@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FormEventHandler, useState } from 'react';
 
 import Pet, { PetType, PetAge, PetGender, PetBreed } from '@/models/pet';
 import { Input, Checkbox, CheckboxGroup, Listbox, ListboxItem, ListboxSection } from '@nextui-org/react';
@@ -6,13 +6,13 @@ import { Input, Checkbox, CheckboxGroup, Listbox, ListboxItem, ListboxSection } 
 export default function PetForm() {
    const [type, setType] = useState<string>();
    const [location, setLocation] = useState<string>('');
-   const [breed, setBreed] = useState<string[]>([]);
-   const [color, setColor] = useState<string>('');
+   const [breeds, setBreed] = useState<string[]>();
+   const [color, setColor] = useState<string[]>();
    const [observations, setObservations] = useState<string>('');
    const [imgUrl, setImgUrl] = useState<string>('');
    const [age, setAge] = useState<string>();
 
-   const breeds = [
+   const allBreeds = [
       'Sem raça definida',
       'Beagle',
       'Border Collie',
@@ -37,31 +37,6 @@ export default function PetForm() {
       'Yorkshire Terrier',
    ]
 
-   const handlePetChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-      setType(event.target.value);
-   };
-
-   const handleBreedChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      const value = event.target.value;
-      if (event.target.checked) {
-         setBreed([...breed, value]);
-      } else {
-         setBreed(removeArrStrItem(value, breed));
-      }
-   };
-
-   const handleAgeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-      setAge(event.target.value);
-   };
-
-   const handleDescription = (event: React.ChangeEvent<HTMLSelectElement>) => {
-      setObservations(event.target.value);
-   };
-
-   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
-   };
-
    const removeArrStrItem = (str: string, arr: Array<string>) => {
       let newArr: string[] = []
       for (let i = 0; i < arr.length; i++) {
@@ -79,6 +54,9 @@ export default function PetForm() {
                label="Pet"
                selectionMode='single'
                disallowEmptySelection
+               selectedKeys={type}
+
+               onSelectionChange={(set) => setType(set as string)}
             >
                <ListboxItem key='cachorro'>cachorro</ListboxItem>
                <ListboxItem key='gato'>gato</ListboxItem>
@@ -94,9 +72,10 @@ export default function PetForm() {
                label="Raça"
                defaultValue={["Sem raça definida"]}
                orientation='horizontal'
-
+               onValueChange={setBreed}
+               value={breeds}
             >
-               {breeds.map((breed) => (
+               {allBreeds.map((breed) => (
                   <Checkbox key={breed} value={breed}
                      classNames={{
                         base: 'max-w-xs',
@@ -107,7 +86,22 @@ export default function PetForm() {
          </div>
 
          <div>
-            <Input label={'cor da pelagem (separar com virgula)'} />
+            <CheckboxGroup
+               label="cor da pelagem"
+               orientation='horizontal'
+               value={color}
+               onValueChange={setColor}
+            >
+               <Checkbox value='Preto' key='Preto'>Preto</Checkbox>
+               <Checkbox value='Branco' key='Branco'>Branco</Checkbox>
+               <Checkbox value='Marrom' key='Marrom'>Marrom</Checkbox>
+               <Checkbox value='Bege' key='Bege'>Bege</Checkbox>
+               <Checkbox value='Amarelo' key='Amarelo'>Amarelo</Checkbox>
+               <Checkbox value='Caramelo' key='Caramelo'>Caramelo</Checkbox>
+               <Checkbox value='Cinza' key='Cinza'>Cinza</Checkbox>
+               <Checkbox value='Rajado' key='Rajado'>Rajado</Checkbox>
+               <Checkbox value='Laranja' key='Laranja'>Laranja</Checkbox>
+            </CheckboxGroup>
          </div>
 
          <div>
@@ -133,6 +127,10 @@ export default function PetForm() {
                <Checkbox value="adulto">adulto</Checkbox>
                <Checkbox value="idoso">idoso</Checkbox>
             </CheckboxGroup>
+         </div>
+
+         <div>
+            <Input label='Observações' />
          </div>
          {/* <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Submit</button> */}
       </form>
