@@ -51,11 +51,11 @@ export default function PetForm() {
       setPetInfos(pet);
    };
 
-   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
-      // Handle form submission here
-      // console.log({ pet, raca, idade });
-   };
+   // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+   //    event.preventDefault();
+   //    // Handle form submission here
+   //    // console.log({ pet, raca, idade });
+   // };
 
    const removeArrStrItem = (str: string, arr: Array<string>) => {
       let newArr: string[] = []
@@ -63,11 +63,12 @@ export default function PetForm() {
          if (arr[i] === str) continue;
          newArr.push(arr[i])
       }
+
       return newArr;
    }
 
    return (
-      <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-8 text-black">
+      <form className="max-w-md mx-auto mt-8 text-black">
          <div className="mb-4">
             <label htmlFor="pet" className="block text-gray-700 text-sm font-bold mb-2">Pet</label>
             <select id="pet" value={petInfos.type} onChange={handlePetChange} className="w-full border border-gray-300 rounded p-2">
