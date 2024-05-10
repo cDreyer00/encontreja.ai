@@ -1,4 +1,8 @@
-import { ObjectId } from "mongodb";
+import { ObjectId, Collection } from "mongodb";
+
+export type PetType   = 'gato'       | 'cachorro'
+export type PetGender = 'indefinido' | 'macho'  | 'fêmea';
+export type PetAge    = 'jovem'      | 'adulto' | 'idoso';
 
 export default class Pet {
    constructor(
@@ -7,10 +11,7 @@ export default class Pet {
       public age:          PetAge[],
       public breed:        string[],
       public observations: string,
-      public id?:          ObjectId,
+      public imgUrl:       string,
+      public _id?:         ObjectId,
    ) {}
 }
-
-export type PetType   = 'cat'       | 'dog'
-export type PetGender = 'undefined' | 'male'  | 'female';
-export type PetAge    = 'young'     | 'adult' | 'senior';

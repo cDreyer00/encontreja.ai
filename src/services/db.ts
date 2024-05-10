@@ -1,23 +1,22 @@
-import * as mongodb from "mongodb";
+import { MongoClient, Collection, Db } from "mongodb";
+import Pet from "@/models/pet";
 
-export const collections: { pets?: mongodb.Collection } = {}
-const uri = "mongodb+srv://testdb:<password>@cluster0.nidkkdu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-const connString = process.env.DB_CONN_STRING as string
+export const collections: { pets?: Collection<Pet> } = {}
+
+const dbPass = process.env.DB_PASS
 const collectionName = process.env.DB_COLLECTION_NAME as string
 const dbName = process.env.DB_NAME
-
+const connString = `mongodb+srv://admin:${dbPass}@cluster0.nidkkdu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
 export async function connectToDatabase() {
-   const client: mongodb.MongoClient = new mongodb.MongoClient(connString);
-
-   await client.connect();
-
-   const db: mongodb.Db = client.db(dbName);
-
-   const petsCollection: mongodb.Collection = db.collection(collectionName);
-
-   collections.pets = petsCollection;
-
-   console.log(`Successfully connected to database: ${db.databaseName} and collection: ${petsCollection.collectionName}`);
+   try {
+      const client: MongoClient = new MongoClient(connString);
+      await client.connect();
+      const db: Db = client.db(dbName);
+      const petsCollection: Collection<Pet> = db.collection(collectionName);
+      collections.pets = petsCollection;
+   }
+   catch (error) {
+      console.error(error);
+   }
 }
-

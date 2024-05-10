@@ -3,26 +3,15 @@
 import Image from "next/image";
 import kv from '@vercel/kv'
 import React, { useEffect, useState } from "react";
+import Pet from "@/models/pet";
 
 export default function Home() {
-  const [data, setData] = useState({});
+  const [data, setData] = useState<Pet>();
 
   useEffect(() => {
-    getPrefs()
-      .then((prefs) => {
-        if (!prefs) {
-          // new record
-          var newPrefs = {
-            name: 'John Doe',
-            age: '30',
-          }
-
-          updatePrefs(newPrefs)
-        }
-
-        setData(prefs)
-      })
-
+    fetch("/api/register")
+      .then((response) => response.json())
+      .then((data) => setData(data));
   })
 
   return (
@@ -32,13 +21,4 @@ export default function Home() {
       </div>
     </main>
   );
-}
-
-export async function getPrefs() {
-  const prefs = await kv.get('prefs');
-  return prefs || {};
-}
-
-export async function updatePrefs(prefs: Record<string, string>) {
-  return kv.set('prefs', prefs);
 }
