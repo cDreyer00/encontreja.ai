@@ -54,29 +54,29 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
       e.preventDefault();
 
       if (!type) {
-         console.log('type is required');
+         alert('type is required');
          return;
       }
       if (!location) {
-         console.log('location is required');
+         alert('location is required');
          return;
       }
       if (!breeds) {
-         console.log('breeds is required');
+         alert('breeds is required');
          return;
       }
       if (!color) {
-         console.log('color is required');
+         alert('color is required');
          return;
       }
 
       // if (!imgUrl){
-      //    console.log('imgUrl is required');
+      //    alert('imgUrl is required');
       //    return;
       // }
 
       if (!age) {
-         console.log('age is required');
+         alert('age is required');
          return;
       }
 
