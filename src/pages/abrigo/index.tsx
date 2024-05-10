@@ -4,21 +4,21 @@ import { useState, useEffect } from "react"
 import PetForm from "@/components/PetForm"
 import Pet from "@/models/pet"
 
-const petExample = `{
-   "pet": "cachorro",
-   "raca": ["vira-lata", "labrador"],
-   "core": ["preto", "branco"],
-   "idade": ["jovem"],
-   "observacoes": "coleira marrom, mancha branca no peito"
- }`
+// const petExample = `{
+//    "pet": "cachorro",
+//    "raca": ["vira-lata", "labrador"],
+//    "core": ["preto", "branco"],
+//    "idade": ["jovem"],
+//    "observacoes": "coleira marrom, mancha branca no peito"
+//  }`
 
 export default function Abrigo() {
    const [img, setImg] = useState<File>()
    const [imgUrl, setImgUrl] = useState<string>()
    const [petInfos, setPetInfos] = useState<Pet>()
 
-   const pet: Pet = JSON.parse(petExample);
-   console.log(pet);
+   // const pet: Pet = JSON.parse(petExample);
+   // console.log(pet);
 
    async function handleImageUpload(e: React.ChangeEvent<HTMLInputElement>) {
       const file: File | null = e.target.files?.[0] || null;
@@ -76,10 +76,28 @@ export default function Abrigo() {
       }
    }
 
-   async function handleSubmitPet() {
-      fetch('/api/register', {
+   async function handleSubmitPet(pet: Pet) {
+      console.log(pet);
+      if (!imgUrl) return;
+      pet.imgUrl = imgUrl;
 
+      fetch('/api/register', {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json',
+         },
+         body: JSON.stringify({ pet }),
       })
+      .then((response) => {
+         if (!response.ok) {
+            throw new Error('Failed to submit pet');
+         }
+         alert('Pet submitted successfully');
+      })
+      .catch((error) => {
+         console.error('Error submitting pet:', error);
+         alert('Failed to submit pet');
+      });
    }
 
    return (
@@ -104,14 +122,14 @@ export default function Abrigo() {
                </div>
                <div>
                   {img && (
-                     <PetForm />
+                     <PetForm onSubmit={handleSubmitPet} />
                   )}
                </div>
             </div>
             <div>
-               <button onClick={handleSubmitPet} className="bg-white text-black px-4 py-2 text-sm font-semibold rounded shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white focus:ring-opacity-50">
+               {/* <button onClick={handleSubmitPet} className="bg-white text-black px-4 py-2 text-sm font-semibold rounded shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white focus:ring-opacity-50">
                   Enviar
-               </button>
+               </button> */}
             </div>
             <div className="mt-8">
                <pre>{JSON.stringify(petInfos)}</pre>

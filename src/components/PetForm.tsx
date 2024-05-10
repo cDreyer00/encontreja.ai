@@ -1,16 +1,19 @@
 import { FormEventHandler, useState } from 'react';
 
 import Pet, { PetType, PetAge, PetGender, PetBreed } from '@/models/pet';
-import { Input, Checkbox, CheckboxGroup, Listbox, ListboxItem, ListboxSection } from '@nextui-org/react';
+import { Input, Checkbox, CheckboxGroup, Listbox, ListboxItem, ListboxSection, SelectItem, Select } from '@nextui-org/react';
 
-export default function PetForm() {
+type SubmitPet = (pet: Pet) => void;
+
+export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
    const [type, setType] = useState<string>();
-   const [location, setLocation] = useState<string>('');
+   const [location, setLocation] = useState<string>();
    const [breeds, setBreed] = useState<string[]>();
    const [color, setColor] = useState<string[]>();
-   const [observations, setObservations] = useState<string>('');
-   const [imgUrl, setImgUrl] = useState<string>('');
-   const [age, setAge] = useState<string>();
+   const [observations, setObservations] = useState<string>();
+   const [imgUrl, setImgUrl] = useState<string>();
+   const [age, setAge] = useState<string[]>();
+   const [gender, setGender] = useState<string>();
 
    const allBreeds = [
       'Sem raça definida',
@@ -47,24 +50,72 @@ export default function PetForm() {
       return newArr;
    }
 
+   function handleSubmit(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+      e.preventDefault();
+
+      if (!type) {
+         console.log('type is required');
+         return;
+      }
+      if (!location) {
+         console.log('location is required');
+         return;
+      }
+      if (!breeds) {
+         console.log('breeds is required');
+         return;
+      }
+      if (!color) {
+         console.log('color is required');
+         return;
+      }
+
+      // if (!imgUrl){
+      //    console.log('imgUrl is required');
+      //    return;
+      // }
+
+      if (!age) {
+         console.log('age is required');
+         return;
+      }
+
+      if (!gender) {
+         return;
+      }
+
+      const pet = new Pet(
+         type,
+         gender,
+         location,
+         age,
+         breeds,
+         color,
+         observations as string,
+         imgUrl,
+      );
+
+      onSubmit(pet);
+
+   }
+
    return (
       <form className="max-w-96 mx-auto mt-8 text-black">
          <div>
-            <Listbox
+            <Select
                label="Pet"
                selectionMode='single'
                disallowEmptySelection
-               selectedKeys={type}
-
-               onSelectionChange={(set) => setType(set as string)}
+               onChange={(e) => setType(e.target.value)}
+               value={type}
             >
-               <ListboxItem key='cachorro'>cachorro</ListboxItem>
-               <ListboxItem key='gato'>gato</ListboxItem>
-            </Listbox>
+               <SelectItem key='cachorro'>cachorro</SelectItem>
+               <SelectItem key='gato'>gato</SelectItem>
+            </Select>
          </div>
 
          <div>
-            <Input label='Local/Abrigo' />
+            <Input label='Local/Abrigo' value={location} onValueChange={setLocation} />
          </div>
 
          <div>
@@ -105,14 +156,15 @@ export default function PetForm() {
          </div>
 
          <div>
-            <Listbox
+            <Select
                label="Genero/Sexo"
-               selectionMode='single'
-               disallowEmptySelection
+               onChange={(e) => setGender(e.target.value)}
+               value={gender}
+
             >
-               <ListboxItem key="Macho">Macho</ListboxItem>
-               <ListboxItem key="Fêmea">Fêmea</ListboxItem>
-            </Listbox>
+               <SelectItem key="Macho">Macho</SelectItem>
+               <SelectItem key="Fêmea">Fêmea</SelectItem>
+            </Select>
          </div>
 
          <div>
@@ -120,7 +172,8 @@ export default function PetForm() {
                label="Idade"
                defaultValue={["indefinido"]}
                orientation='horizontal'
-
+               onValueChange={setAge}
+               value={age}
             >
                <Checkbox value="indefinido">indefinido</Checkbox>
                <Checkbox value="jovem">jovem</Checkbox>
@@ -130,9 +183,9 @@ export default function PetForm() {
          </div>
 
          <div>
-            <Input label='Observações' />
+            <Input label='Observações' value={observations} onValueChange={setObservations} />
          </div>
-         {/* <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Submit</button> */}
+         <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onClick={handleSubmit}>Enviar</button>
       </form>
    );
 }
