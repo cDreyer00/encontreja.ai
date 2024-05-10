@@ -26,11 +26,20 @@ const prompt = `
    }
 `
 
-
-export async function ExtractPetInfos(imageUrl: string): Promise<string> {
-   if (!imageUrlRegex.test(imageUrl)) {
-      return 'Invalid image URL'
+export async function GET(req: NextRequest) {
+   const image = req.nextUrl.searchParams.get('image');
+   if (!image) {
+      return new Response('Missing image URL', { status: 400 });
    }
+
+   const infos = await ExtractPetInfos(image);
+   return new Response(infos);
+}
+
+async function ExtractPetInfos(imageUrl: string): Promise<string> {
+   // if (!imageUrlRegex.test(imageUrl)) {
+   //    return 'Invalid image URL'
+   // }
 
    const result = await openai.chat.completions.create({
       model: 'gpt-4-vision-preview',
@@ -56,12 +65,3 @@ export async function ExtractPetInfos(imageUrl: string): Promise<string> {
    return res;
 }
 
-export async function GET(req: NextRequest) {
-   const image = req.nextUrl.searchParams.get('image');
-   if (!image) {
-      return new Response('Missing image URL', { status: 400 });
-   }
-
-   const infos = await ExtractPetInfos(image);
-   return new Response(infos);
-}

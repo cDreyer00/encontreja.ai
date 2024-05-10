@@ -2,12 +2,13 @@
 import "@/app/globals.css"
 import { useState, useEffect } from "react"
 import PetForm from "@/components/PetForm"
+import Pet from "@/models/pet"
 // import { ExtractPetInfos } from "@/app/assistant"
 
 export default function Abrigo() {
    const [img, setImg] = useState<File>()
    const [imgUrl, setImgUrl] = useState<string>()
-   const [petInfos, setPetInfos] = useState<string>("pet content")
+   const [petInfos, setPetInfos] = useState<Pet>()
 
    async function handleImageUpload(e: React.ChangeEvent<HTMLInputElement>) {
       const file: File | null = e.target.files?.[0] || null;
@@ -23,13 +24,6 @@ export default function Abrigo() {
       const imgUrl = await submitImageToImgbb(file);
       setPetInfos(imgUrl);
       setImgUrl(imgUrl);
-   }
-
-   async function GetAI(imgUrl: string) {
-      console.log(imgUrl);
-      const assistanteRequest = await fetch(`/api/assistant?image=${imgUrl}`);
-      const assistanteResponse = await assistanteRequest.json();
-      setPetInfos(assistanteResponse);
    }
 
    async function submitImageToImgbb(img: File) {
@@ -56,6 +50,18 @@ export default function Abrigo() {
          return jsonResponse.data.url;
       } catch (error) {
          console.error('Error uploading image:', error);
+         throw error;
+      }
+   }
+
+   async function GetAI(imgUrl: string) {
+      try {
+         const assistanteRequest = await fetch(`/api/assistant?image=${imgUrl}`);
+         const assistanteResponse = await assistanteRequest.json();
+         setPetInfos(assistanteResponse);
+      }
+      catch (error) {
+         console.error('Error getting AI:', error);
          throw error;
       }
    }
@@ -96,7 +102,7 @@ export default function Abrigo() {
                </button>
             </div>
             <div className="mt-8">
-               <pre>{petInfos}</pre>
+               <pre>{JSON.stringify(petInfos)}</pre>
             </div>
             <div>
                <button onClick={() => GetAI(imgUrl!)}> TEST </button>
