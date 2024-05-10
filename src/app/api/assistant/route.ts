@@ -32,15 +32,6 @@ export async function GET(req: NextRequest) {
       return new Response('Missing image URL', { status: 400 });
    }
 
-   const infos = await ExtractPetInfos(image);
-   return new Response(infos);
-}
-
-async function ExtractPetInfos(imageUrl: string): Promise<string> {
-   // if (!imageUrlRegex.test(imageUrl)) {
-   //    return 'Invalid image URL'
-   // }
-
    const result = await openai.chat.completions.create({
       model: 'gpt-4-vision-preview',
       messages: [
@@ -53,15 +44,15 @@ async function ExtractPetInfos(imageUrl: string): Promise<string> {
             content: [
                {
                   type: 'image_url',
-                  image_url: { url: imageUrl }
+                  image_url: { url: image }
                },
             ]
          }
       ]
    })
 
-   const res = result.choices[0].message.content
-   if (!res) return 'No response from the AI model';
-   return res;
+   const infos = result.choices[0].message.content
+   if (!infos) return new Response(infos, { status: 400 });
+   return new Response(infos);
 }
 

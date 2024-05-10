@@ -19,7 +19,12 @@ export async function GET(req: NextRequest): Promise<Response> {
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
-   const pet = new Pet('gato', 'indefinido', ['adulto', 'idoso'], ['indefinido', 'siames'], '4', 'http');
+   // const pet = new Pet('gato', 'indefinido', ['adulto', 'idoso'], ['indefinido', 'siames'], '4', 'http');
+   const data = await req.json();
+   const pet: Pet = data.pet
+   
+   console.log(pet);
+
    await collections.pets?.insertOne(pet);
 
    return new Response('ok');

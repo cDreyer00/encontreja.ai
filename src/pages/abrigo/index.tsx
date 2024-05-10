@@ -67,7 +67,9 @@ export default function Abrigo() {
    }
 
    async function handleSubmitPet() {
-
+      fetch('/api/register', {
+         
+      })
    }
 
    return (
