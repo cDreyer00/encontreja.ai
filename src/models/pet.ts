@@ -2,7 +2,8 @@ import { ObjectId, Collection } from "mongodb";
 
 export type PetType   = 'gato'       | 'cachorro'
 export type PetGender = 'indefinido' | 'macho'  | 'fêmea';
-export type PetAge    = 'jovem'      | 'adulto' | 'idoso';
+export type PetAge    = 'indefinido' | 'jovem'  | 'adulto' | 'idoso';
+export type PetBreed    = 'indefinido' | 'jovem'  | 'adulto' | 'idoso';
 
 export default class Pet {
    constructor(

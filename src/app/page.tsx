@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const router = useRouter();
 
-  async function handleChangePage(page: string){
+  async function handleChangePage(page: string) {
     router.push(page);
   }
 

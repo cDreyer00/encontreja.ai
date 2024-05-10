@@ -3,12 +3,22 @@ import "@/app/globals.css"
 import { useState, useEffect } from "react"
 import PetForm from "@/components/PetForm"
 import Pet from "@/models/pet"
-// import { ExtractPetInfos } from "@/app/assistant"
+
+const petExample = `{
+   "pet": "cachorro",
+   "raca": ["vira-lata", "labrador"],
+   "core": ["preto", "branco"],
+   "idade": ["jovem"],
+   "observacoes": "coleira marrom, mancha branca no peito"
+ }`
 
 export default function Abrigo() {
    const [img, setImg] = useState<File>()
    const [imgUrl, setImgUrl] = useState<string>()
    const [petInfos, setPetInfos] = useState<Pet>()
+
+   const pet: Pet = JSON.parse(petExample);
+   console.log(pet);
 
    async function handleImageUpload(e: React.ChangeEvent<HTMLInputElement>) {
       const file: File | null = e.target.files?.[0] || null;
@@ -68,7 +78,7 @@ export default function Abrigo() {
 
    async function handleSubmitPet() {
       fetch('/api/register', {
-         
+
       })
    }
 
