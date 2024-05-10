@@ -2,15 +2,14 @@
 
 import React, { useEffect, useState } from "react";
 import Pet from "@/models/pet";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  // const [data, setData] = useState<Pet>();
+  const router = useRouter();
 
-  // useEffect(() => {
-  //   fetch("/api/register")
-  //     .then((response) => response.json())
-  //     .then((data) => setData(data));
-  // })
+  async function handleChangePage(page: string){
+    router.push(page);
+  }
 
   return (
     <>
@@ -30,10 +29,10 @@ export default function Home() {
             <div className="text-sm w-1/3 mx-2">
               <h2 className="font-semibold mb-2">Escolha uma das opções ao lado</h2>
               <div className="flex flex-col">
-                <button className="text-white border border-gray-700 px-4 py-2 mb-2 hover:bg-gray-800 transition duration-150 ease-in-out">
+                <button className="text-white border border-gray-700 px-4 py-2 mb-2 hover:bg-gray-800 transition duration-150 ease-in-out" onClick={() => handleChangePage('/tutor')}>
                   TUTOR
                 </button>
-                <button className="text-white border border-gray-700 px-4 py-2 hover:bg-gray-800 transition duration-150 ease-in-out">
+                <button className="text-white border border-gray-700 px-4 py-2 hover:bg-gray-800 transition duration-150 ease-in-out" onClick={() => handleChangePage('/abrigo')}>
                   ABRIGO
                 </button>
               </div>
