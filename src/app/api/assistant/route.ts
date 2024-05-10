@@ -52,6 +52,7 @@ export async function GET(req: NextRequest) {
    })
 
    const infos = result.choices[0].message.content
+   console.log(infos)
    if (!infos) return new Response(infos, { status: 400 });
    return new Response(infos);
 }

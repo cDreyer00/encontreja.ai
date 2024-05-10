@@ -1,61 +1,66 @@
 import { useState } from 'react';
 
 import Pet, { PetType, PetAge, PetGender, PetBreed } from '@/models/pet';
+import { Input, Checkbox, CheckboxGroup, Listbox, ListboxItem, ListboxSection } from '@nextui-org/react';
 
 export default function PetForm() {
-   const [petInfos, setPetInfos] = useState<Pet>(new Pet('cachorro', 'indefinido', ['indefinido'], ['vira-lata'], '', 'undefined'));
+   const [type, setType] = useState<string>();
+   const [location, setLocation] = useState<string>('');
+   const [breed, setBreed] = useState<string[]>([]);
+   const [color, setColor] = useState<string>('');
+   const [observations, setObservations] = useState<string>('');
+   const [imgUrl, setImgUrl] = useState<string>('');
+   const [age, setAge] = useState<string>();
+
+   const breeds = [
+      'Sem raça definida',
+      'Beagle',
+      'Border Collie',
+      'Boxer',
+      'Bulldog Francês',
+      'Bulldog Inglês',
+      'Cavalier King Charles Spaniel',
+      'Chihuahua',
+      'Cocker Spaniel',
+      'Doberman',
+      'Golden Retriever',
+      'Husky Siberiano',
+      'Labrador Retriever',
+      'Maltese',
+      'Pastor Alemão',
+      'Pinscher',
+      'Poodle',
+      'Pug',
+      'Rottweiler',
+      'Salsicha (Dachshund)',
+      'Shih Tzu',
+      'Yorkshire Terrier',
+   ]
 
    const handlePetChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-      let pet = petInfos;
-      let type: PetType = event.target.value as PetType;
-      pet.type = type;
-      setPetInfos(pet);
+      setType(event.target.value);
    };
 
-   const handleRacaChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      let pet = petInfos;
-      let newBreed = event.target.value as PetBreed
-      if (petInfos.breed.includes(newBreed))
-         pet.breed = removeArrStrItem(newBreed, pet.breed);
-      else
-         pet.breed.push(newBreed);
-
-      // if(pet.breed.length > 1)
-      //    pet.breed = removeArrStrItem('indefinido', pet.breed);
-
-      setPetInfos(pet);
+   const handleBreedChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      const value = event.target.value;
+      if (event.target.checked) {
+         setBreed([...breed, value]);
+      } else {
+         setBreed(removeArrStrItem(value, breed));
+      }
    };
 
-   const handleIdadeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-      let pet = petInfos;
-      let age = event.target.value as PetAge;
-      if (petInfos.breed.includes(age))
-         pet.breed = removeArrStrItem(age, pet.age);
-      else
-         pet.breed.push(age);
-
-      if (pet.breed.length > 1)
-         pet.breed = removeArrStrItem('indefinido', pet.age);
-
-      setPetInfos(pet);
+   const handleAgeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+      setAge(event.target.value);
    };
 
    const handleDescription = (event: React.ChangeEvent<HTMLSelectElement>) => {
-      let pet = petInfos;
-      let desc = event.target.value as string
-      if (desc === undefined)
-         return;
-
-      pet.observations = desc;
-
-      setPetInfos(pet);
+      setObservations(event.target.value);
    };
 
-   // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-   //    event.preventDefault();
-   //    // Handle form submission here
-   //    // console.log({ pet, raca, idade });
-   // };
+   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+   };
 
    const removeArrStrItem = (str: string, arr: Array<string>) => {
       let newArr: string[] = []
@@ -68,32 +73,80 @@ export default function PetForm() {
    }
 
    return (
-      <form className="max-w-md mx-auto mt-8 text-black">
-         <div className="mb-4">
-            <label htmlFor="pet" className="block text-gray-700 text-sm font-bold mb-2">Pet</label>
-            <select id="pet" value={petInfos.type} onChange={handlePetChange} className="w-full border border-gray-300 rounded p-2">
-               <option value="dog">Cachorro</option>
-               <option value="cat">Gato</option>
-            </select>
+      <form className="max-w-96 mx-auto mt-8 text-black">
+         <div>
+            <Listbox
+               label="Pet"
+               selectionMode='single'
+               disallowEmptySelection
+            >
+               <ListboxItem key='cachorro'>cachorro</ListboxItem>
+               <ListboxItem key='gato'>gato</ListboxItem>
+            </Listbox>
          </div>
-         <div className="mb-4">
-            <label htmlFor="raca" className="block text-gray-700 text-sm font-bold mb-2">Raça</label>
-            <input type="text" id="raca" value={petInfos.breed} onChange={handleRacaChange} className="w-full border border-gray-300 rounded p-2" />
+
+         <div>
+            <Input label='Local/Abrigo' />
          </div>
-         <div className="mb-4">
-            <label htmlFor="idade" className="block text-gray-700 text-sm font-bold mb-2">Idade</label>
-            <select id="idade" value={petInfos.age} onChange={handleIdadeChange} className="w-full border border-gray-300 rounded p-2">
-               <option value="Jovem">Indefinido</option>
-               <option value="Jovem">Jovem</option>
-               <option value="Adulto">Adulto</option>
-               <option value="Idoso">Idoso</option>
-            </select>
+
+         <div>
+            <CheckboxGroup
+               label="Raça"
+               defaultValue={["Sem raça definida"]}
+               orientation='horizontal'
+
+            >
+               {breeds.map((breed) => (
+                  <Checkbox key={breed} value={breed}
+                     classNames={{
+                        base: 'max-w-xs',
+                     }}
+                  >{breed}</Checkbox>
+               ))}
+            </CheckboxGroup>
          </div>
-         <div className="mb-4">
-            <label htmlFor="idade" className="block text-gray-700 text-sm font-bold mb-2">Idade</label>
-            <textarea value={petInfos.observations}></textarea>
+
+         <div>
+            <Input label={'cor da pelagem (separar com virgula)'} />
+         </div>
+
+         <div>
+            <Listbox
+               label="Genero/Sexo"
+               selectionMode='single'
+               disallowEmptySelection
+            >
+               <ListboxItem key="Macho">Macho</ListboxItem>
+               <ListboxItem key="Fêmea">Fêmea</ListboxItem>
+            </Listbox>
+         </div>
+
+         <div>
+            <CheckboxGroup
+               label="Idade"
+               defaultValue={["indefinido"]}
+               orientation='horizontal'
+
+            >
+               <Checkbox value="indefinido">indefinido</Checkbox>
+               <Checkbox value="jovem">jovem</Checkbox>
+               <Checkbox value="adulto">adulto</Checkbox>
+               <Checkbox value="idoso">idoso</Checkbox>
+            </CheckboxGroup>
          </div>
          {/* <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Submit</button> */}
+      </form>
+   );
+}
+
+function MultiSelectDropdown({ formFieldName, options }: { formFieldName: string, options: string[] }) {
+   return (
+      <form>
+         <select name='select' multiple className='size-56'>
+            <option>one</option>
+            <option>two</option>
+            <option>three</option>
+         </select>
       </form>
    );
 }

@@ -15,7 +15,6 @@ export async function GET(req: NextRequest): Promise<Response> {
       console.error(error);
       return new Response("An error occurred", { status: 500 });
    }
-
 }
 
 export async function POST(req: NextRequest): Promise<Response> {

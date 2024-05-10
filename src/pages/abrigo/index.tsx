@@ -84,7 +84,7 @@ export default function Abrigo() {
 
    return (
       <>
-         <div className="bg-black h-screen flex flex-col justify-center items-center text-white">
+         <div className="bg-slate-400 h-screen flex flex-col justify-center items-center text-white">
             <div className="mb-8">
                <button
                   className="bg-white text-black px-4 py-2 text-sm font-semibold rounded shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white focus:ring-opacity-50"
