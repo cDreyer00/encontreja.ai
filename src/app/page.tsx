@@ -3,6 +3,20 @@
 import React, { useEffect, useState } from "react";
 import Pet from "@/models/pet";
 import { useRouter } from "next/navigation";
+import { Chivo, Hanken_Grotesk } from "next/font/google";
+import MainButton from "@/components/MainButton";
+
+const containerClass = "w-full h-screen text-white flex flex-row"
+
+const chivo = Chivo({
+  weight: '700',
+  subsets: ['latin'],
+})
+
+const hanken_grotesk = Hanken_Grotesk({
+  weight: '500',
+  subsets: ['latin'],
+})
 
 export default function Home() {
   const router = useRouter();
@@ -13,35 +27,41 @@ export default function Home() {
 
   return (
     <>
-      <div className="min-h-screen bg-black text-white flex flex-col justify-center items-center p-4">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold mb-4">EncontreJá.Ai</h1>
-          <p className="mb-4">Encontre seu pet perdido nas enchentes do RS</p>
-          <div className="text-sm">
-            <button className="text-white border border-gray-700 px-6 py-2 hover:bg-gray-800 transition duration-150 ease-in-out">
-              Como funciona?
-            </button>
+      {/* ================================================== */}
+
+      <div className={containerClass}>
+        <div className="bg-soft-blue h-full min-w-2/5">
+          <div className={`${hanken_grotesk.className} text-7xl text-black text-end mt-10 mr-5`}>
+            Encontrejá.Ai
+          </div>
+          <div>
+            IMAGEM
           </div>
         </div>
 
-        <div className="w-full max-w-4xl bg-gray-900 p-6 rounded-lg shadow-lg">
-          <div className="flex justify-between items-center">
-            <div className="text-sm w-1/3 mx-2">
-              <h2 className="font-semibold mb-2">Escolha uma das opções ao lado</h2>
-              <div className="flex flex-col">
-                <button className="text-white border border-gray-700 px-4 py-2 mb-2 hover:bg-gray-800 transition duration-150 ease-in-out" onClick={() => handleChangePage('/tutor')}>
-                  TUTOR
-                </button>
-                <button className="text-white border border-gray-700 px-4 py-2 hover:bg-gray-800 transition duration-150 ease-in-out" onClick={() => handleChangePage('/abrigo')}>
-                  ABRIGO
-                </button>
-              </div>
-            </div>
-            <div className="text-sm w-2/3 mx-2">
-              <p>Com ajuda de voluntários, é feito um cadastramento fotográfico de animais abrigados das enchentes.</p>
-              <p className="mt-4">Ao subir sua foto, nossa IA cruza informações e traz resultados baseados nas informações visuais disponíveis no arquivo gerado pelos voluntários.</p>
-            </div>
+        <div className="bg-soft-black w-full h-full flex flex-col">
+          <div className="m-8 text-[7rem] w-2/3 self-center leading-[150px]">
+            NÓS AJUDAMOS VOCÊ A ENCONTRAR SEU <a className="text-soft-blue">PET</a> PERDIDO NAS ENCHENTES DO RS
           </div>
+
+          <div className={`${chivo.className} mt-5 text-3xl self-center w-2/3`}>
+            Com auxílio de Inteligência Artificial
+          </div>
+        </div>
+      </div>
+
+      {/* ================================================== */}
+
+      <div className={`${containerClass} bg-soft-black flex flex-col`}>
+        <div className="w-auto m-20">
+          <div className="text-7xl text-center">
+            COMO PODEMOS AJUDAR <a className="text-soft-blue">VOCÊ?</a>
+          </div>
+        </div>
+
+        <div className={`flex flex-row gap-10 justify-center h-full`}>
+          <MainButton label="TUTOR" text="ESTOU A PROCURA DO MEU PET PERDIDO" onClick={() => handleChangePage('buscar')} />
+          <MainButton label="ABRIGO E LARES TEMPORÁRIOS" text="QUERO CADASTRAR ANIMAIS ENCONTRADOS" onClick={() => handleChangePage('abrigo')} />
         </div>
       </div>
     </>

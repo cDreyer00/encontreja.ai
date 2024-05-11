@@ -160,7 +160,6 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
                label="Genero/Sexo"
                onChange={(e) => setGender(e.target.value)}
                value={gender}
-
             >
                <SelectItem key="Macho">Macho</SelectItem>
                <SelectItem key="Fêmea">Fêmea</SelectItem>

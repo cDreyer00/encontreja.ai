@@ -14,7 +14,7 @@ export async function GET() {
             content: [
                {
                   type: 'image_url',
-                  image_url: { url: 'https://i.ibb.co/grdYbVg/image.png' }
+                  image_url: { url: 'https://i.ibb.co/MsHhydY/image.png' }
                },
                {
                   type: 'text',
