@@ -33,7 +33,7 @@ export async function POST(req: NextRequest): Promise<Response> {
    // const pet = new Pet('gato', 'indefinido', ['adulto', 'idoso'], ['indefinido', 'siames'], '4', 'http');
    const data = await req.json();
    const pet: Pet = data.pet
-
+   
    console.log("backend");
    console.log(pet);
    await connectToDatabase();

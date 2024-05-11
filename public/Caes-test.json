@@ -1,0 +1,37 @@
+﻿[
+   {
+      "Type": "Cachorro",
+      "Gender": "Macho",
+      "Location": "Novo Esteio (Rua Manuel dos Santos - 236)",
+      "Age": [
+         "Incerto"
+      ],
+      "Breeds": [
+         "Sem raça definida"
+      ],
+      "Colors": [
+         "Marrom",
+         "Caramelo"
+      ],
+      "ImgUrl": "https://drive.google.com/open?id=16L8deGvO43zm8kXIdaUoW3ZhApjBeiYl",
+      "Observations": ""
+   },
+   {
+      "Type": "Cachorro",
+      "Gender": "Fêmea",
+      "Location": "Novo Esteio (Rua Manuel dos Santos - 236)",
+      "Age": [
+         "Incerto"
+      ],
+      "Breeds": [
+         "Sem raça definida"
+      ],
+      "Colors": [
+         "Branco",
+         "preto",
+         "marrom"
+      ],
+      "ImgUrl": "https://drive.google.com/open?id=1BCvMGgT5IpXuzobXWsfBUOwT5omVjwg2",
+      "Observations": ""
+   }
+]

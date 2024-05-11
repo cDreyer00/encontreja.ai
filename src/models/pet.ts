@@ -14,6 +14,7 @@ export default class Pet {
       public breeds: string[],
       public colors: string[],
       public imgUrl: string,
+      public size?: string,
       public observations?: string,
       public _id?: ObjectId,
    ) { }

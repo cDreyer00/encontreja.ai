@@ -96,7 +96,6 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
       );
 
       onSubmit(pet);
-
    }
 
    return (
