@@ -1,5 +1,6 @@
 import OpenAI from "openai"
 import { getImageUrl } from "@/services/googleapi"
+import fs from 'fs';
 
 const openai = new OpenAI({
    apiKey: process.env.OPENAI_API_KEY
@@ -34,7 +35,7 @@ export async function GET() {
    try {
       const fileId = '16L8deGvO43zm8kXIdaUoW3ZhApjBeiYl';
       const imgUrl = await getImageUrl(fileId);
-      if (!imgUrl) return;
+      if (!imgUrl) return new Response("Failed to get image URL", { status: 500 });
       const imgbbUrl = await submitImageToImgbb(imgUrl);
       return new Response(imgbbUrl)
    }
@@ -71,5 +72,18 @@ async function submitImageToImgbb(img: string) {
    } catch (error) {
       console.error('Error uploading image:', error);
       throw error;
+   }
+}
+
+async function extractPets(fileName: string) {
+   try {
+      const data = fs.readFileSync(fileName, 'utf8');
+      const pets = JSON.parse(data);
+      
+      return pets;
+   }
+   catch (error) {
+      console.error(error);
+      return error
    }
 }

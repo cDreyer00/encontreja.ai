@@ -5,8 +5,7 @@ import fs from 'fs';
 export async function getImageUrl(fileId: string): Promise<string | null> {
    try {
       // Set up OAuth2 client
-      const authData = JSON.parse(fs.readFileSync('credentials.json', 'utf8'));
-      
+      const authData = JSON.parse(fs.readFileSync('src/services/credentials.json', 'utf8'));
       const auth = new google.auth.GoogleAuth({
          credentials: authData,
          scopes: ['https://www.googleapis.com/auth/drive.readonly']
