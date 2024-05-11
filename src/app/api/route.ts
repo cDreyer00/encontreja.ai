@@ -1,4 +1,5 @@
 import OpenAI from "openai"
+import { getImageUrl } from "@/services/googleapi"
 
 const openai = new OpenAI({
    apiKey: process.env.OPENAI_API_KEY
@@ -30,19 +31,26 @@ const openai = new OpenAI({
 // }
 
 export async function GET() {
-   await submitImageToImgbb()
-   return new Response('Hello World!')
+   try {
+      const fileId = '16L8deGvO43zm8kXIdaUoW3ZhApjBeiYl';
+      const imgUrl = await getImageUrl(fileId);
+      if (!imgUrl) return;
+      const imgbbUrl = await submitImageToImgbb(imgUrl);
+      return new Response(imgbbUrl)
+   }
+   catch (error) {
+      console.error(error);
+      return new Response("An error occurred", { status: 500 });
+   }
 }
 
 export async function POST() {
    return new Response('Hello World!')
 }
 
-async function submitImageToImgbb() {
+async function submitImageToImgbb(img: string) {
    const apiKey = '187ff376e1ea89f898c252a97fe5648a';
    const apiUrl = 'https://api.imgbb.com/1/upload';
-
-   const img = `https://drive.google.com/file/d/1KeJErH_sZjiX-ZcLeZ6cppAm1sl4rtiI/view`
 
    const formData = new FormData();
    formData.append('image', img);
