@@ -91,8 +91,9 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
          age,
          breeds,
          color,
-         observations as string,
          imgUrl,
+         ["indefinido"],
+         observations as string,
       );
 
       onSubmit(pet);
