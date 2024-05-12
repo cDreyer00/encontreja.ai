@@ -5,9 +5,6 @@ import { promises as fs } from 'fs';
 import Pet from "@/models/pet";
 
 export async function GET(req: NextRequest): Promise<Response> {
-   var res = await extractPets();
-   return new Response(JSON.stringify(res));
-
    try {
       await connectToDatabase();
       const filterPredicate: StrictFilter<Pet> = { _id: new ObjectId("663d783b4a65f784cafec98a") };
