@@ -12,7 +12,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       const petFilter = {} as StrictFilter<Pet>;
 
       if(params.has('type')) {
-         petFilter.type = params.get('type');
+         petFilter.type = params.get('type') as string;
       }
 
       if(params.has('size')) {
