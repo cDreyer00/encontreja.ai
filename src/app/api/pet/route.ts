@@ -7,20 +7,27 @@ export async function GET(req: NextRequest): Promise<Response> {
    try {
       await connectToDatabase();
 
-      const params = req.nextUrl.searchParams
+      const params = req.nextUrl.searchParams;
 
-      const petInfosFilter = {
-         type: params.getAll('type'),
-         breeds: params.getAll('breeds'),
-         colors: params.getAll('colors'),
-         ages: params.getAll('ages'),
-      };
+      const petFilter = {} as StrictFilter<Pet>;
 
-      const filterPredicate: Filter<Pet> = {
-         type: { $not: { $in: ['gato'] } },
-      };
+      if(params.has('type')) {
+         petFilter.type = params.get('type');
+      }
 
-      var result = await collections.pets?.find(filterPredicate).toArray();
+      if(params.has('size')) {
+         petFilter.size = params.getAll('size');
+      }
+
+      if(params.has('age')) {
+         petFilter.age = params.getAll('age');
+      }
+
+      if(params.has('breed')) {
+         petFilter.breeds = params.getAll('breed');
+      }
+
+      var result = await collections.pets?.find(petFilter).limit(30).toArray();
       return new Response(JSON.stringify(result));
    }
    catch (error) {
@@ -33,7 +40,7 @@ export async function POST(req: NextRequest): Promise<Response> {
    // const pet = new Pet('gato', 'indefinido', ['adulto', 'idoso'], ['indefinido', 'siames'], '4', 'http');
    const data = await req.json();
    const pet: Pet = data.pet
-   
+
    console.log("backend");
    console.log(pet);
    await connectToDatabase();

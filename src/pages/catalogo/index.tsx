@@ -10,58 +10,7 @@ const hanken_grotesk = Hanken_Grotesk({
 })
 
 export default function Catalogo() {
-   const [pets, setPets] = useState<Pet[]>([
-      new Pet(
-         'gato',
-         'macho',
-         'rua tal',
-         ['idoso'],
-         ['indf', 'aaa2'],
-         ['colors'],
-         'https://i.ibb.co/7b4KfP3/IMG-5502.webp',
-         'observations',
-      ),
-      new Pet(
-         'gato',
-         'macho',
-         'rua tal',
-         ['idoso'],
-         ['indf', 'aaa2'],
-         ['colors'],
-         'https://i.ibb.co/7b4KfP3/IMG-5502.webp',
-         'observations',
-      ),
-      new Pet(
-         'gato',
-         'macho',
-         'rua tal',
-         ['idoso'],
-         ['indf', 'aaa2'],
-         ['colors'],
-         'https://i.ibb.co/7b4KfP3/IMG-5502.webp',
-         'observations',
-      ),
-      new Pet(
-         'gato',
-         'macho',
-         'rua tal',
-         ['idoso'],
-         ['indf', 'aaa2'],
-         ['colors'],
-         'https://i.ibb.co/7b4KfP3/IMG-5502.webp',
-         'observations',
-      ),
-      new Pet(
-         'gato',
-         'macho',
-         'rua tal',
-         ['idoso'],
-         ['indf', 'aaa2'],
-         ['colors'],
-         'https://i.ibb.co/7b4KfP3/IMG-5502.webp',
-         'observations',
-      )
-   ])
+   const [pets, setPets] = useState<Pet[]>([])
 
    const queryString = (params: Object) => Object.entries(params)
       .map(([key, value]) => {
@@ -75,17 +24,18 @@ export default function Catalogo() {
       .join('&');
 
    useEffect(() => {
-      // const query = queryString({ type: 'cachorro' });
 
-      // fetch(`/api/pet?${query}`)
-      //    .then((res) => res.json())
-      //    .then((data) => {
-      //       console.log(data);
-      //       setPets(data);
-      //    })
-      //    .catch((error) => {
-      //       console.error('Error fetching pets:', error);
-      //    });
+      const query = queryString({ type: 'Cachorro', age: ['Filhote'], breed: [`Poodle`]});
+
+      fetch(`/api/pet?${query}`)
+         .then((res) => res.json())
+         .then((data) => {
+            console.log(data);
+            setPets(data);
+         })
+         .catch((error) => {
+            console.error('Error fetching pets:', error);
+         });
    }, []);
 
    return (
