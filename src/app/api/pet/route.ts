@@ -16,15 +16,16 @@ export async function GET(req: NextRequest): Promise<Response> {
       }
 
       if (params.has('size')) {
-         petFilter.size = params.getAll('size');
+         // get all values from the query string
+         petFilter.size = { $all: params.getAll('size') };
       }
 
       if (params.has('age')) {
-         petFilter.age = params.getAll('age');
+         petFilter.age = { $all: params.getAll('age') };
       }
 
       if (params.has('breed')) {
-         petFilter.breeds = params.getAll('breed');
+         petFilter.breeds = { $all: params.getAll('breed') };
       }
 
       var result =
