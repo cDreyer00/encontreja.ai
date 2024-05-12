@@ -11,23 +11,29 @@ export async function GET(req: NextRequest): Promise<Response> {
 
       const petFilter = {} as StrictFilter<Pet>;
 
-      if(params.has('type')) {
+      if (params.has('type')) {
          petFilter.type = params.get('type') as string;
       }
 
-      if(params.has('size')) {
+      if (params.has('size')) {
          petFilter.size = params.getAll('size');
       }
 
-      if(params.has('age')) {
+      if (params.has('age')) {
          petFilter.age = params.getAll('age');
       }
 
-      if(params.has('breed')) {
+      if (params.has('breed')) {
          petFilter.breeds = params.getAll('breed');
       }
 
-      var result = await collections.pets?.find(petFilter).limit(30).toArray();
+      var result =
+         await collections
+            .pets?.find(petFilter)
+            .collation({ strength: 2 , locale: 'pt'})
+            .limit(30)
+            .toArray();
+
       return new Response(JSON.stringify(result));
    }
    catch (error) {
