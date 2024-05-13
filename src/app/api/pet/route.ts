@@ -6,6 +6,7 @@ import Pet from "@/models/pet";
 export async function GET(req: NextRequest): Promise<Response> {
    try {
       const filter = getPetFilterFromParams(req.nextUrl.searchParams);
+      console.log(filter);
       const result = await searchPets(filter);
       console.log(`amount of pets: ${result.length}`);
       return new Response(JSON.stringify(result));
@@ -72,6 +73,17 @@ function getPetFilterFromParams(params: URLSearchParams): Filter<Pet> {
 
    if (params.has('breed')) {
       pet.breeds = params.getAll('breed');
+   }
+   if (params.has('color')) {
+      pet.colors = params.getAll('color');
+   }
+
+   if (params.has('location')) {
+      pet.location = params.get('location') as string;
+   }
+
+   if (params.has('observations')) {
+      pet.observations = params.get('observations') as string;
    }
 
    const petFilter = getPetFilter(pet);
