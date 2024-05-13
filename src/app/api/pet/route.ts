@@ -18,20 +18,24 @@ export async function GET(req: NextRequest): Promise<Response> {
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
-   // const pet = new Pet('gato', 'indefinido', ['adulto', 'idoso'], ['indefinido', 'siames'], '4', 'http');
-   const data = await req.json();
-   const pet: Pet = data.pet
+   try {
+      const data = await req.json();
+      const isArray = Array.isArray(data);
 
-   console.log("backend");
-   console.log(pet);
-   await connectToDatabase();
+      if (isArray) {
+         const pets = data as Pet[];
+         await insertManyPets(pets);
+         return new Response(JSON.stringify(pets), { status: 201 });
+      }
 
-   // await collections.pets?.deleteMany();
-   await collections.pets?.insertOne(pet);
-
-   return new Response('ok');
+      const pet = data as Pet;
+      await insertOnePet(pet);
+      return new Response(JSON.stringify(pet), { status: 201 });
+   } catch (error) {
+      console.error(error);
+      return new Response("An error occurred", { status: 500 });
+   }
 }
-
 
 async function searchPets(filter: Filter<Pet>): Promise<Pet[]> {
    if (!collections.pets)
@@ -39,6 +43,20 @@ async function searchPets(filter: Filter<Pet>): Promise<Pet[]> {
 
    const result = await collections.pets!.find(filter).collation({ strength: 2, locale: 'pt' }).limit(30).toArray();
    return result;
+}
+
+async function insertOnePet(pet: Pet): Promise<void> {
+   if (!collections.pets)
+      await connectToDatabase();
+
+   await collections.pets?.insertOne(pet);
+}
+
+async function insertManyPets(pets: Pet[]): Promise<void> {
+   if (!collections.pets)
+      await connectToDatabase();
+
+   await collections.pets?.insertMany(pets);
 }
 
 function getPetFilter(pet: Pet): Filter<Pet> {
