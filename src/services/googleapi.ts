@@ -29,7 +29,3 @@ export async function getImageUrlFromDrive(fileId: string): Promise<string | nul
       return null;
    }
 }
-
-// getImageUrl(fileId)
-//    .then(() => console.log('Image downloaded successfully'))
-//    .catch(err => console.error('Error downloading image:', err));
