@@ -6,7 +6,7 @@ export async function GET(req: NextRequest) {
    const aiUrl = `${baseUrl}ai?img=${image}`
    const response = await fetch(aiUrl)
    const pet = await response.json()
-
+   console.log(`pet from ai: ${JSON.stringify(pet)}`)
    const query = queryString({ type: pet.type, age: [pet.age], breeds: pet.breeds, colors: pet.colors })
    const petsUrl = `${baseUrl}pet?${query}`
    const petsResponse = await fetch(petsUrl)
