@@ -83,23 +83,6 @@ const prompt = `
    ]
 `
 
-const prompt2 = `
-   Você é um assistente classificador, seu objectivo é receber imagens de pets e extrair informações para ajudar seus donos a encontra-los.
-   Ao receber a imagem, voce deve extrair informações fisicas, como a cor, raça aparente,
-   Para facilitar a comunicação, você deve responder com um objeto JSON contendo as informações extraídas de forma simplificada, priorizando usar palavras únicas ao invés de frases.
-   raça, cor e idade podem ter mais de uma opção, nesse caso, você deve retornar um array com as opções.
-   raças mistas devem conter "vira-lata" como uma das opções e junto a raça original que o animal se assemelha.
-   
-   exemplo de resposta:
-   {
-      "pet": "cachorro",
-      "raca": ["vira-lata", "labrador"]
-      "cores": ["preto", "branco"],
-      "idade": "jovem",
-      "observacoes": "coleira marrom, mancha branca no peito"
-   }
-`
-
 export async function GET(req: NextRequest) {
    const image = req.nextUrl.searchParams.get('img');
    if (!image) {

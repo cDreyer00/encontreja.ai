@@ -4,12 +4,13 @@ import { collections, connectToDatabase } from "@/services/db";
 import Pet from "@/models/pet";
 
 export async function GET(req: NextRequest): Promise<Response> {
+   let params = req.nextUrl.searchParams;
    try {
-      const filter = getPetFilterFromParams(req.nextUrl.searchParams);
-      console.log(filter);
-      const result = await searchPets(filter);
-      console.log(`amount of pets: ${result.length}`);
-      return new Response(JSON.stringify(result));
+      const filter = getPetFilterFromParams(params);
+      const amount: number = params.has('amount') ? parseInt(params.get('amount') as string) : 0;
+      const result = await searchPets(filter, amount);
+      console.log(result);
+      return new Response(JSON.stringify(result), { status: 200 });
    }
    catch (error) {
       console.error(error);
@@ -37,12 +38,14 @@ export async function POST(req: NextRequest): Promise<Response> {
    }
 }
 
-async function searchPets(filter: Filter<Pet>): Promise<Pet[]> {
+async function searchPets(filter: Filter<Pet>, amount: number = 0): Promise<Pet[]> {
    if (!collections.pets)
       await connectToDatabase();
 
-   const result = await collections.pets!.find(filter).collation({ strength: 2, locale: 'pt' }).limit(30).toArray();
-   return result;
+   if (amount < 0)
+      return await collections.pets!.find(filter).collation({ strength: 2, locale: 'pt' }).toArray();
+   else
+      return await collections.pets!.find(filter).collation({ strength: 2, locale: 'pt' }).limit(amount).toArray();
 }
 
 async function insertOnePet(pet: Pet): Promise<void> {
@@ -89,11 +92,11 @@ function getPetFilterFromParams(params: URLSearchParams): Filter<Pet> {
       pet.age = params.getAll('age');
    }
 
-   if (params.has('breed')) {
-      pet.breeds = params.getAll('breed');
+   if (params.has('breeds')) {
+      pet.breeds = params.getAll('breeds');
    }
-   if (params.has('color')) {
-      pet.colors = params.getAll('color');
+   if (params.has('colors')) {
+      pet.colors = params.getAll('colors');
    }
 
    if (params.has('location')) {
