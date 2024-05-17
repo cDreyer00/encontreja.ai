@@ -7,7 +7,6 @@ export type PetBreed = 'indefinido' | 'jovem' | 'adulto' | 'idoso';
 
 export default class Pet {
    constructor(
-      public createdAt?: Date,
       public type?: string,
       public gender?: string,
       public location?: string,
@@ -17,6 +16,7 @@ export default class Pet {
       public imgUrl?: string,
       public size?: string[],
       public observations?: string,
+      public createdAt?: Date,
       public _id?: ObjectId,
    ) { }
 }

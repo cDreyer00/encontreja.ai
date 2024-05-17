@@ -15,7 +15,7 @@ const prompt = `
    Para facilitar a comunicação, você deve responder com um objeto JSON contendo as informações extraídas de forma simplificada, priorizando usar palavras únicas ao invés de frases.
    raça, cor e idade podem ter mais de uma opção, nesse caso, você deve retornar um array com as opções.
    raças mistas devem conter "se raça definida" como uma das opções e junto a raça original que o animal se assemelha.
-   resposta lower case, ou seja, TUDO MINUSCULO
+   resposta lower case, ou seja, TUDO MINUSCULO.
    
    exemplo de resposta:
    {
