@@ -11,6 +11,7 @@ export async function GET(req: NextRequest) {
    const petsUrl = `${baseUrl}?${query}`
    const petsResponse = await fetch(petsUrl)
    const pets = await petsResponse.json()
+   console.log("res: ", pets)
    return new Response(JSON.stringify(pets), { status: 200 });
 };
 
