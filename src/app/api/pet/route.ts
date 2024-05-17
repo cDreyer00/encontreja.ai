@@ -23,19 +23,27 @@ export async function POST(req: NextRequest): Promise<Response> {
       const data = await req.json();
       const isArray = Array.isArray(data);
 
+      const date = new Date();
+      
       if (isArray) {
          const pets = data as Pet[];
+         pets.forEach(pet => pet.createdAt = date);
          await insertManyPets(pets);
          return new Response(JSON.stringify(pets), { status: 201 });
       }
 
       const pet = data as Pet;
+      pet.createdAt = date;
       await insertOnePet(pet);
       return new Response(JSON.stringify(pet), { status: 201 });
    } catch (error) {
       console.error(error);
       return new Response("An error occurred", { status: 500 });
    }
+}
+
+export async function DELETE(req: NextRequest): Promise<Response> {
+   return new Response("Not implemented", { status: 501 });
 }
 
 async function searchPets(filter: Filter<Pet>, amount: number = 0): Promise<Pet[]> {
