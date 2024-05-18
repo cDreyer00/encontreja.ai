@@ -4,9 +4,9 @@ import { Readable } from 'stream';
 
 let drive: drive_v3.Drive | null = null
 
-let credentials = process.env.GOOGLE_CREDENTIALS;
-
 async function connectToDrive() {
+   let credentials = process.env.GOOGLE_CREDENTIALS;
+   console.log("credentials:", credentials)
    const authData = JSON.parse(credentials!);
    const auth = new google.auth.GoogleAuth({
       credentials: authData,
