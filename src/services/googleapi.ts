@@ -5,7 +5,7 @@ import { Readable } from 'stream';
 let drive: drive_v3.Drive | null = null
 
 async function connectToDrive() {
-   const authData = JSON.parse(fs.readFileSync('src/services/credentials.json', 'utf8'));
+   const authData = JSON.parse(fs.readFileSync('public/credentials.json', 'utf8'));
    const auth = new google.auth.GoogleAuth({
       credentials: authData,
       scopes: ['https://www.googleapis.com/auth/drive']
