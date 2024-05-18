@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
-import { Antonio } from "next/font/google";
+import { Antonio, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 
 // const inter = Inter({ subsets: ["latin"] });
 
 const antonio = Antonio({
-  weight: '700',
+  weight: '100',
   subsets: ['latin'],
 })
 
+
+const hanken_grotesk = Hanken_Grotesk({
+  weight: '500',
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={antonio.className}>{children}</body>
+      <body className={`${hanken_grotesk.className} bg-soft-black`}>{children}</body>
     </html>
   );
 }

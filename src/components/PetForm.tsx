@@ -1,7 +1,8 @@
-import { FormEventHandler, useState } from 'react';
+import { FormEventHandler, useEffect, useState } from 'react';
 
 import Pet, { PetType, PetAge, PetGender, PetBreed } from '@/models/pet';
-import { Input, Checkbox, CheckboxGroup, Listbox, ListboxItem, ListboxSection, SelectItem, Select } from '@nextui-org/react';
+import { Input, Checkbox, CheckboxGroup, Listbox, ListboxItem, ListboxSection, SelectItem, Select, Image, Button } from '@nextui-org/react';
+
 
 type SubmitPet = (pet: Pet) => void;
 
@@ -14,31 +15,44 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
    const [imgUrl, setImgUrl] = useState<string>();
    const [age, setAge] = useState<string[]>();
    const [gender, setGender] = useState<string>();
+   const [size, setSize] = useState<string[]>();
 
-   const allBreeds = [
-      'Sem raça definida',
-      'Beagle',
-      'Border Collie',
-      'Boxer',
-      'Bulldog Francês',
-      'Bulldog Inglês',
-      'Cavalier King Charles Spaniel',
-      'Chihuahua',
-      'Cocker Spaniel',
-      'Doberman',
-      'Golden Retriever',
-      'Husky Siberiano',
-      'Labrador Retriever',
-      'Maltese',
-      'Pastor Alemão',
-      'Pinscher',
-      'Poodle',
-      'Pug',
-      'Rottweiler',
-      'Salsicha (Dachshund)',
-      'Shih Tzu',
-      'Yorkshire Terrier',
-   ]
+   const [allBreeds, setAllBreeds] = useState<string[]>([]);
+   const [allColors, setAllColors] = useState<string[]>([]);
+   const [allSizes, setAllSizes] = useState<string[]>([
+      'Mini',
+      'Pequeno',
+      'Médio',
+      'Grande',
+      'Gigante',
+   ]);
+
+   const [allAges, setAllAges] = useState<string[]>([
+      'Indefinido',
+      'Jovem',
+      'Adulto',
+      'Idoso',
+   ]);
+
+   const formSectionClass = 'mt-4';
+
+   useEffect(() => {
+
+      getCategoryValues(`raca_${type}`)
+         .then((data) => setAllBreeds(data))
+         .catch((err) => console.error(err))
+
+      getCategoryValues(`cor`)
+         .then((data) => setAllColors(data))
+         .catch((err) => console.error(err))
+   }, [type]);
+
+   async function getCategoryValues(category: string) {
+      let res = await fetch(`/api/categoria?q=${category}`)
+      if (!res.ok) throw new Error('Failed to fetch category values')
+      let data = await res.json()
+      return data;
+   }
 
    const removeArrStrItem = (str: string, arr: Array<string>) => {
       let newArr: string[] = []
@@ -57,10 +71,12 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
          alert('type is required');
          return;
       }
+
       if (!location) {
          alert('location is required');
          return;
       }
+
       if (!breeds) {
          alert('breeds is required');
          return;
@@ -69,11 +85,6 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
          alert('color is required');
          return;
       }
-
-      // if (!imgUrl){
-      //    alert('imgUrl is required');
-      //    return;
-      // }
 
       if (!age) {
          alert('age is required');
@@ -92,111 +103,215 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
          breeds,
          color,
          imgUrl,
-         ["indefinido"],
+         size,
          observations as string,
       );
 
+
       onSubmit(pet);
+      alert('pet sendo cadastrado...');
+      fetch('/api/pet', {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json'
+         },
+         body: JSON.stringify(pet)
+      })
+         .then((res) => {
+            if (res.ok) {
+               alert('Pet cadastrado com sucesso!');
+               clearForm();
+            } else {
+               alert('Erro ao cadastrar pet');
+            }
+         })
+         .catch((err) => {
+            console.error(err);
+            alert('Erro ao cadastrar pet');
+         });
+
+   }
+
+   function clearForm() {
+      setType('');
+      setLocation('');
+      setBreed([]);
+      setColor([]);
+      setObservations('');
+      setImgUrl('');
+      setAge([]);
+      setGender('');
+      setSize([]);
+   }
+
+   async function onImageUpdate(e: React.ChangeEvent<HTMLInputElement>) {
+
+      let file = e.target.files![0]
+      let url = URL.createObjectURL(file)
+      setImgUrl(url)
+
+      let formData = new FormData()
+      formData.append('image', file)
+      formData.append('folderId', '1v4_bvJ9P8JJWICK9dLATd6IQCMJRiiuY')
+      let res = await fetch('/api/image', {
+         method: 'POST',
+         body: formData
+      })
+
+      if (!res.ok) {
+         console.error('Failed to upload image')
+         setImgUrl('')
+         alert('Failed to upload image')
+         return;
+      }
+      let data = await res.json()
+
+      setImgUrl(data.imgUrl)
+      
+      let aiRes = await fetch(`/api/ai?img=${data.imgUrl}`)
+      let pet = await aiRes.json()
+      console.log('pet:', pet)
+      setType(pet.type)
+      setBreed(pet.breeds)
+      setColor(pet.colors)
+      setObservations(pet.observations)
+      setAge(pet.age)
+      setSize(pet.size)
+
    }
 
    return (
-      <form className="max-w-96 mx-auto mt-8 text-black">
+      <form className="max-w-[70%] w-auto h-auto max-h-screen mt-8 mx-auto flex flex-row align-middle justify-center gap-10">
          <div>
-            <Select
-               label="Pet"
-               selectionMode='single'
-               disallowEmptySelection
-               onChange={(e) => setType(e.target.value)}
-               value={type}
-            >
-               <SelectItem key='cachorro'>cachorro</SelectItem>
-               <SelectItem key='gato'>gato</SelectItem>
-            </Select>
+            <input type="file" accept="image/*" onChange={(e) => onImageUpdate(e)} />
+            <Image
+               src={imgUrl}
+               alt="Imagem do pet"
+               width={200}
+               height={200}
+               className="rounded"
+            />
          </div>
+         <div>
+            <div className={formSectionClass}>
+               <Select
+                  label="Pet"
+                  selectionMode='single'
+                  onChange={(e) => setType(e.target.value)}
+                  value={type}
+               >
+                  <SelectItem key='cachorro' value={'cachorro'}>cachorro</SelectItem>
+                  <SelectItem key='gato' value={'gato'}>gato</SelectItem>
+               </Select>
+            </div>
 
-         <div>
-            <Input label='Local/Abrigo' value={location} onValueChange={setLocation} />
-         </div>
+            <div className={formSectionClass}>
+               <Input label='Local/Abrigo' value={location} onValueChange={setLocation} />
+            </div>
 
-         <div>
-            <CheckboxGroup
-               label="Raça"
-               defaultValue={["Sem raça definida"]}
-               orientation='horizontal'
-               onValueChange={setBreed}
-               value={breeds}
-            >
-               {allBreeds.map((breed) => (
-                  <Checkbox key={breed} value={breed}
-                     classNames={{
-                        base: 'max-w-xs',
-                     }}
-                  >{breed}</Checkbox>
-               ))}
-            </CheckboxGroup>
-         </div>
+            <div className={formSectionClass}>
+               <Select
+                  label="Genero/Sexo"
+                  selectionMode='single'
+                  onChange={(e) => setGender(e.target.value)}
+                  value={gender}
+               >
+                  <SelectItem key="indefinido" value="indefinido">Indefinido</SelectItem>
+                  <SelectItem key="macho" value="macho">Macho</SelectItem>
+                  <SelectItem key="fêmea" value="fêmea">Fêmea</SelectItem>
+               </Select>
+            </div>
 
-         <div>
-            <CheckboxGroup
-               label="cor da pelagem"
-               orientation='horizontal'
-               value={color}
-               onValueChange={setColor}
-            >
-               <Checkbox value='Preto' key='Preto'>Preto</Checkbox>
-               <Checkbox value='Branco' key='Branco'>Branco</Checkbox>
-               <Checkbox value='Marrom' key='Marrom'>Marrom</Checkbox>
-               <Checkbox value='Bege' key='Bege'>Bege</Checkbox>
-               <Checkbox value='Amarelo' key='Amarelo'>Amarelo</Checkbox>
-               <Checkbox value='Caramelo' key='Caramelo'>Caramelo</Checkbox>
-               <Checkbox value='Cinza' key='Cinza'>Cinza</Checkbox>
-               <Checkbox value='Rajado' key='Rajado'>Rajado</Checkbox>
-               <Checkbox value='Laranja' key='Laranja'>Laranja</Checkbox>
-            </CheckboxGroup>
-         </div>
+            <div className={formSectionClass}>
+               <CheckboxGroup
+                  label="Raça"
+                  orientation='horizontal'
+                  onValueChange={setBreed}
+                  value={breeds}>
+                  {allBreeds.map((breed) => (
+                     <Checkbox key={breed.toLowerCase()} value={breed.toLowerCase()}
+                        classNames={{
+                           base: 'max-w-xs',
+                        }}
+                     ><p className={`text-white`}>{breed}</p></Checkbox>
+                  ))}
+               </CheckboxGroup>
+            </div>
 
-         <div>
-            <Select
-               label="Genero/Sexo"
-               onChange={(e) => setGender(e.target.value)}
-               value={gender}
-            >
-               <SelectItem key="Macho">Macho</SelectItem>
-               <SelectItem key="Fêmea">Fêmea</SelectItem>
-            </Select>
-         </div>
+            <div className={formSectionClass}>
+               <CheckboxGroup
+                  label="cor da pelagem"
+                  orientation='horizontal'
+                  value={color}
+                  onValueChange={setColor}
+               >
+                  {allColors.map((color) => (
+                     <Checkbox key={color.toLowerCase()} value={color.toLowerCase()}
+                        classNames={{
+                           base: 'max-w-xs',
+                        }}
+                     ><p className={`text-white`}>{color}</p></Checkbox>
+                  ))}
+               </CheckboxGroup>
+            </div>
 
-         <div>
-            <CheckboxGroup
-               label="Idade"
-               defaultValue={["indefinido"]}
-               orientation='horizontal'
-               onValueChange={setAge}
-               value={age}
-            >
-               <Checkbox value="indefinido">indefinido</Checkbox>
-               <Checkbox value="jovem">jovem</Checkbox>
-               <Checkbox value="adulto">adulto</Checkbox>
-               <Checkbox value="idoso">idoso</Checkbox>
-            </CheckboxGroup>
-         </div>
+            <div className={formSectionClass}>
+               <CheckboxGroup
+                  label="Tamanho"
+                  orientation='horizontal'
+                  onValueChange={setSize}
+                  value={size}
+               >
+                  {allSizes.map((size) => (
+                     <Checkbox key={size.toLowerCase()} value={size.toLowerCase()}
+                        classNames={{
+                           base: 'max-w-xs',
+                        }}
+                     ><p className={`text-white`}>{size}</p></Checkbox>
+                  ))}
+               </CheckboxGroup>
+            </div>
 
-         <div>
-            <Input label='Observações' value={observations} onValueChange={setObservations} />
+            <div className={formSectionClass}>
+               <CheckboxGroup
+                  label="Idade"
+                  orientation='horizontal'
+                  onValueChange={setAge}
+                  value={age}
+               >
+                  {allAges.map((age) => (
+                     <Checkbox key={age.toLowerCase()} value={age.toLowerCase()}
+                        classNames={{
+                           base: 'max-w-xs',
+                        }}
+                     ><p className={`text-white`}>{age}</p></Checkbox>
+                  ))}
+               </CheckboxGroup>
+            </div>
+
+            <div className={formSectionClass}>
+               <Input label='Observações' value={observations} onValueChange={setObservations} />
+            </div>
+
+
+            {(type && imgUrl && location && breeds && color && age && size && gender && observations &&
+               <Button type="submit" className={`${formSectionClass}`} onClick={handleSubmit}>
+                  Enviar
+               </Button>
+            )}
          </div>
-         <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onClick={handleSubmit}>Enviar</button>
       </form>
    );
 }
 
-function MultiSelectDropdown({ formFieldName, options }: { formFieldName: string, options: string[] }) {
-   return (
-      <form>
-         <select name='select' multiple className='size-56'>
-            <option>one</option>
-            <option>two</option>
-            <option>three</option>
-         </select>
-      </form>
-   );
-}
+// function MultiSelectDropdown({ formFieldName, options }: { formFieldName: string, options: string[] }) {
+//    return (
+//       <form>
+//          <select name='select' multiple className='size-56'>
+//             <option>one</option>
+//             <option>two</option>
+//             <option>three</option>
+//          </select>
+//       </form>
+//    );
+// }

@@ -14,7 +14,8 @@ const prompt = `
    Ao receber a imagem, voce deve extrair informações como qual é o tipo do pet, raça, cores, idade aparente e observações adicionais relevantes.
    Para facilitar a comunicação, você deve responder com um objeto JSON contendo as informações extraídas de forma simplificada, priorizando usar palavras únicas ao invés de frases.
    raça, cor e idade podem ter mais de uma opção, nesse caso, você deve retornar um array com as opções.
-   raças mistas devem conter "se raça definida" como uma das opções e junto a raça original que o animal se assemelha.
+   raças mistas devem conter "sem raça definida" como uma das opções e junto a raça original que o animal se assemelha, qualquer caracteristica de outra raça em um pet de raça mista, mesmo que pouca, essa raça deve ser mencionada.
+   conter o genero, caso seja impossivel identificar pela imagem, reotnrar 'indefinido'
    resposta lower case, ou seja, TUDO MINUSCULO.
    
    exemplo de resposta:
@@ -23,7 +24,8 @@ const prompt = `
       "breeds": ["sem raça definida", "labrador"]
       "colors": ["preto", "branco"],
       "age": ["filhote"],
-      "size": ["pequeno", "medio"],
+      "size": ["pequeno", "médio"],
+      "gender": "indefinido",
       "observations": "coleira marrom, mancha branca no peito"
    }
 
@@ -41,7 +43,7 @@ const prompt = `
       'Laranja',
    ]
 
-   raças: [
+   raças_cachorro: [
       'Sem raça definida',
       'Beagle',
       'Border collie',
@@ -67,6 +69,25 @@ const prompt = `
       'Shih tzu',
       'Yorkshire',
    ]
+
+   raças_gato: [
+      'Sem raça definida',
+      'Azul Russo',
+      'Bengal',
+      'British Shorthair',
+      'Gato da Floresta Norueguesa',
+      'Mau Egípcio',
+      'Maine Coon',
+      'Persa',
+      'Ragdoll',
+      'Scottish Fold',
+      'Siamês',
+      'Sphynx',
+      'Abissínio',
+   ]
+
+   genders: 'indefinido' | 'macho' | 'fêmea'
+
 
    idade: [
       'Filhote',
