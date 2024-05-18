@@ -294,7 +294,7 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
             </div>
 
 
-            {(type && imgUrl && location && breeds && color && age && size && gender && observations &&
+            {(type && imgUrl && location && breeds && color && age && size && gender &&
                <Button type="submit" className={`${formSectionClass}`} onClick={handleSubmit}>
                   Enviar
                </Button>
