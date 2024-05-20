@@ -4,18 +4,113 @@ import { collections, connectToDatabase } from "@/services/db";
 import Pet from "@/models/pet";
 
 export async function GET(req: NextRequest): Promise<Response> {
+   if (!collections.pets)
+      await connectToDatabase()
+
+   const col = collections.pets;
+   if (!col) {
+      console.error('Error connecting to database');
+      return new Response('Internal server error', { status: 500 });
+   }
+
    let params = req.nextUrl.searchParams;
-   try {
-      const filter = getPetFilterFromParams(params);
-      const amount: number = params.has('amount') ? parseInt(params.get('amount') as string) : 0;
-      const result = await searchPets(filter, amount);
-      console.log(result);
-      return new Response(JSON.stringify(result), { status: 200 });
-   }
-   catch (error) {
-      console.error(error);
-      return new Response("An error occurred", { status: 500 });
-   }
+
+   let type = params.get('type');
+   let gender = params.get('gender');
+
+   let breedsParam = params.get('breeds');
+   let breeds: string[] = breedsParam ? breedsParam.split(',') : [];
+
+   let colorsParam = params.get('colors');
+   let colors: string[] = colorsParam ? colorsParam.split(',') : [];
+
+
+   let ageParams = params.get('age');
+   let age: string[] = ageParams ? ageParams.split(',') : [];
+
+   let sizeParams = params.get('size');
+   let size: string[] = sizeParams ? sizeParams.split(',') : [];
+
+   let collation = { locale: 'pt', strength: 2 }
+
+   const weights = {
+      breeds: 4,
+      colors: 3,
+      age: 2,
+      sizes: 1
+   };
+
+   // if type != null, match type
+
+   let matchingType = type ? { $match: { type: type } } : { $match: {} }
+
+   let pipeline = [
+      matchingType,
+      {
+         $addFields: {
+            countBreeds: { $size: { $setIntersection: ["$breeds", breeds] } },
+            countColors: { $size: { $setIntersection: ["$colors", colors] } },
+            countAge: { $size: { $setIntersection: ["$age", age] } },
+            matchingType: { $eq: ["$type", type] },
+            matchingGender: { $eq: ["$gender", gender] },
+            // countSize: { $size: { $setIntersection: ["$size", size] } },
+            nonMatchingTagsCount: {
+               $size: {
+                  $setDifference: ["$breeds", breeds]
+               }
+            },
+            hasMuttTag: {
+               $cond: {
+                  if: { $in: ["Sem raça definida", "$breeds"] },
+                  then: 1,
+                  else: 0
+               }
+            },
+         }
+      },
+      {
+         $addFields: {
+            combinedScore: {
+               $add: [
+                  { $multiply: ["$countBreeds", weights.breeds] },
+                  { $multiply: ["$countColors", weights.colors] },
+                  { $multiply: ["$countAge", weights.age] },
+                  // { $multiply: ["$countSize", weights.sizes] },
+               ]
+            }
+         }
+      },
+      {
+         $sort: {
+            // matchingTypes: -1,
+            // countColors: -1,
+            // matchingGender: -1,
+            // countAge: -1,
+            // nonMatchingTagsCount: 1,
+            // hasMuttTag: 1,
+            // countBreeds: -1,
+            // // countSize: -1,
+            combinedScore: -1
+         }
+      },
+   ]
+
+
+   const pets = await collections.pets?.aggregate(pipeline, { collation }).toArray()
+   return new Response(JSON.stringify(pets))
+
+   // let params = req.nextUrl.searchParams;
+   // try {
+   //    const filter = getPetFilterFromParams(params);
+   //    const amount: number = params.has('amount') ? parseInt(params.get('amount') as string) : 0;
+   //    const result = await searchPets(filter, amount);
+   //    console.log(result);
+   //    return new Response(JSON.stringify(result), { status: 200 });
+   // }
+   // catch (error) {
+   //    console.error(error);
+   //    return new Response("An error occurred", { status: 500 });
+   // }
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
@@ -24,7 +119,7 @@ export async function POST(req: NextRequest): Promise<Response> {
       const isArray = Array.isArray(data);
 
       const date = new Date();
-      
+
       if (isArray) {
          const pets = data as Pet[];
          pets.forEach(pet => pet.createdAt = date);
