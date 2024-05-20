@@ -3,16 +3,17 @@ const baseUrl = 'https://encontreja-ai.vercel.app/api/'
 
 export async function GET(req: NextRequest) {
    const image = req.nextUrl.searchParams.get('img');
-   const aiUrl = `${baseUrl}ai?image=${image}`
+   let decodedImage = decodeURIComponent(image as string)
+   const aiUrl = `${baseUrl}analisar?img=${decodedImage}`
    const response = await fetch(aiUrl)
    const pet = await response.json()
    console.log(`pet from ai: ${JSON.stringify(pet)}`)
-   const query = queryString({ type: pet.type, age: pet.age, breeds: pet.breeds, colors: pet.colors })
+   const query = queryString({ type: pet.type, age: pet.age, breeds: pet.breeds, colors: pet.colors }) as string
    console.log(`query: ${query}`)
-   const petsUrl = `${baseUrl}?pets${query}`
+   const petsUrl = `${baseUrl}?pet${query}`
    const petsResponse = await fetch(petsUrl)
    const pets = await petsResponse.json()
-   console.log("res: ", pets)
+   // console.log("res: ", pets)
    return new Response(JSON.stringify(pets), { status: 200 });
 };
 

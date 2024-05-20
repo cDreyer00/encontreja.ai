@@ -10,7 +10,7 @@ parametro com array seprarar com virgula:
       
    * [GET](https://encontreja-ai.vercel.app/api/main)
    * params:
-      - image: string
+      - img: string
 </details>
 ---
 <details> 
@@ -54,5 +54,5 @@ parametro com array seprarar com virgula:
       
    * [GET](https://encontreja-ai.vercel.app/api/analisar)
    * params:
-      - image: string         
+      - img: string         
 </details>

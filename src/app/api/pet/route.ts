@@ -15,8 +15,8 @@ export async function GET(req: NextRequest): Promise<Response> {
 
    let params = req.nextUrl.searchParams;
 
-   let type = params.get('type');
-   let gender = params.get('gender');
+   let type = params.get('type') ?? null;
+   let gender = params.get('gender') ?? null;
 
    let breedsParam = params.get('breeds');
    let breeds: string[] = breedsParam ? breedsParam.split(',') : [];
@@ -33,6 +33,13 @@ export async function GET(req: NextRequest): Promise<Response> {
 
    let collation = { locale: 'pt', strength: 2 }
 
+   console.log('type:', type);
+   console.log('breeds:', breeds);
+   console.log('colors:', colors);
+   console.log('age:', age);
+   console.log('size:', size);
+   
+
    const weights = {
       breeds: 4,
       colors: 3,
@@ -40,9 +47,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       sizes: 1
    };
 
-   // if type != null, match type
-
-   let matchingType = type ? { $match: { type: type } } : { $match: {} }
+   let matchingType = type ? { $match: { type: type } } : { $match: {} }   
 
    let pipeline = [
       matchingType,
@@ -51,8 +56,6 @@ export async function GET(req: NextRequest): Promise<Response> {
             countBreeds: { $size: { $setIntersection: ["$breeds", breeds] } },
             countColors: { $size: { $setIntersection: ["$colors", colors] } },
             countAge: { $size: { $setIntersection: ["$age", age] } },
-            matchingType: { $eq: ["$type", type] },
-            matchingGender: { $eq: ["$gender", gender] },
             // countSize: { $size: { $setIntersection: ["$size", size] } },
             nonMatchingTagsCount: {
                $size: {
