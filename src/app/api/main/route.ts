@@ -4,6 +4,7 @@ const baseUrl = 'https://encontreja-ai.vercel.app/api/'
 export async function GET(req: NextRequest) {
    const image = req.nextUrl.searchParams.get('img');
    let decodedImage = decodeURIComponent(image as string)
+   console.log(`decodedImage: ${decodedImage}`)
    const aiUrl = `${baseUrl}analisar?img=${decodedImage}`
    const response = await fetch(aiUrl)
    const pet = await response.json()
