@@ -6,6 +6,14 @@ parametro com array seprarar com virgula:
 - ?param=a,b,c
 
 <details> 
+   <Summary>/main</Summary>
+      
+   * [GET](https://encontreja-ai.vercel.app/api/main)
+   * params:
+      - image: string
+</details>
+
+<details> 
    <Summary>/pet</Summary>
       
    * [GET](https://encontreja-ai.vercel.app/api/pet)
@@ -44,7 +52,7 @@ parametro com array seprarar com virgula:
 <details> 
    <Summary>/analisar</Summary>
       
-   * [GET](https://encontreja-ai.vercel.app/api/categoria?q=cor)
+   * [GET](https://encontreja-ai.vercel.app/api/analisar)
    * params:
       - image: string         
 </details>
