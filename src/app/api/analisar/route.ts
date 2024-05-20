@@ -105,7 +105,8 @@ const prompt = `
 `
 
 export async function GET(req: NextRequest) {
-   const image = req.nextUrl.searchParams.get('img');
+   let image = req.nextUrl.searchParams.get('img') as string;
+   image = decodeURIComponent(image);
    if (!image) {
       return new Response('Missing image URL', { status: 400 });
    }
