@@ -12,7 +12,7 @@ parametro com array seprarar com virgula:
    * params:
       - image: string
 </details>
-
+---
 <details> 
    <Summary>/pet</Summary>
       
