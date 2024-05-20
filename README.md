@@ -20,7 +20,7 @@ parametro com array seprarar com virgula:
       - size: string[]
       - age: string[]
       ---
-   * [POST]() /pet
+   * [POST]()
    * body (json):
       - type: string
       - gender: string
@@ -31,30 +31,20 @@ parametro com array seprarar com virgula:
       - size: string[]
       - age: string[]   
 </details>
-
+---
 <details> 
-   <Summary>Pets</Summary>
+   <Summary>/categoria</Summary>
       
-   * [GET](https://encontreja-ai.vercel.app/api/pet)
+   * [GET](https://encontreja-ai.vercel.app/api/categoria?q=cor)
    * params:
-      - id: string
-      - type: string
-      - gender: string
-      - observations: string
-      - location: string
-      - breeds: string[]
-      - colors: string[]
-      - size: string[]
-      - age: string[]
-      ---
-   * [POST]() /pet
-   * body (json):
-      - type: string
-      - gender: string
-      - observations: string
-      - location: string
-      - breeds: string[]
-      - colors: string[]
-      - size: string[]
-      - age: string[]   
+      - q: string
+         - raca_cachorro | raca_gato | cor
+</details>
+---
+<details> 
+   <Summary>/analisar</Summary>
+      
+   * [GET](https://encontreja-ai.vercel.app/api/categoria?q=cor)
+   * params:
+      - image: string         
 </details>
