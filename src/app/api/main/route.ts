@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
-// const baseUrl = 'https://encontreja-ai.vercel.app/api/'
-const baseUrl = 'http://localhost:3000/api/'
+const baseUrl = 'https://encontreja-ai.vercel.app/api/'
+// const baseUrl = 'http://localhost:3000/api/'
 
 export async function GET(req: NextRequest) {
    const image = req.nextUrl.searchParams.get('img');
