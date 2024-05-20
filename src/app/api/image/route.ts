@@ -8,13 +8,15 @@ export async function POST(req: NextRequest) {
       let fileId = await submitImgUrlToDrive(body.folderId, body.img as string);
       if (!fileId) return new Response('Failed to submit image URL', { status: 500 });
       let url = await getImageUrlFromDrive(fileId);
-      return new Response(url, { status: 200 });
+      let data = { fileId: fileId, imgUrl: url }
+      return new Response(JSON.stringify(data), { status: 200 });
    }
 
    let fileId = await submitImageToDrive(body.folderId, body.img as File);
    if (!fileId) return new Response('Failed to submit image', { status: 500 });
    let url = await getImageUrlFromDrive(fileId);
-   return new Response(url, { status: 200 });
+   let data = { fileId: fileId, imgUrl: url }
+   return new Response(JSON.stringify(data), { status: 200 });
 }
 
 interface ImgReq {
@@ -29,7 +31,7 @@ async function exportBody(req: NextRequest): Promise<ImgReq> {
       let img = data.get('image') as File;
       let folderId = data.get('folderId') as string;
       return { img, folderId, isUrl: false };
-   } catch (e) {}
+   } catch (e) { }
 
    try {
       let data = await req.json();
@@ -37,7 +39,7 @@ async function exportBody(req: NextRequest): Promise<ImgReq> {
       data.isUrl = true;
       return data;
    } catch (e) {
-      console.error('Failed to parse request body as JSON');      
+      console.error('Failed to parse request body as JSON');
    }
 
    throw new Error('Failed to parse request body');

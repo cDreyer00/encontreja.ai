@@ -190,7 +190,7 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
 
       setImgUrl(data.imgUrl)
 
-      let aiRes = await fetch(`/api/ai?img=${data.imgUrl}`)
+      let aiRes = await fetch(`/api/analisar?img=${data.imgUrl}`)
       let pet = await aiRes.json()
       console.log('pet:', pet)
       setType(pet.type)
