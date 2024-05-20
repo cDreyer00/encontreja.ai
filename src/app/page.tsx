@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import Pet from "@/models/pet";
 import { useRouter } from "next/navigation";
 import { Chivo, Hanken_Grotesk } from "next/font/google";
-import MainButton from "@/components/MainButton";
 import PetForm from "@/components/PetForm";
 
 const containerClass = "h-screen text-white flex flex-row"

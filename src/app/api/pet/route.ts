@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 import { Filter, ObjectId, StrictFilter } from "mongodb";
 import { collections, connectToDatabase } from "@/services/db";
+
 import Pet from "@/models/pet";
 
 export async function GET(req: NextRequest): Promise<Response> {
@@ -120,18 +121,28 @@ export async function POST(req: NextRequest): Promise<Response> {
    try {
       const data = await req.json();
       const isArray = Array.isArray(data);
+      console.log(`register pet: ${data}`)
 
       const date = new Date();
 
+      const fixPet = (pet: Pet) => {
+         pet.createdAt = date;
+         pet.breeds = Array.from(new Set(pet.breeds));
+         pet.colors = Array.from(new Set(pet.colors));
+         pet.age = Array.from(new Set(pet.age));
+         pet.size = Array.from(new Set(pet.size));
+         return pet;
+      }
+
       if (isArray) {
          const pets = data as Pet[];
-         pets.forEach(pet => pet.createdAt = date);
+         pets.forEach(fixPet);
          await insertManyPets(pets);
          return new Response(JSON.stringify(pets), { status: 201 });
       }
 
       const pet = data as Pet;
-      pet.createdAt = date;
+      fixPet(pet);      
       await insertOnePet(pet);
       return new Response(JSON.stringify(pet), { status: 201 });
    } catch (error) {
@@ -142,16 +153,6 @@ export async function POST(req: NextRequest): Promise<Response> {
 
 export async function DELETE(req: NextRequest): Promise<Response> {
    return new Response("Not implemented", { status: 501 });
-}
-
-async function searchPets(filter: Filter<Pet>, amount: number = 0): Promise<Pet[]> {
-   if (!collections.pets)
-      await connectToDatabase();
-
-   if (amount < 0)
-      return await collections.pets!.find(filter).collation({ strength: 2, locale: 'pt' }).toArray();
-   else
-      return await collections.pets!.find(filter).collation({ strength: 2, locale: 'pt' }).limit(amount).toArray();
 }
 
 async function insertOnePet(pet: Pet): Promise<void> {
@@ -166,53 +167,4 @@ async function insertManyPets(pets: Pet[]): Promise<void> {
       await connectToDatabase();
 
    await collections.pets?.insertMany(pets);
-}
-
-function getPetFilter(pet: Pet): Filter<Pet> {
-   const cleanFilter = Object.entries(pet).reduce((acc: Filter<Pet>, [key, value]) => {
-      if (typeof value === 'string') {
-         acc[key] = { $regex: new RegExp(value, 'i') }; // Busca de texto aproximada (case-insensitive)
-      } else {
-         acc[key] = { $in: value }; // Multi seleção
-      }
-      return acc;
-   }, {} as Pet);
-
-   // Remover campos vazios do filtro
-   Object.keys(cleanFilter).forEach((key) => (cleanFilter[key as keyof Pet] == undefined) && delete cleanFilter[key as keyof Pet]);
-
-   return cleanFilter;
-}
-
-function getPetFilterFromParams(params: URLSearchParams): Filter<Pet> {
-   const pet = {} as Pet;
-   if (params.has('type')) {
-      pet.type = params.get('type') as string;
-   }
-
-   if (params.has('size')) {
-      pet.size = params.getAll('size');
-   }
-
-   if (params.has('age')) {
-      pet.age = params.getAll('age');
-   }
-
-   if (params.has('breeds')) {
-      pet.breeds = params.getAll('breeds');
-   }
-   if (params.has('colors')) {
-      pet.colors = params.getAll('colors');
-   }
-
-   if (params.has('location')) {
-      pet.location = params.get('location') as string;
-   }
-
-   if (params.has('observations')) {
-      pet.observations = params.get('observations') as string;
-   }
-
-   const petFilter = getPetFilter(pet);
-   return petFilter;
 }
