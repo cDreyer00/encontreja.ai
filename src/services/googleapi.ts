@@ -6,7 +6,6 @@ let drive: drive_v3.Drive | null = null
 
 async function connectToDrive() {
    let credentials = process.env.GOOGLE_CREDENTIALS;
-   console.log("credentials:", credentials)
    const authData = JSON.parse(credentials!);
    const auth = new google.auth.GoogleAuth({
       credentials: authData,
@@ -30,21 +29,41 @@ function bufferToStream(buffer: Buffer): Readable {
 // Function to download an image from Google Drive
 export async function getImageUrlFromDrive(fileId: string): Promise<string | null> {
    return `https://lh3.googleusercontent.com/d/${fileId}`;
+}
 
+export async function submitImgUrlToDrive(folderId: string, imgUrl: string): Promise<string | null> {
    try {
+      console.log('Submitting image URL:', imgUrl)
       if (!drive) await connectToDrive();
+      console.log('connected')
       if (!drive) return null;
 
-      const response = await drive!.files.get({
-         fileId: fileId,
-         fields: 'webContentLink' // Get the web content link of the file
+      const imageResponse = await fetch(imgUrl);
+      console.log('Image response:', imageResponse);
+      const imageBuffer = await imageResponse.arrayBuffer();
+      const imageStream = bufferToStream(Buffer.from(imageBuffer));
+
+      const fileMetadata = {
+         name: imgUrl,
+         parents: [folderId]
+      };
+
+      const media = {
+         mimeType: imageResponse.headers.get('Content-Type')!,
+         body: imageStream
+      };
+
+      const response = await drive.files.create({
+         requestBody: fileMetadata,
+         media: media,
+         fields: 'id'
       });
 
-      const contet = response.data.webContentLink;
-      console.log('Content:', contet);
-      return contet!;
+      const fileId = response.data.id;
+      console.log('File ID:', fileId);
+      return fileId!;
    } catch (error) {
-      console.error('Error getting image URL:', error);
+      console.error('Error submitting image URL:', error);
       return null;
    }
 }

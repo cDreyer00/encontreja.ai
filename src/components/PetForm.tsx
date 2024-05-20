@@ -34,6 +34,10 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
       'Idoso',
    ]);
 
+   let tempFolderId = '1v4_bvJ9P8JJWICK9dLATd6IQCMJRiiuY';
+   let dogImgsDbFolderId = '15JrJPxhehgRqtF__GuHtAWGd0atJH5_EfR3pVyMHXd8-INhlMsiWujNW_r0qCdsYNzyBf_dE';
+   let catImgsDbFolderId = '1mO0QHnMX8HanFElrvh3CoOv9Ey2f0PO39Y0RqQp4M_QPBpltFyFLkKuGMfpo3bF-0GBZ_QbY';
+
    const formSectionClass = 'mt-4';
 
    useEffect(() => {
@@ -64,7 +68,7 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
       return newArr;
    }
 
-   function handleSubmit(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+   async function handleSubmit(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
       e.preventDefault();
 
       if (!type) {
@@ -95,6 +99,24 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
          return;
       }
 
+      let folderId = type === 'cachorro' ? dogImgsDbFolderId : catImgsDbFolderId;
+      let body = {
+         "imgUrl": imgUrl,
+         "folderId": folderId
+      }
+
+      let res = await fetch('/api/image', {
+         method: 'POST',
+         body: JSON.stringify(body),
+      })
+
+      if (!res.ok) {
+         alert('Failed to submit image');
+         return;
+      }
+
+      let img = await res.text();
+
       const pet = new Pet(
          type,
          gender,
@@ -102,7 +124,7 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
          age,
          breeds,
          color,
-         imgUrl,
+         img,
          size,
          observations as string,
       );
@@ -152,7 +174,7 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
 
       let formData = new FormData()
       formData.append('image', file)
-      formData.append('folderId', '1v4_bvJ9P8JJWICK9dLATd6IQCMJRiiuY')
+      formData.append('folderId', tempFolderId)
       let res = await fetch('/api/image', {
          method: 'POST',
          body: formData
@@ -167,7 +189,7 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
       let data = await res.json()
 
       setImgUrl(data.imgUrl)
-      
+
       let aiRes = await fetch(`/api/ai?img=${data.imgUrl}`)
       let pet = await aiRes.json()
       console.log('pet:', pet)
