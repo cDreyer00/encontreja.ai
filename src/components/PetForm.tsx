@@ -115,7 +115,7 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
          return;
       }
 
-      let img = await res.text();
+      let driveImg = await res.json();
 
       const pet = new Pet(
          type,
@@ -124,7 +124,7 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
          age,
          breeds,
          color,
-         img,
+         driveImg.imgUrl,
          size,
          observations as string,
       );
@@ -192,7 +192,6 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
 
       let aiRes = await fetch(`/api/analisar?img=${data.imgUrl}`)
       let pet = await aiRes.json()
-      console.log('pet:', pet)
       setType(pet.type)
       setBreed(pet.breeds)
       setColor(pet.colors)

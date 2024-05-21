@@ -121,14 +121,9 @@ export async function POST(req: NextRequest): Promise<Response> {
    try {
       const data = await req.json();
       const isArray = Array.isArray(data);
-      console.log(`register pet: ${data}`)
-      console.log(data)
 
-      const date = new Date();
-
-      const isStrNullOrEmpty = (str: any) => str === null || str === undefined || str === '';
-      const isArr = (check: any) => Array.isArray(check);
       const fixPet = (pet: Pet) => {
+         const date = new Date();
          pet.createdAt = date;
 
          pet.breeds = validateArr(pet.breeds);
