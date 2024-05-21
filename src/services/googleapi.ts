@@ -39,7 +39,6 @@ export async function submitImgUrlToDrive(folderId: string, imgUrl: string): Pro
       if (!drive) return null;
 
       const imageResponse = await fetch(imgUrl);
-      console.log('Image response:', imageResponse);
       const imageBuffer = await imageResponse.arrayBuffer();
       const imageStream = bufferToStream(Buffer.from(imageBuffer));
 

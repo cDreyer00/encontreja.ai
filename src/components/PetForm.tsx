@@ -35,8 +35,6 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
    ]);
 
    let tempFolderId = '1v4_bvJ9P8JJWICK9dLATd6IQCMJRiiuY';
-   let dogImgsDbFolderId = '15JrJPxhehgRqtF__GuHtAWGd0atJH5_EfR3pVyMHXd8-INhlMsiWujNW_r0qCdsYNzyBf_dE';
-   let catImgsDbFolderId = '1mO0QHnMX8HanFElrvh3CoOv9Ey2f0PO39Y0RqQp4M_QPBpltFyFLkKuGMfpo3bF-0GBZ_QbY';
 
    const formSectionClass = 'mt-4';
 
@@ -99,24 +97,6 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
          return;
       }
 
-      let folderId = type === 'cachorro' ? dogImgsDbFolderId : catImgsDbFolderId;
-      let body = {
-         "imgUrl": imgUrl,
-         "folderId": folderId
-      }
-
-      let res = await fetch('/api/image', {
-         method: 'POST',
-         body: JSON.stringify(body),
-      })
-
-      if (!res.ok) {
-         alert('Failed to submit image');
-         return;
-      }
-
-      let driveImg = await res.json();
-
       const pet = new Pet(
          type,
          gender,
@@ -124,7 +104,7 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
          age,
          breeds,
          color,
-         driveImg.imgUrl,
+         imgUrl,
          size,
          observations as string,
       );

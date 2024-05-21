@@ -4,6 +4,9 @@ import { collections, connectToDatabase } from "@/services/db";
 
 import Pet from "@/models/pet";
 
+let submitImgUrl = "http://localhost:3000/api/image"
+// let submitImgUrl = "https://encontreja-ai.vercel.app/api/image"
+
 export async function GET(req: NextRequest): Promise<Response> {
    if (!collections.pets)
       await connectToDatabase()
@@ -124,17 +127,24 @@ export async function POST(req: NextRequest): Promise<Response> {
 
       if (isArray) {
          const pets = data as Pet[];
+         pets.forEach((p) => {
+            if(p.imgUrl === undefined)
+               throw new Error('Missing imgUrl in one or more pets');
+         });
          pets.forEach((p) => p = fixPet(p));
          await insertManyPets(pets);
          return new Response(JSON.stringify(pets), { status: 201 });
       }
+
+      if(data.imgUrl === undefined)
+         throw new Error('Missing imgUrl in pet');
 
       let pet = fixPet(data);
       await insertOnePet(pet);
       return new Response(JSON.stringify(pet), { status: 201 });
    } catch (error) {
       console.error(error);
-      return new Response("An error occurred", { status: 500 });
+      return new Response("An error occurred: " + error, { status: 500 });
    }
 }
 
@@ -146,12 +156,18 @@ async function insertOnePet(pet: Pet): Promise<void> {
    if (!collections.pets)
       await connectToDatabase();
 
+   pet = await updatePetImage(pet);
+
    await collections.pets?.insertOne(pet);
 }
 
 async function insertManyPets(pets: Pet[]): Promise<void> {
    if (!collections.pets)
       await connectToDatabase();
+
+   for (let pet of pets) {
+      pet = await updatePetImage(pet);
+   }
 
    await collections.pets?.insertMany(pets);
 }
@@ -182,10 +198,34 @@ const fixPet = (target: any) => {
    pet.colors = validateArr(target.colors);
    pet.age = validateArr(target.age, 'indefinido');
    pet.size = validateArr(target.size, 'indefinido');
+   pet.imgUrl = target.imgUrl;
 
    pet.healthCondition = target.healthCondition;
    pet.locationFound = target.locationFound;
    pet.infoOrigin = target.infoOrigin;
+
+   return pet;
+}
+
+
+async function updatePetImage(pet: Pet) {
+   let dogImgsDbFolderId = '15JrJPxhehgRqtF__GuHtAWGd0atJH5_EfR3pVyMHXd8-INhlMsiWujNW_r0qCdsYNzyBf_dE';
+   let catImgsDbFolderId = '1mO0QHnMX8HanFElrvh3CoOv9Ey2f0PO39Y0RqQp4M_QPBpltFyFLkKuGMfpo3bF-0GBZ_QbY';
+
+   let folder = pet.type === 'cachorro' ? dogImgsDbFolderId : catImgsDbFolderId;
+   console.log(pet)
+   let newImg = await fetch(submitImgUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ imgUrl: pet.imgUrl, folderId: folder })
+   });
+
+   if (!newImg.ok) {
+      throw new Error('Failed to submit image: ' + newImg.statusText);
+   }
+
+   let imgData = await newImg.json();
+   pet.imgUrl = imgData.imgUrl;
 
    return pet;
 }

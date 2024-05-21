@@ -4,6 +4,9 @@ import { NextRequest } from "next/server";
 export async function POST(req: NextRequest) {
    let body = await exportBody(req);
 
+   console.log("=================================== img req")
+   console.log(body)
+
    if (body.isUrl) {
       let fileId = await submitImgUrlToDrive(body.folderId, body.img as string);
       if (!fileId) return new Response('Failed to submit image URL', { status: 500 });
