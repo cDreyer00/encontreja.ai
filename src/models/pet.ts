@@ -18,5 +18,9 @@ export default class Pet {
       public observations?: string,
       public createdAt?: Date,
       public _id?: ObjectId,
+
+      public healthCondition?: string,
+      public locationFound?: string,
+      public infoOrigin?: string,
    ) { }
 }
