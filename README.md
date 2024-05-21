@@ -33,11 +33,12 @@ parametro com array seprarar com virgula:
       - type: string
       - gender: string
       - observations: string
+      - imgUrl: string
       - location: string
       - breeds: string[]
       - colors: string[]
       - size: string[]
-      - age: string[]   
+      - age: string[]
 </details>
 ---
 <details> 
@@ -46,7 +47,12 @@ parametro com array seprarar com virgula:
    * [GET](https://encontreja-ai.vercel.app/api/categoria?q=cor)
    * params:
       - q: string
-         - raca_cachorro | raca_gato | cor
+         - raca_cachorro 
+         - raca_gato
+         - cor
+         - idade
+         - tamanho
+         - genero
 </details>
 ---
 <details> 

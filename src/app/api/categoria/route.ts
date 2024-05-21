@@ -8,6 +8,9 @@ export async function GET(req: NextRequest): Promise<Response> {
       category === 'raca_cachorro' ? dogBreeds :
       category === 'raca_gato'     ? catBreeds :
       category === 'cor'           ? colors :
+      category === 'idade'         ? ages :
+      category === 'tamanho'       ? sizes :
+      category === 'genero'        ? genders :
       [];
 
    return new Response(JSON.stringify(res));
@@ -66,4 +69,26 @@ const colors = [
    'Cinza',
    'Rajado',
    'Laranja',
+]
+
+const ages = [
+   'Incerto',
+   'Filhote',
+   'Adulto',
+   'Idoso'
+]
+
+const sizes =[
+   'Incerto',
+   'Mini',
+   'Pequeno',
+   'Médio',
+   'Grande',
+   'Gigante'
+]
+
+const genders = [
+   'Incerto',
+   'Macho',
+   'Fêmea'
 ]
