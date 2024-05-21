@@ -39,7 +39,7 @@ export async function GET(req: NextRequest): Promise<Response> {
    console.log('colors:', colors);
    console.log('age:', age);
    console.log('size:', size);
-   
+
 
    const weights = {
       breeds: 4,
@@ -48,7 +48,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       sizes: 1
    };
 
-   let matchingType = type ? { $match: { type: type } } : { $match: {} }   
+   let matchingType = type ? { $match: { type: type } } : { $match: {} }
 
    let pipeline = [
       matchingType,
@@ -122,15 +122,20 @@ export async function POST(req: NextRequest): Promise<Response> {
       const data = await req.json();
       const isArray = Array.isArray(data);
       console.log(`register pet: ${data}`)
+      console.log(data)
 
       const date = new Date();
 
+      const isStrNullOrEmpty = (str: any) => str === null || str === undefined || str === '';
+      const isArr = (check: any) => Array.isArray(check);
       const fixPet = (pet: Pet) => {
          pet.createdAt = date;
-         pet.breeds = Array.from(new Set(pet.breeds));
-         pet.colors = Array.from(new Set(pet.colors));
-         pet.age = Array.from(new Set(pet.age));
-         pet.size = Array.from(new Set(pet.size));
+
+         pet.breeds = validateArr(pet.breeds);
+         pet.colors = validateArr(pet.colors);
+         pet.age = validateArr(pet.age, 'indefinido');
+         pet.size = validateArr(pet.size, 'indefinido');
+
          return pet;
       }
 
@@ -142,7 +147,7 @@ export async function POST(req: NextRequest): Promise<Response> {
       }
 
       const pet = data as Pet;
-      fixPet(pet);      
+      fixPet(pet);
       await insertOnePet(pet);
       return new Response(JSON.stringify(pet), { status: 201 });
    } catch (error) {
@@ -167,4 +172,19 @@ async function insertManyPets(pets: Pet[]): Promise<void> {
       await connectToDatabase();
 
    await collections.pets?.insertMany(pets);
+}
+
+function validateArr(arr: any, defaultValueIfEmpty: string | undefined = undefined) {
+   // if is array, return it
+   if (Array.isArray(arr))
+      return arr;
+
+   // if is string, return it as array of single element
+   if (typeof arr === 'string')
+      return [arr]
+
+   if (defaultValueIfEmpty === undefined)
+      return [];
+
+   return [defaultValueIfEmpty];
 }
