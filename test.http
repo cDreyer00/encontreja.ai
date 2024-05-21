@@ -14,5 +14,9 @@ Content-Type: application/json
 {
     "type": "gato",
     "breeds": "pitbull",
-    "colors": "preto"
+    "colors": "preto",
+    "healthCondition": "saudavel",
+    "locationFound": "local tal",
+    "infoOrigin": "fontes da minha cabeça",
+    "infoMtTop": "AAAAAAAAAAAAAAAAA"
 }

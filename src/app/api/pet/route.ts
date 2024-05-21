@@ -122,27 +122,14 @@ export async function POST(req: NextRequest): Promise<Response> {
       const data = await req.json();
       const isArray = Array.isArray(data);
 
-      const fixPet = (pet: Pet) => {
-         const date = new Date();
-         pet.createdAt = date;
-
-         pet.breeds = validateArr(pet.breeds);
-         pet.colors = validateArr(pet.colors);
-         pet.age = validateArr(pet.age, 'indefinido');
-         pet.size = validateArr(pet.size, 'indefinido');
-
-         return pet;
-      }
-
       if (isArray) {
          const pets = data as Pet[];
-         pets.forEach(fixPet);
+         pets.forEach((p) => p = fixPet(p));
          await insertManyPets(pets);
          return new Response(JSON.stringify(pets), { status: 201 });
       }
 
-      const pet = data as Pet;
-      fixPet(pet);
+      let pet = fixPet(data);
       await insertOnePet(pet);
       return new Response(JSON.stringify(pet), { status: 201 });
    } catch (error) {
@@ -182,4 +169,23 @@ function validateArr(arr: any, defaultValueIfEmpty: string | undefined = undefin
       return [];
 
    return [defaultValueIfEmpty];
+}
+
+const fixPet = (target: any) => {
+   const date = new Date();
+
+   const pet = new Pet()
+
+   pet.createdAt = date;
+   pet.type = target.type;
+   pet.breeds = validateArr(target.breeds);
+   pet.colors = validateArr(target.colors);
+   pet.age = validateArr(target.age, 'indefinido');
+   pet.size = validateArr(target.size, 'indefinido');
+
+   pet.healthCondition = target.healthCondition;
+   pet.locationFound = target.locationFound;
+   pet.infoOrigin = target.infoOrigin;
+
+   return pet;
 }
