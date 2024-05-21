@@ -56,6 +56,7 @@ parametro com array seprarar com virgula:
          - idade
          - tamanho
          - genero
+         - abrigo
 </details>
 ---
 <details> 
