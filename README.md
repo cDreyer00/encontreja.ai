@@ -35,6 +35,9 @@ parametro com array seprarar com virgula:
       - observations: string
       - imgUrl: string
       - location: string
+      - locationFound: string
+      - healthCondition: string
+      - infoOrigin: string
       - breeds: string[]
       - colors: string[]
       - size: string[]
