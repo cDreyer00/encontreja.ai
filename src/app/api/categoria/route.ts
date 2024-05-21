@@ -11,7 +11,14 @@ export async function GET(req: NextRequest): Promise<Response> {
       category === 'idade'         ? ages :
       category === 'tamanho'       ? sizes :
       category === 'genero'        ? genders :
-      [];
+      {
+         dogBreeds,
+         catBreeds,
+         colors,
+         ages,
+         sizes,
+         genders
+      }
 
    return new Response(JSON.stringify(res));
 }
