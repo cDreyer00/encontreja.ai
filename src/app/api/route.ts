@@ -6,13 +6,16 @@ import { NextRequest } from "next/server"
 import { Filter, AggregationCursor } from "mongodb"
 
 export async function GET(req: NextRequest) {
-   return new Response('not allowed');
+   // return new Response('not allowed');
+
+   let sizes = await getByPet();
+   return new Response(JSON.stringify(sizes), { status: 200 });
 
    // if (!collections.temp)
    //    await connectToDatabase();
 
    // let col = collections.temp;
-   
+
    // if (!col)
    //    return new Response('Erro ao conectar ao banco de dados', { status: 500 });
 
@@ -23,6 +26,55 @@ export async function GET(req: NextRequest) {
    // await col!.insertMany(pets);
 
    // return new Response('ok');
+
+}
+
+async function getByPet() {
+   if (!collections.temp)
+      await connectToDatabase();
+
+   let col = collections.temp;
+
+   if (!col)
+      return new Response('Erro ao conectar ao banco de dados', { status: 500 });
+
+   let sizes: any = {}
+
+   let cats = await col.find({ type: "Gato" }).toArray();
+   let dogs = await col.find({ type: "Cachorro" }).toArray();
+   
+   sizes.dogs = dogs.length;
+   sizes.cats = cats.length;
+
+   return sizes;
+}
+
+async function countSizeValues() {
+   if (!collections.temp)
+      await connectToDatabase();
+
+   let col = collections.temp;
+
+   if (!col)
+      return new Response('Erro ao conectar ao banco de dados', { status: 500 });
+
+   let sizes: any = {
+      "Pequeno": 0,
+      "Médio": 0,
+      "Grande": 0,
+      "Gigante": 0
+   }
+
+   let datas = await col.find({}).toArray();
+   for (let data of datas) {
+      console.log(data);
+      if (data.size) {
+         for (let size of data.size)
+            sizes[size] += 1;
+      }
+   }
+
+   return sizes;
 }
 
 let cats = [

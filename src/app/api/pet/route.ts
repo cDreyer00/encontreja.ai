@@ -35,7 +35,19 @@ export async function GET(req: NextRequest): Promise<Response> {
    let sizeParams = params.get('size');
    let size: string[] = sizeParams ? sizeParams.split(',') : [];
 
+   let observations = params.get('observations') ?? null;
+
    let collation = { locale: 'pt', strength: 2 }
+
+   console.log({
+      type,
+      gender,
+      breeds,
+      colors,
+      age,
+      size,
+      observations
+   })
 
    const weights = {
       breeds: 4,

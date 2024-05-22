@@ -37,7 +37,7 @@ export function fixPet(target: any) {
    pet.age = validateArr(target.age, 'indefinido');
    pet.size = validateArr(target.size, 'indefinido');
    pet.imgUrl = target.imgUrl;
-   pet.observations = target.observations
+   pet.observations = target.observations;
    pet.location = target.location;
 
    pet.healthCondition = target.healthCondition;
@@ -49,9 +49,12 @@ export function fixPet(target: any) {
 
 export function validateArr(arr: any, defaultValueIfEmpty: string | undefined = undefined, splitString: boolean = false) {
    // if is array, return it
-   if (Array.isArray(arr)){
+   if (Array.isArray(arr)) {
+      if (arr.length === 0 && defaultValueIfEmpty !== undefined)
+         return [defaultValueIfEmpty];
+
       // split by comma and remove empty strings and dots
-      if(splitString){
+      if (splitString) {
          let newArr = arr
             .map((el: string) => el.split(','))
             .flat()
@@ -61,10 +64,10 @@ export function validateArr(arr: any, defaultValueIfEmpty: string | undefined = 
                return e;
             })
             .filter((el: string) => el !== '');
-         
+
          return newArr;
       }
-         
+
 
       return arr;
    }
@@ -86,4 +89,15 @@ export function validateArr(arr: any, defaultValueIfEmpty: string | undefined = 
       return [];
 
    return [defaultValueIfEmpty];
+}
+
+function validateStr(target: string, defaultValue: string | undefined = undefined) {
+   if (typeof target !== 'string')
+      return defaultValue;
+
+   let newStr = target.trim();
+   if (newStr === '')
+      return defaultValue;
+
+   return newStr;
 }
