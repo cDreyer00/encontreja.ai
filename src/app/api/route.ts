@@ -8,21 +8,21 @@ import { Filter, AggregationCursor } from "mongodb"
 export async function GET(req: NextRequest) {
    return new Response('not allowed');
 
-   if (!collections.temp)
-      await connectToDatabase();
+   // if (!collections.temp)
+   //    await connectToDatabase();
 
-   let col = collections.temp;
+   // let col = collections.temp;
    
-   if (!col)
-      return new Response('Erro ao conectar ao banco de dados', { status: 500 });
+   // if (!col)
+   //    return new Response('Erro ao conectar ao banco de dados', { status: 500 });
 
-   await col.deleteMany({});
+   // await col.deleteMany({});
 
-   let pets = dogs.map(fixPet);
-   pets.push(...cats.map(fixPet));
-   await col!.insertMany(pets);
+   // let pets = dogs.map(fixPet);
+   // pets.push(...cats.map(fixPet));
+   // await col!.insertMany(pets);
 
-   return new Response('ok');
+   // return new Response('ok');
 }
 
 let cats = [
