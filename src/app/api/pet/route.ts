@@ -96,7 +96,7 @@ export async function GET(req: NextRequest): Promise<Response> {
    ]
 
 
-   const pets = await collections.pets?.aggregate(pipeline, { collation }).toArray()
+   const pets = await col?.aggregate(pipeline, { collation }).toArray()
    return new Response(JSON.stringify(pets), { status: 200 });
 
    // let params = req.nextUrl.searchParams;
