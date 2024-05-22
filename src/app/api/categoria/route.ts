@@ -4,7 +4,7 @@ import { connectToDatabase, collections } from "@/services/db";
 export async function GET(req: NextRequest): Promise<Response> {
    const params = req.nextUrl.searchParams;
    const category = params.get('q');
-   
+   console.log(`category: ${category}`);
    if(category === 'abrigo'){
       let locations = await getAllLocations();
       return new Response(JSON.stringify(locations));      
