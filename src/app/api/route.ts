@@ -1081,7 +1081,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom, Caramelo"
       ],
       "gender": "Macho",
@@ -1097,7 +1097,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco, preto, marrom"
       ],
       "gender": "Fêmea",
@@ -1113,7 +1113,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco, Preto, Marrom"
       ],
       "gender": "Fêmea",
@@ -1130,7 +1130,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto, Marrom, Branco"
       ],
       "gender": "Fêmea",
@@ -1146,7 +1146,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom, Branco"
       ],
       "gender": "Fêmea",
@@ -1163,7 +1163,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco, Marrom, Preto"
       ],
       "gender": "Macho",
@@ -1181,7 +1181,7 @@ let dogs = [
          "Golden Retriever",
          "Labrador Retriever"
       ],
-      "color": [
+      "colors": [
          "Caramelo, Branco"
       ],
       "gender": "Macho",
@@ -1197,7 +1197,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -1213,7 +1213,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -1229,7 +1229,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto, Branco"
       ],
       "gender": "Fêmea",
@@ -1245,7 +1245,7 @@ let dogs = [
       "breeds": [
          "Pitbull"
       ],
-      "color": [
+      "colors": [
          "Branco, Marrom"
       ],
       "gender": "Macho",
@@ -1261,7 +1261,7 @@ let dogs = [
       "breeds": [
          "Pitbull"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Fêmea",
@@ -1279,7 +1279,7 @@ let dogs = [
          "Shih Tzu",
          "Lhasa Apso"
       ],
-      "color": [
+      "colors": [
          "Branco, Marrom"
       ],
       "age": [
@@ -1294,7 +1294,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Caramelo, Branco."
       ],
       "gender": "Fêmea",
@@ -1312,7 +1312,7 @@ let dogs = [
          "Boxer",
          "Bulldog Inglês"
       ],
-      "color": [
+      "colors": [
          "Branco, preto."
       ],
       "age": [
@@ -1327,7 +1327,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto, Branco."
       ],
       "age": [
@@ -1342,7 +1342,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "age": [
@@ -1358,7 +1358,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto, Branco"
       ],
       "gender": "Macho",
@@ -1374,7 +1374,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom claro, Marrom escuro"
       ],
       "gender": "Macho",
@@ -1390,7 +1390,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco, Preto"
       ],
       "age": [
@@ -1405,7 +1405,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco, Preto"
       ],
       "age": [
@@ -1420,7 +1420,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "age": [
@@ -1435,7 +1435,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco, Marrom"
       ],
       "age": [
@@ -1450,7 +1450,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom claro, Preto"
       ],
       "age": [
@@ -1465,7 +1465,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -1480,7 +1480,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Caramelo, Branco"
       ],
       "age": [
@@ -1495,7 +1495,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom avermelhado"
       ],
       "age": [
@@ -1510,7 +1510,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco, caramelo"
       ],
       "gender": "Fêmea",
@@ -1526,7 +1526,7 @@ let dogs = [
       "breeds": [
          "Pitbull"
       ],
-      "color": [
+      "colors": [
          "Vermelho, Branco"
       ],
       "age": [
@@ -1543,7 +1543,7 @@ let dogs = [
          "Pastor Alemão",
          "Chow chow"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "observations": "Focinho preto"
@@ -1555,7 +1555,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto, cinza"
       ],
       "age": [
@@ -1572,7 +1572,7 @@ let dogs = [
       "breeds": [
          "Jack Russel"
       ],
-      "color": [
+      "colors": [
          "Branco, vermelho"
       ],
       "age": [
@@ -1587,7 +1587,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto, Marrom, Branco."
       ],
       "gender": "Fêmea",
@@ -1604,7 +1604,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Caramelo, Marrom"
       ],
       "age": [
@@ -1619,7 +1619,7 @@ let dogs = [
       "breeds": [
          "Yorkshire Terrier"
       ],
-      "color": [
+      "colors": [
          "Vermelho claro"
       ],
       "age": [
@@ -1634,7 +1634,7 @@ let dogs = [
       "breeds": [
          "Poodle"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -1649,7 +1649,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "age": [
@@ -1664,7 +1664,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Vermelho"
       ],
       "gender": "Macho",
@@ -1680,7 +1680,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto, Marrom, Branco."
       ],
       "age": [
@@ -1696,7 +1696,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto, Marrom"
       ],
       "age": [
@@ -1711,7 +1711,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Vermelho"
       ],
       "age": [
@@ -1726,7 +1726,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "preto"
       ],
       "age": [
@@ -1741,7 +1741,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -1757,7 +1757,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom, Preto."
       ],
       "age": [
@@ -1772,7 +1772,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco, Marrom claro"
       ],
       "age": [
@@ -1787,7 +1787,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Caramelo."
       ],
       "age": [
@@ -1803,7 +1803,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Caramelo, Branco"
       ],
       "age": [
@@ -1819,7 +1819,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -1834,7 +1834,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -1851,7 +1851,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto, Branco, Marrom"
       ],
       "age": [
@@ -1867,7 +1867,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -1882,7 +1882,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Caramelo, Branco"
       ],
       "gender": "Fêmea",
@@ -1900,7 +1900,7 @@ let dogs = [
          "Sem raça definida",
          "Shih Tzu"
       ],
-      "color": [
+      "colors": [
          "Branco, Marrom"
       ],
       "age": [
@@ -1915,7 +1915,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto, Marrom"
       ],
       "gender": "Fêmea",
@@ -1934,7 +1934,7 @@ let dogs = [
          "Shih Tzu",
          "Lhasa Apso"
       ],
-      "color": [
+      "colors": [
          "Preto, Branco."
       ],
       "age": [
@@ -1950,7 +1950,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto, Marrom"
       ],
       "age": [
@@ -1967,7 +1967,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom Claro"
       ],
       "age": [
@@ -1982,7 +1982,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom escuro, Branco"
       ],
       "age": [
@@ -1998,7 +1998,7 @@ let dogs = [
          "Sem raça definida",
          "Salsicha (Dachshund)"
       ],
-      "color": [
+      "colors": [
          "Preto, Marrom, Branco"
       ],
       "age": [
@@ -2015,7 +2015,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Vermelho"
       ],
       "age": [
@@ -2030,7 +2030,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Caramelo, branca."
       ],
       "gender": "Fêmea",
@@ -2048,7 +2048,7 @@ let dogs = [
          "Sem raça definida",
          "Bulldog Francês"
       ],
-      "color": [
+      "colors": [
          "Branco, Preto, Marrom"
       ],
       "age": [
@@ -2064,7 +2064,7 @@ let dogs = [
       "breeds": [
          "Pastor Alemão"
       ],
-      "color": [
+      "colors": [
          "Preto, Marrom Claro"
       ],
       "gender": "Fêmea",
@@ -2081,7 +2081,7 @@ let dogs = [
          "Sem raça definida",
          "Pointer"
       ],
-      "color": [
+      "colors": [
          "Branco, Preto"
       ],
       "age": [
@@ -2096,7 +2096,7 @@ let dogs = [
       "breeds": [
          "Pastor Alemão"
       ],
-      "color": [
+      "colors": [
          "Preto, Marrom Claro"
       ],
       "gender": "Macho",
@@ -2112,7 +2112,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -2128,7 +2128,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -2143,7 +2143,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto, Marrom"
       ],
       "age": [
@@ -2158,7 +2158,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -2174,7 +2174,7 @@ let dogs = [
          "Sem raça definida",
          "Labrador Retriever"
       ],
-      "color": [
+      "colors": [
          "Chocolate"
       ],
       "gender": "Fêmea",
@@ -2192,7 +2192,7 @@ let dogs = [
          "Sem raça definida",
          "Chow chow"
       ],
-      "color": [
+      "colors": [
          "Marrom, Preto"
       ],
       "age": [
@@ -2207,7 +2207,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Vermelho"
       ],
       "age": [
@@ -2223,7 +2223,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -2238,7 +2238,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -2254,7 +2254,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto, Marrom"
       ],
       "gender": "Macho",
@@ -2270,7 +2270,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Caramelo, Branco"
       ],
       "age": [
@@ -2286,7 +2286,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom Claro"
       ],
       "age": [
@@ -2301,7 +2301,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco, Marrom"
       ],
       "gender": "Macho",
@@ -2317,7 +2317,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -2332,7 +2332,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom claro, Branco"
       ],
       "gender": "Fêmea",
@@ -2349,7 +2349,7 @@ let dogs = [
          "Sem raça definida",
          "Pit bull"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -2364,7 +2364,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom claro"
       ],
       "age": [
@@ -2380,7 +2380,7 @@ let dogs = [
          "Sem raça definida",
          "Beagle"
       ],
-      "color": [
+      "colors": [
          "Branco, Marrom, Preto"
       ],
       "age": [
@@ -2396,7 +2396,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto, Marrom"
       ],
       "age": [
@@ -2412,7 +2412,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Cinza, Branco"
       ],
       "gender": "Macho",
@@ -2429,7 +2429,7 @@ let dogs = [
          "Sem raça definida",
          "Pit bull"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -2446,7 +2446,7 @@ let dogs = [
          "Sem raça definida",
          "Pitbull"
       ],
-      "color": [
+      "colors": [
          "Preto, Branco."
       ],
       "gender": "Fêmea",
@@ -2462,7 +2462,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Vermelhado"
       ],
       "age": [
@@ -2477,7 +2477,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -2492,7 +2492,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -2507,7 +2507,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom Claro"
       ],
       "age": [
@@ -2523,7 +2523,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -2539,7 +2539,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto."
       ],
       "gender": "Fêmea",
@@ -2558,7 +2558,7 @@ let dogs = [
          "Shih Tzu",
          "Yorkshire Terrier"
       ],
-      "color": [
+      "colors": [
          "Preto, Cinza"
       ],
       "age": [
@@ -2573,7 +2573,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom claro"
       ],
       "age": [
@@ -2588,7 +2588,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco, Preto."
       ],
       "age": [
@@ -2603,7 +2603,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco, Marrom"
       ],
       "gender": "Macho",
@@ -2621,7 +2621,7 @@ let dogs = [
          "Sem raça definida",
          "Salsicha (Dachshund)"
       ],
-      "color": [
+      "colors": [
          "Preto, Marrom."
       ],
       "age": [
@@ -2637,7 +2637,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -2652,7 +2652,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco, Preto, Marrom"
       ],
       "age": [
@@ -2667,7 +2667,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto, Branco"
       ],
       "age": [
@@ -2682,7 +2682,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco, Marrom."
       ],
       "gender": "Macho",
@@ -2699,7 +2699,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Vermelho"
       ],
       "gender": "Macho",
@@ -2715,7 +2715,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Cinza escuro, Cinza claro"
       ],
       "age": [
@@ -2731,7 +2731,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom escuro"
       ],
       "age": [
@@ -2747,7 +2747,7 @@ let dogs = [
          "Sem raça definida",
          "Poodle"
       ],
-      "color": [
+      "colors": [
          "Cinza escuro, Cinza claro"
       ],
       "age": [
@@ -2764,7 +2764,7 @@ let dogs = [
          "Sem raça definida",
          "Beagle"
       ],
-      "color": [
+      "colors": [
          "Marrom, Branco, Preto"
       ],
       "age": [
@@ -2779,7 +2779,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -2797,7 +2797,7 @@ let dogs = [
          "Sem raça definida",
          "Pitbull"
       ],
-      "color": [
+      "colors": [
          "Branco, Marrom claro"
       ],
       "gender": "Macho",
@@ -2813,7 +2813,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Cinza escuro"
       ],
       "age": [
@@ -2829,7 +2829,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto, Marrom"
       ],
       "age": [
@@ -2844,7 +2844,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto, Amarelo."
       ],
       "gender": "Macho",
@@ -2861,7 +2861,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -2876,7 +2876,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -2891,7 +2891,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto, Marrom"
       ],
       "age": [
@@ -2908,7 +2908,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -2925,7 +2925,7 @@ let dogs = [
          "Sem raça definida",
          "Border Collie"
       ],
-      "color": [
+      "colors": [
          "Branco, Preto, Marrom"
       ],
       "age": [
@@ -2940,7 +2940,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto, Marrom."
       ],
       "gender": "Macho",
@@ -2957,7 +2957,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preta, marrom e bege."
       ],
       "gender": "Macho",
@@ -2973,7 +2973,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom claro"
       ],
       "age": [
@@ -2988,7 +2988,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preta"
       ],
       "age": [
@@ -3003,7 +3003,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preta"
       ],
       "age": [
@@ -3020,7 +3020,7 @@ let dogs = [
          "Shih Tzu",
          "Lhasa Apso"
       ],
-      "color": [
+      "colors": [
          "Branco, Marrom, Caramelo."
       ],
       "gender": "Macho",
@@ -3038,7 +3038,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -3054,7 +3054,7 @@ let dogs = [
       "breeds": [
          "Pug"
       ],
-      "color": [
+      "colors": [
          "Branco, Preto."
       ],
       "gender": "Fêmea",
@@ -3070,7 +3070,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom claro"
       ],
       "age": [
@@ -3086,7 +3086,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branca e preta"
       ],
       "gender": "Fêmea",
@@ -3102,7 +3102,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -3117,7 +3117,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco, Bege"
       ],
       "age": [
@@ -3133,7 +3133,7 @@ let dogs = [
          "Sem raça definida",
          "Salsicha (Dachshund)"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -3151,7 +3151,7 @@ let dogs = [
          "Shih Tzu",
          "Lhasa Apso"
       ],
-      "color": [
+      "colors": [
          "Caramelo, Amarelo, Marrom, Branco."
       ],
       "gender": "Fêmea",
@@ -3167,7 +3167,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preta e marrom."
       ],
       "gender": "Macho",
@@ -3184,7 +3184,7 @@ let dogs = [
          "Sem raça definida",
          "Poodle"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -3199,7 +3199,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco, Amarelo."
       ],
       "gender": "Macho",
@@ -3215,7 +3215,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco, Preto"
       ],
       "gender": "Macho",
@@ -3231,7 +3231,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco, Preto"
       ],
       "age": [
@@ -3246,7 +3246,7 @@ let dogs = [
       "breeds": [
          "Shih Tzu"
       ],
-      "color": [
+      "colors": [
          "Branca e preta"
       ],
       "gender": "Fêmea",
@@ -3263,7 +3263,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco, Marrom"
       ],
       "age": [
@@ -3278,7 +3278,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto, Branco"
       ],
       "age": [
@@ -3294,7 +3294,7 @@ let dogs = [
          "Sem raça definida",
          "Pinscher"
       ],
-      "color": [
+      "colors": [
          "Preto, Marrom."
       ],
       "age": [
@@ -3311,7 +3311,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -3327,7 +3327,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -3346,7 +3346,7 @@ let dogs = [
          "Sem raça definida",
          "Pitbull"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "age": [
@@ -3361,7 +3361,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -3380,7 +3380,7 @@ let dogs = [
          "Sem raça definida",
          "Labrador Retriever"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -3396,7 +3396,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo",
          "Laranja"
@@ -3414,7 +3414,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -3429,7 +3429,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -3446,7 +3446,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -3461,7 +3461,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -3477,7 +3477,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -3497,7 +3497,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege"
       ],
@@ -3513,7 +3513,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -3528,7 +3528,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -3544,7 +3544,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -3561,7 +3561,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -3578,7 +3578,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Caramelo"
       ],
@@ -3595,7 +3595,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -3611,7 +3611,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -3626,7 +3626,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -3646,7 +3646,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -3666,7 +3666,7 @@ let dogs = [
          "Shih Tzu",
          "Lhasa Apso"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege"
@@ -3686,7 +3686,7 @@ let dogs = [
          "Sem raça definida",
          "Border Collie"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -3702,7 +3702,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Caramelo"
       ],
@@ -3718,7 +3718,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Caramelo"
       ],
@@ -3734,7 +3734,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -3749,7 +3749,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege",
@@ -3770,7 +3770,7 @@ let dogs = [
          "Sem raça definida",
          "Poodle"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -3787,7 +3787,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Caramelo"
       ],
@@ -3804,7 +3804,7 @@ let dogs = [
          "Sem raça definida",
          "Salsicha (Dachshund)"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -3823,7 +3823,7 @@ let dogs = [
          "Boxer",
          "Bulldog Inglês"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -3841,7 +3841,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Caramelo"
       ],
@@ -3857,7 +3857,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -3873,7 +3873,7 @@ let dogs = [
          "Sem raça definida",
          "Labrador Retriever"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege"
       ],
@@ -3891,7 +3891,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -3908,7 +3908,7 @@ let dogs = [
          "Sem raça definida",
          "Yorkshire Terrier"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege"
@@ -3925,7 +3925,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -3945,7 +3945,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -3962,7 +3962,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -3979,7 +3979,7 @@ let dogs = [
          "Sem raça definida",
          "Salsicha (Dachshund)"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege"
       ],
@@ -3997,7 +3997,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "age": [
@@ -4012,7 +4012,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Caramelo"
@@ -4030,7 +4030,7 @@ let dogs = [
       "breeds": [
          "Rottweiler"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -4048,7 +4048,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -4065,7 +4065,7 @@ let dogs = [
          "Sem raça definida",
          "Pastor Alemão"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Bege",
          "Caramelo"
@@ -4083,7 +4083,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "age": [
@@ -4099,7 +4099,7 @@ let dogs = [
          "Sem raça definida",
          "Poodle"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -4116,7 +4116,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -4134,7 +4134,7 @@ let dogs = [
          "Sem raça definida",
          "Pinscher"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -4152,7 +4152,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -4167,7 +4167,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Amarelo",
          "Caramelo"
@@ -4186,7 +4186,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Caramelo"
       ],
@@ -4203,7 +4203,7 @@ let dogs = [
          "Sem raça definida",
          "Shih Tzu"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -4219,7 +4219,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo"
       ],
@@ -4237,7 +4237,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -4252,7 +4252,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -4267,7 +4267,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Cinza"
@@ -4286,7 +4286,7 @@ let dogs = [
          "Sem raça definida",
          "Pastor Alemão"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -4306,7 +4306,7 @@ let dogs = [
          "Sem raça definida",
          "Shih Tzu"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege"
@@ -4324,7 +4324,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -4341,7 +4341,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Caramelo",
          "Laranja"
@@ -4360,7 +4360,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -4375,7 +4375,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Amarelo",
          "Caramelo"
@@ -4394,7 +4394,7 @@ let dogs = [
          "Sem raça definida",
          "Pinscher"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege",
          "Amarelo"
@@ -4415,7 +4415,7 @@ let dogs = [
          "Sem raça definida",
          "Labrador Retriever"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -4431,7 +4431,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -4446,7 +4446,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -4463,7 +4463,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -4478,7 +4478,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -4495,7 +4495,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -4512,7 +4512,7 @@ let dogs = [
          "Sem raça definida",
          "Yorkshire Terrier"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege"
       ],
@@ -4528,7 +4528,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -4547,7 +4547,7 @@ let dogs = [
          "Sem raça definida",
          "Boxer"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -4565,7 +4565,7 @@ let dogs = [
          "Sem raça definida",
          "Pit Bull"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege"
       ],
@@ -4581,7 +4581,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -4599,7 +4599,7 @@ let dogs = [
          "Sem raça definida",
          "Labrador Retriever"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -4615,7 +4615,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Caramelo",
          "Cinza"
       ],
@@ -4632,7 +4632,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -4648,7 +4648,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -4663,7 +4663,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Caramelo",
@@ -4683,7 +4683,7 @@ let dogs = [
          "Sem raça definida",
          "Pinscher"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -4698,7 +4698,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -4714,7 +4714,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -4731,7 +4731,7 @@ let dogs = [
          "Maltese",
          "Shih Tzu"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Cinza"
@@ -4750,7 +4750,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -4766,7 +4766,7 @@ let dogs = [
          "Sem raça definida",
          "Boxer"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Caramelo"
       ],
@@ -4783,7 +4783,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Caramelo"
       ],
@@ -4799,7 +4799,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Caramelo"
@@ -4817,7 +4817,7 @@ let dogs = [
          "Sem raça definida",
          "Pastor Alemão"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -4835,7 +4835,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Caramelo",
@@ -4854,7 +4854,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -4872,7 +4872,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -4889,7 +4889,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -4905,7 +4905,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -4923,7 +4923,7 @@ let dogs = [
          "Sem raça definida",
          "Boxer"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -4940,7 +4940,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -4956,7 +4956,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -4972,7 +4972,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Caramelo"
       ],
@@ -4989,7 +4989,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -5006,7 +5006,7 @@ let dogs = [
          "Sem raça definida",
          "Boxer"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Rajado"
@@ -5023,7 +5023,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Caramelo"
       ],
@@ -5039,7 +5039,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege"
@@ -5057,7 +5057,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -5073,7 +5073,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -5090,7 +5090,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -5106,7 +5106,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege"
       ],
@@ -5135,7 +5135,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -5152,7 +5152,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Caramelo"
       ],
@@ -5168,7 +5168,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege",
@@ -5187,7 +5187,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "age": [
@@ -5202,7 +5202,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -5217,7 +5217,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -5235,7 +5235,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -5251,7 +5251,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -5270,7 +5270,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -5289,7 +5289,7 @@ let dogs = [
          "Sem raça definida",
          "Chow chow"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Cinza"
       ],
@@ -5306,7 +5306,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -5323,7 +5323,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Cinza"
       ],
@@ -5340,7 +5340,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege"
@@ -5361,7 +5361,7 @@ let dogs = [
          "Yorkshire Terrier",
          "Lhasa Apso"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -5380,7 +5380,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -5399,7 +5399,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Caramelo"
       ],
@@ -5420,7 +5420,7 @@ let dogs = [
          "Yorkshire Terrier",
          "Lhasa Apso"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege"
       ],
@@ -5438,7 +5438,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege"
@@ -5456,7 +5456,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Macho",
@@ -5472,7 +5472,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege"
@@ -5490,7 +5490,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Caramelo"
       ],
@@ -5507,7 +5507,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege"
@@ -5524,7 +5524,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -5542,7 +5542,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Caramelo"
@@ -5560,7 +5560,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -5578,7 +5578,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -5594,7 +5594,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Caramelo"
       ],
@@ -5611,7 +5611,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -5627,7 +5627,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -5647,7 +5647,7 @@ let dogs = [
          "Shih Tzu",
          "Lhasa Apso"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege"
@@ -5667,7 +5667,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -5683,7 +5683,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Fêmea",
@@ -5699,7 +5699,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -5716,7 +5716,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege",
          "Caramelo"
@@ -5733,7 +5733,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Fêmea",
@@ -5749,7 +5749,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege"
@@ -5767,7 +5767,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Caramelo"
       ],
@@ -5785,7 +5785,7 @@ let dogs = [
       "breeds": [
          "Pastor Alemão"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege"
@@ -5803,7 +5803,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Cinza"
       ],
@@ -5820,7 +5820,7 @@ let dogs = [
          "Sem raça definida",
          "Salsicha (Dachshund)"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -5838,7 +5838,7 @@ let dogs = [
       "breeds": [
          "Pastor Alemão"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -5854,7 +5854,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Bege",
          "Caramelo"
@@ -5872,7 +5872,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -5892,7 +5892,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -5907,7 +5907,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -5928,7 +5928,7 @@ let dogs = [
          "Yorkshire Terrier",
          "Lhasa Apso"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege"
@@ -5947,7 +5947,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -5964,7 +5964,7 @@ let dogs = [
          "Sem raça definida",
          "Boxer"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -5980,7 +5980,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -5996,7 +5996,7 @@ let dogs = [
       "breeds": [
          "Pinscher"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege"
@@ -6014,7 +6014,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -6030,7 +6030,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Bege"
       ],
@@ -6046,7 +6046,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -6065,7 +6065,7 @@ let dogs = [
          "Sem raça definida",
          "Labrador Retriever"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Macho",
@@ -6081,7 +6081,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege",
          "Caramelo"
@@ -6100,7 +6100,7 @@ let dogs = [
          "Sem raça definida",
          "Fox"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Caramelo"
@@ -6119,7 +6119,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -6136,7 +6136,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -6153,7 +6153,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -6168,7 +6168,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Fêmea",
@@ -6184,7 +6184,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Caramelo"
       ],
@@ -6203,7 +6203,7 @@ let dogs = [
          "Chihuahua",
          "Pinscher"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -6221,7 +6221,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Caramelo"
@@ -6239,7 +6239,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -6255,7 +6255,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Cinza"
       ],
@@ -6275,7 +6275,7 @@ let dogs = [
          "Shih Tzu",
          "Lhasa Apso"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -6296,7 +6296,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -6315,7 +6315,7 @@ let dogs = [
          "Border Collie",
          "Collie"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -6336,7 +6336,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Caramelo"
       ],
@@ -6356,7 +6356,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Rajado"
@@ -6377,7 +6377,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -6400,7 +6400,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -6420,7 +6420,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -6440,7 +6440,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege",
@@ -6462,7 +6462,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Bege"
       ],
@@ -6486,7 +6486,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -6511,7 +6511,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege"
       ],
@@ -6531,7 +6531,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -6550,7 +6550,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -6573,7 +6573,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -6595,7 +6595,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -6618,7 +6618,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege",
@@ -6640,7 +6640,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -6659,7 +6659,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -6678,7 +6678,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -6696,7 +6696,7 @@ let dogs = [
          "Sem raça definida",
          "Maltese"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Cinza"
@@ -6718,7 +6718,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege"
       ],
@@ -6741,7 +6741,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -6759,7 +6759,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege"
@@ -6781,7 +6781,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -6802,7 +6802,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege"
@@ -6823,7 +6823,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -6843,7 +6843,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Caramelo"
@@ -6865,7 +6865,7 @@ let dogs = [
          "Mini",
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -6888,7 +6888,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege"
@@ -6910,7 +6910,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -6930,7 +6930,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege",
@@ -6952,7 +6952,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -6975,7 +6975,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -6994,7 +6994,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege",
@@ -7017,7 +7017,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -7033,7 +7033,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -7053,7 +7053,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Bege"
       ],
@@ -7073,7 +7073,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -7093,7 +7093,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Caramelo"
@@ -7114,7 +7114,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Amarelo",
          "Caramelo"
@@ -7135,7 +7135,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -7156,7 +7156,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -7175,7 +7175,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Amarelo",
          "Caramelo"
       ],
@@ -7195,7 +7195,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Cinza"
@@ -7217,7 +7217,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege",
          "Amarelo",
@@ -7240,7 +7240,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Cinza",
          "Rajado"
       ],
@@ -7261,7 +7261,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege"
       ],
@@ -7281,7 +7281,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege"
       ],
@@ -7301,7 +7301,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Bege",
          "Rajado"
@@ -7322,7 +7322,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege",
@@ -7344,7 +7344,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Bege",
          "Amarelo",
@@ -7365,7 +7365,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Caramelo"
@@ -7388,7 +7388,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -7409,7 +7409,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -7427,7 +7427,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo",
          "Rajado"
@@ -7445,7 +7445,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -7465,7 +7465,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Rajado"
@@ -7485,7 +7485,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -7505,7 +7505,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -7525,7 +7525,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "observations": "Encontrado Zona Norte de Porto Alegre"
@@ -7543,7 +7543,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Fêmea",
@@ -7563,7 +7563,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege",
          "Caramelo",
@@ -7587,7 +7587,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Bege"
       ],
@@ -7604,7 +7604,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege"
@@ -7622,7 +7622,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Amarelo",
          "Caramelo"
       ],
@@ -7639,7 +7639,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Rajado"
       ],
@@ -7656,7 +7656,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -7677,7 +7677,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege",
@@ -7698,7 +7698,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo"
       ],
@@ -7713,7 +7713,7 @@ let dogs = [
          "Boxer",
          "Labrador Retriever"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -7731,7 +7731,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege"
@@ -7752,7 +7752,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -7771,7 +7771,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "observations": "Encontrado na Zona Norte de Porto Alegre."
@@ -7786,7 +7786,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Rajado"
@@ -7808,7 +7808,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -7829,7 +7829,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Cinza"
       ],
@@ -7849,7 +7849,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Bege",
          "Caramelo"
@@ -7863,7 +7863,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "age": [
@@ -7881,7 +7881,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "age": [
@@ -7899,7 +7899,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -7919,7 +7919,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -7937,7 +7937,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -7955,7 +7955,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -7975,7 +7975,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -7994,7 +7994,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege"
       ],
@@ -8010,7 +8010,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -8028,7 +8028,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -8046,7 +8046,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -8065,7 +8065,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -8083,7 +8083,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Rajado"
       ],
       "age": [
@@ -8102,7 +8102,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Fêmea",
@@ -8122,7 +8122,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "age": [
@@ -8140,7 +8140,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Fêmea",
@@ -8159,7 +8159,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "age": [
@@ -8177,7 +8177,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege"
@@ -8198,7 +8198,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Caramelo"
       ],
@@ -8217,7 +8217,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "age": [
@@ -8235,7 +8235,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -8253,7 +8253,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege"
       ],
@@ -8269,7 +8269,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Caramelo"
@@ -8289,7 +8289,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Caramelo",
          "Rajado"
       ],
@@ -8308,7 +8308,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -8326,7 +8326,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "age": [
@@ -8344,7 +8344,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -8363,7 +8363,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "age": [
@@ -8381,7 +8381,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -8399,7 +8399,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -8418,7 +8418,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Rajado"
       ],
       "age": [
@@ -8436,7 +8436,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Cinza"
       ],
@@ -8455,7 +8455,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Bege"
       ],
@@ -8471,7 +8471,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "age": [
@@ -8489,7 +8489,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "age": [
@@ -8507,7 +8507,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -8526,7 +8526,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -8544,7 +8544,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "observations": ""
@@ -8559,7 +8559,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -8577,7 +8577,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "age": [
@@ -8595,7 +8595,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -8613,7 +8613,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -8631,7 +8631,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -8649,7 +8649,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -8668,7 +8668,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "age": [
@@ -8686,7 +8686,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -8705,7 +8705,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -8724,7 +8724,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -8744,7 +8744,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -8765,7 +8765,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege"
@@ -8786,7 +8786,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "age": [
@@ -8806,7 +8806,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege",
          "Rajado"
@@ -8826,7 +8826,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Fêmea",
@@ -8845,7 +8845,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -8864,7 +8864,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -8885,7 +8885,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Rajado"
       ],
       "age": [
@@ -8905,7 +8905,7 @@ let dogs = [
          "Mini",
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege",
          "Rajado"
@@ -8927,7 +8927,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege",
@@ -8951,7 +8951,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -8970,7 +8970,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Amarelo",
          "Caramelo"
       ],
@@ -8991,7 +8991,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -9012,7 +9012,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Caramelo"
@@ -9032,7 +9032,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -9052,7 +9052,7 @@ let dogs = [
          "Mini",
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege"
       ],
@@ -9073,7 +9073,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "age": [
@@ -9092,7 +9092,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -9109,7 +9109,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -9128,7 +9128,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -9148,7 +9148,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -9166,7 +9166,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Bege"
       ],
@@ -9186,7 +9186,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -9207,7 +9207,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "observations": "Cachorro pequeno. Pelagem média, tipo poodle. Cor branca."
@@ -9223,7 +9223,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege",
          "Caramelo",
@@ -9244,7 +9244,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "observations": "Cachorro porte médio de pelagem média preta."
@@ -9259,7 +9259,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -9275,7 +9275,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Caramelo",
@@ -9296,7 +9296,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -9316,7 +9316,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Cinza"
       ],
@@ -9336,7 +9336,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege",
@@ -9361,7 +9361,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Amarelo",
          "Cinza",
@@ -9383,7 +9383,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -9400,7 +9400,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege"
@@ -9422,7 +9422,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -9443,7 +9443,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Caramelo",
@@ -9464,7 +9464,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -9483,7 +9483,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Caramelo",
@@ -9501,7 +9501,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Amarelo",
          "Caramelo",
@@ -9524,7 +9524,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -9544,7 +9544,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Bege",
          "Caramelo"
@@ -9568,7 +9568,7 @@ let dogs = [
          "Mini",
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -9590,7 +9590,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "age": [
@@ -9609,7 +9609,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -9624,7 +9624,7 @@ let dogs = [
          "Chihuahua",
          "Pinscher"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege",
@@ -9648,7 +9648,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Amarelo",
@@ -9671,7 +9671,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -9690,7 +9690,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege",
@@ -9715,7 +9715,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege",
@@ -9738,7 +9738,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -9756,7 +9756,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Caramelo"
@@ -9776,7 +9776,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -9796,7 +9796,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -9815,7 +9815,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -9832,7 +9832,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Amarelo",
          "Caramelo"
@@ -9854,7 +9854,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -9873,7 +9873,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -9890,7 +9890,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -9911,7 +9911,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Rajado"
@@ -9932,7 +9932,7 @@ let dogs = [
          "Mini",
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege"
       ],
@@ -9951,7 +9951,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -9967,7 +9967,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -9987,7 +9987,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Bege",
          "Amarelo",
@@ -10010,7 +10010,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Rajado"
@@ -10028,7 +10028,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -10044,7 +10044,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -10065,7 +10065,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege",
          "Amarelo",
@@ -10088,7 +10088,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Cinza",
          "Rajado"
@@ -10102,7 +10102,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -10125,7 +10125,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege"
       ],
@@ -10144,7 +10144,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -10164,7 +10164,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Amarelo",
          "Caramelo"
       ],
@@ -10181,7 +10181,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege",
@@ -10201,7 +10201,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege",
          "Caramelo"
@@ -10223,7 +10223,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -10242,7 +10242,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -10265,7 +10265,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Amarelo",
@@ -10290,7 +10290,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -10310,7 +10310,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Amarelo",
@@ -10333,7 +10333,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege",
@@ -10356,7 +10356,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Caramelo"
       ],
@@ -10377,7 +10377,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege",
@@ -10401,7 +10401,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -10423,7 +10423,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Rajado"
       ],
@@ -10443,7 +10443,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -10464,7 +10464,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -10487,7 +10487,7 @@ let dogs = [
          "Mini",
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -10508,7 +10508,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo",
          "Caramelo"
@@ -10529,7 +10529,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Caramelo",
          "Rajado"
@@ -10551,7 +10551,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege",
@@ -10573,7 +10573,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Amarelo",
          "Caramelo",
@@ -10595,7 +10595,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege",
@@ -10617,7 +10617,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -10637,7 +10637,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -10660,7 +10660,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -10679,7 +10679,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -10700,7 +10700,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Cinza"
       ],
@@ -10724,7 +10724,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Rajado"
@@ -10746,7 +10746,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -10770,7 +10770,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -10792,7 +10792,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Caramelo",
@@ -10816,7 +10816,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -10836,7 +10836,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -10861,7 +10861,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Cinza",
@@ -10884,7 +10884,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege",
@@ -10910,7 +10910,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -10932,7 +10932,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -10953,7 +10953,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege",
@@ -10978,7 +10978,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -11001,7 +11001,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -11021,7 +11021,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege"
@@ -11043,7 +11043,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -11064,7 +11064,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Amarelo",
@@ -11088,7 +11088,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -11109,7 +11109,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo",
          "Caramelo"
@@ -11131,7 +11131,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Caramelo",
@@ -11154,7 +11154,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Rajado"
       ],
@@ -11173,7 +11173,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -11196,7 +11196,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege"
@@ -11219,7 +11219,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege"
       ],
@@ -11243,7 +11243,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege",
@@ -11266,7 +11266,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -11289,7 +11289,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -11309,7 +11309,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege",
@@ -11332,7 +11332,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Amarelo",
          "Caramelo"
@@ -11354,7 +11354,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -11375,7 +11375,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -11396,7 +11396,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -11417,7 +11417,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -11438,7 +11438,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo",
          "Caramelo"
@@ -11459,7 +11459,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Bege",
          "Amarelo",
@@ -11480,7 +11480,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Amarelo",
@@ -11502,7 +11502,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Amarelo",
          "Caramelo"
@@ -11524,7 +11524,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -11545,7 +11545,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege",
@@ -11568,7 +11568,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -11588,7 +11588,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Cinza"
       ],
@@ -11608,7 +11608,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Fêmea",
@@ -11628,7 +11628,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Rajado"
@@ -11649,7 +11649,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -11669,7 +11669,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -11688,7 +11688,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "observations": ""
@@ -11703,7 +11703,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -11724,7 +11724,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Amarelo",
@@ -11748,7 +11748,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -11767,7 +11767,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -11789,7 +11789,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -11808,7 +11808,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -11829,7 +11829,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -11848,7 +11848,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Caramelo"
       ],
@@ -11868,7 +11868,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege",
@@ -11892,7 +11892,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -11914,7 +11914,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Caramelo"
       ],
@@ -11935,7 +11935,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -11956,7 +11956,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -11977,7 +11977,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Caramelo"
       ],
@@ -11997,7 +11997,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -12016,7 +12016,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -12037,7 +12037,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -12054,7 +12054,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Caramelo"
       ],
@@ -12075,7 +12075,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Amarelo",
@@ -12097,7 +12097,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Caramelo"
@@ -12118,7 +12118,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Amarelo",
@@ -12139,7 +12139,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Amarelo"
@@ -12158,7 +12158,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Amarelo",
          "Caramelo"
@@ -12179,7 +12179,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -12199,7 +12199,7 @@ let dogs = [
       "porte": [
          "Mini"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -12220,7 +12220,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -12240,7 +12240,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Caramelo"
       ],
@@ -12261,7 +12261,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Amarelo",
          "Caramelo",
          "Cinza"
@@ -12283,7 +12283,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -12304,7 +12304,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Caramelo"
@@ -12325,7 +12325,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Amarelo",
@@ -12362,7 +12362,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -12380,7 +12380,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -12399,7 +12399,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -12419,7 +12419,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -12440,7 +12440,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -12462,7 +12462,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Caramelo"
       ],
@@ -12482,7 +12482,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -12502,7 +12502,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -12522,7 +12522,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -12541,7 +12541,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -12559,7 +12559,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Fêmea",
@@ -12578,7 +12578,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "age": [
@@ -12597,7 +12597,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Amarelo",
          "Caramelo"
@@ -12617,7 +12617,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -12637,7 +12637,7 @@ let dogs = [
          "Mini",
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Cinza"
@@ -12658,7 +12658,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Amarelo",
@@ -12680,7 +12680,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Amarelo",
@@ -12701,7 +12701,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -12725,7 +12725,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Fêmea",
@@ -12745,7 +12745,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo",
          "Caramelo"
@@ -12768,7 +12768,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -12791,7 +12791,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -12814,7 +12814,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -12836,7 +12836,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -12858,7 +12858,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -12883,7 +12883,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -12904,7 +12904,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Amarelo",
          "Caramelo",
@@ -12927,7 +12927,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -12948,7 +12948,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -12969,7 +12969,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Amarelo",
@@ -12992,7 +12992,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -13013,7 +13013,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Bege",
          "Amarelo",
@@ -13036,7 +13036,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -13060,7 +13060,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Amarelo",
          "Caramelo"
@@ -13082,7 +13082,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -13104,7 +13104,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -13129,7 +13129,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -13154,7 +13154,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Cinza",
@@ -13176,7 +13176,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -13200,7 +13200,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo",
          "Caramelo"
@@ -13222,7 +13222,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo",
          "Laranja"
@@ -13244,7 +13244,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -13264,7 +13264,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege"
@@ -13286,7 +13286,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -13306,7 +13306,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Caramelo"
@@ -13328,7 +13328,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Cinza"
       ],
@@ -13348,7 +13348,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Caramelo"
       ],
@@ -13368,7 +13368,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -13388,7 +13388,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Caramelo"
@@ -13410,7 +13410,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -13429,7 +13429,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege",
          "Amarelo"
@@ -13451,7 +13451,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo",
          "Caramelo"
@@ -13473,7 +13473,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -13494,7 +13494,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Cinza"
@@ -13516,7 +13516,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo",
@@ -13539,7 +13539,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -13563,7 +13563,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -13583,7 +13583,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo",
          "Laranja"
@@ -13600,7 +13600,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo",
          "Laranja"
@@ -13619,7 +13619,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -13637,7 +13637,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -13654,7 +13654,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo",
          "Laranja"
@@ -13671,7 +13671,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -13689,7 +13689,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -13707,7 +13707,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "observations": "Canino de porte pequeno, cor preta, corpo robusto, patas que ficam viradas para fora."
@@ -13722,7 +13722,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo",
          "Laranja"
@@ -13739,7 +13739,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo",
          "Caramelo"
@@ -13756,7 +13756,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "observations": "Canino de porte pequeno e pelagem curta de cor preta, orelhas com pontas caídas."
@@ -13771,7 +13771,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -13790,7 +13790,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -13810,7 +13810,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Fêmea",
@@ -13829,7 +13829,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Fêmea",
@@ -13848,7 +13848,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -13867,7 +13867,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Caramelo"
       ],
@@ -13887,7 +13887,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -13906,7 +13906,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -13925,7 +13925,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -13944,7 +13944,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -13964,7 +13964,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Macho",
@@ -13983,7 +13983,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Macho",
@@ -14002,7 +14002,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Caramelo"
@@ -14024,7 +14024,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -14045,7 +14045,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "observations": "Canino, porte médio, cor marrom, cego de um olho."
@@ -14061,7 +14061,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -14080,7 +14080,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -14102,7 +14102,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege",
@@ -14125,7 +14125,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -14145,7 +14145,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Amarelo",
          "Caramelo"
       ],
@@ -14165,7 +14165,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo",
          "Caramelo"
@@ -14186,7 +14186,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Amarelo",
@@ -14209,7 +14209,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -14229,7 +14229,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Caramelo"
       ],
@@ -14249,7 +14249,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Amarelo",
          "Caramelo",
@@ -14273,7 +14273,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Fêmea",
@@ -14293,7 +14293,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Cinza"
       ],
       "gender": "Macho",
@@ -14314,7 +14314,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Fêmea",
@@ -14334,7 +14334,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -14354,7 +14354,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -14374,7 +14374,7 @@ let dogs = [
          "Mini",
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -14393,7 +14393,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -14412,7 +14412,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Rajado"
@@ -14434,7 +14434,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Cinza"
@@ -14456,7 +14456,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -14476,7 +14476,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -14495,7 +14495,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -14516,7 +14516,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -14536,7 +14536,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Rajado"
       ],
@@ -14558,7 +14558,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege",
          "Amarelo",
@@ -14581,7 +14581,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -14603,7 +14603,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -14623,7 +14623,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -14645,7 +14645,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -14667,7 +14667,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Caramelo"
@@ -14689,7 +14689,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege",
          "Amarelo",
@@ -14715,7 +14715,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Rajado"
       ],
@@ -14737,7 +14737,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -14759,7 +14759,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Cinza"
       ],
       "gender": "Macho",
@@ -14778,7 +14778,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege",
@@ -14803,7 +14803,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege",
@@ -14828,7 +14828,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Amarelo",
@@ -14851,7 +14851,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -14870,7 +14870,7 @@ let dogs = [
          "Mini",
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo",
          "Caramelo",
@@ -14893,7 +14893,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -14913,7 +14913,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege",
          "Rajado"
@@ -14935,7 +14935,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege"
@@ -14955,7 +14955,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Caramelo"
       ],
@@ -14977,7 +14977,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -14998,7 +14998,7 @@ let dogs = [
       "porte": [
          "Mini"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -15017,7 +15017,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege",
@@ -15038,7 +15038,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -15059,7 +15059,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -15079,7 +15079,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -15099,7 +15099,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Rajado"
       ],
       "gender": "Fêmea",
@@ -15119,7 +15119,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -15140,7 +15140,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Rajado"
       ],
@@ -15161,7 +15161,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -15181,7 +15181,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -15200,7 +15200,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Caramelo"
       ],
@@ -15221,7 +15221,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Rajado"
@@ -15242,7 +15242,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -15262,7 +15262,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -15281,7 +15281,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -15302,7 +15302,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -15322,7 +15322,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Rajado"
       ],
@@ -15344,7 +15344,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo",
          "Laranja"
@@ -15366,7 +15366,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Rajado"
       ],
@@ -15387,7 +15387,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Rajado"
@@ -15408,7 +15408,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Rajado"
@@ -15429,7 +15429,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Macho",
@@ -15448,7 +15448,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Macho",
@@ -15464,7 +15464,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo",
          "Caramelo",
@@ -15487,7 +15487,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Rajado"
       ],
@@ -15509,7 +15509,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Macho",
@@ -15528,7 +15528,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Caramelo",
          "Rajado"
       ],
@@ -15550,7 +15550,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege",
@@ -15572,7 +15572,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -15593,7 +15593,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -15614,7 +15614,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Rajado"
@@ -15636,7 +15636,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -15656,7 +15656,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -15676,7 +15676,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Cinza"
       ],
       "gender": "Fêmea",
@@ -15695,7 +15695,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -15715,7 +15715,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -15735,7 +15735,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -15754,7 +15754,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -15773,7 +15773,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -15793,7 +15793,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -15813,7 +15813,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -15833,7 +15833,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -15849,7 +15849,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -15869,7 +15869,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -15889,7 +15889,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Macho",
@@ -15909,7 +15909,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -15930,7 +15930,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -15949,7 +15949,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -15970,7 +15970,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -15989,7 +15989,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -16008,7 +16008,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -16027,7 +16027,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -16047,7 +16047,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -16067,7 +16067,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -16087,7 +16087,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -16106,7 +16106,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -16125,7 +16125,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -16145,7 +16145,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -16164,7 +16164,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -16184,7 +16184,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -16204,7 +16204,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Macho",
@@ -16223,7 +16223,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -16244,7 +16244,7 @@ let dogs = [
          "Mini",
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -16264,7 +16264,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege"
       ],
@@ -16286,7 +16286,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Macho",
@@ -16305,7 +16305,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -16325,7 +16325,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Rajado"
@@ -16347,7 +16347,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -16368,7 +16368,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -16393,7 +16393,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -16412,7 +16412,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege"
@@ -16431,7 +16431,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Caramelo"
@@ -16453,7 +16453,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -16473,7 +16473,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Amarelo",
@@ -16495,7 +16495,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -16513,7 +16513,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Fêmea",
@@ -16534,7 +16534,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -16555,7 +16555,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -16576,7 +16576,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -16593,7 +16593,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -16614,7 +16614,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -16634,7 +16634,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -16653,7 +16653,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo",
          "Laranja"
@@ -16673,7 +16673,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -16693,7 +16693,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -16709,7 +16709,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Cinza"
       ],
       "observations": "Canino pequeno de pelagem de comprimento irregular mediano na cor cinza. Focinho lindo, orelhas com as pontas caídas. Rabo longo. Corpo cinza escuro e patas cinza claro."
@@ -16724,7 +16724,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo"
       ],
@@ -16741,7 +16741,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -16759,7 +16759,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Cinza"
       ],
@@ -16775,7 +16775,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -16791,7 +16791,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -16807,7 +16807,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -16825,7 +16825,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -16846,7 +16846,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege",
          "Amarelo",
@@ -16869,7 +16869,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Cinza"
@@ -16891,7 +16891,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Amarelo",
          "Caramelo"
@@ -16913,7 +16913,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -16937,7 +16937,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -16962,7 +16962,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Cinza"
       ],
@@ -16984,7 +16984,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo",
          "Laranja"
@@ -17007,7 +17007,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege",
          "Amarelo"
@@ -17029,7 +17029,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -17051,7 +17051,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -17073,7 +17073,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Caramelo"
@@ -17097,7 +17097,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Caramelo"
@@ -17121,7 +17121,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege",
@@ -17145,7 +17145,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Caramelo"
@@ -17166,7 +17166,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -17189,7 +17189,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege",
@@ -17214,7 +17214,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -17231,7 +17231,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -17253,7 +17253,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -17274,7 +17274,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege",
          "Amarelo"
@@ -17297,7 +17297,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo",
          "Laranja"
@@ -17320,7 +17320,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -17341,7 +17341,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -17364,7 +17364,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege",
@@ -17388,7 +17388,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Bege",
          "Amarelo"
@@ -17411,7 +17411,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -17433,7 +17433,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -17454,7 +17454,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Caramelo"
@@ -17476,7 +17476,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -17495,7 +17495,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Amarelo",
@@ -17514,7 +17514,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -17534,7 +17534,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo",
          "Rajado"
@@ -17551,7 +17551,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -17573,7 +17573,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Cinza"
       ],
       "gender": "Fêmea",
@@ -17594,7 +17594,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Caramelo"
@@ -17612,7 +17612,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Cinza",
          "Rajado"
@@ -17634,7 +17634,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -17656,7 +17656,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -17677,7 +17677,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege",
@@ -17696,7 +17696,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -17713,7 +17713,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo",
          "Caramelo"
@@ -17733,7 +17733,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege",
          "Amarelo"
@@ -17755,7 +17755,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -17776,7 +17776,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Amarelo",
          "Caramelo"
@@ -17799,7 +17799,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege",
@@ -17823,7 +17823,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege",
@@ -17848,7 +17848,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Caramelo",
@@ -17869,7 +17869,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -17888,7 +17888,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Amarelo"
@@ -17909,7 +17909,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -17931,7 +17931,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -17953,7 +17953,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo",
@@ -17972,7 +17972,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -17993,7 +17993,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo",
@@ -18016,7 +18016,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -18036,7 +18036,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -18058,7 +18058,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -18079,7 +18079,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo",
          "Laranja"
@@ -18102,7 +18102,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -18124,7 +18124,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Rajado"
       ],
       "gender": "Fêmea",
@@ -18143,7 +18143,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Caramelo",
          "Laranja"
@@ -18167,7 +18167,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -18186,7 +18186,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -18203,7 +18203,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege"
       ],
@@ -18223,7 +18223,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -18244,7 +18244,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -18266,7 +18266,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo",
          "Caramelo"
@@ -18284,7 +18284,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -18301,7 +18301,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege"
@@ -18318,7 +18318,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -18339,7 +18339,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Caramelo"
@@ -18357,7 +18357,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Caramelo"
@@ -18378,7 +18378,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege"
       ],
@@ -18399,7 +18399,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Amarelo",
          "Caramelo",
@@ -18424,7 +18424,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Amarelo",
          "Caramelo"
       ],
@@ -18446,7 +18446,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -18467,7 +18467,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege",
@@ -18492,7 +18492,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -18513,7 +18513,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -18536,7 +18536,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -18556,7 +18556,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege",
          "Amarelo"
@@ -18578,7 +18578,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -18595,7 +18595,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Cinza"
       ],
       "age": [
@@ -18612,7 +18612,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -18629,7 +18629,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege"
@@ -18643,7 +18643,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege",
@@ -18662,7 +18662,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Caramelo"
@@ -18679,7 +18679,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Amarelo",
          "Caramelo"
@@ -18701,7 +18701,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -18721,7 +18721,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -18742,7 +18742,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -18762,7 +18762,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -18783,7 +18783,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -18804,7 +18804,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege"
       ],
@@ -18825,7 +18825,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -18847,7 +18847,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -18871,7 +18871,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege",
          "Cinza"
@@ -18893,7 +18893,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -18914,7 +18914,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -18933,7 +18933,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo",
@@ -18956,7 +18956,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Caramelo"
       ],
@@ -18976,7 +18976,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -18995,7 +18995,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -19014,7 +19014,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -19035,7 +19035,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo"
       ],
@@ -19056,7 +19056,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo",
          "Caramelo"
@@ -19078,7 +19078,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -19099,7 +19099,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -19119,7 +19119,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -19139,7 +19139,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -19157,7 +19157,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -19177,7 +19177,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Caramelo"
@@ -19199,7 +19199,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege",
@@ -19223,7 +19223,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -19242,7 +19242,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Rajado",
@@ -19264,7 +19264,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Cinza"
       ],
       "gender": "Macho",
@@ -19283,7 +19283,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Rajado"
@@ -19305,7 +19305,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -19328,7 +19328,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -19348,7 +19348,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -19368,7 +19368,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -19391,7 +19391,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -19411,7 +19411,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -19430,7 +19430,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Caramelo"
       ],
@@ -19450,7 +19450,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -19470,7 +19470,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege"
       ],
@@ -19490,7 +19490,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -19509,7 +19509,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -19529,7 +19529,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -19549,7 +19549,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -19569,7 +19569,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo",
          "Caramelo"
@@ -19590,7 +19590,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -19610,7 +19610,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -19631,7 +19631,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -19654,7 +19654,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Rajado"
       ],
@@ -19675,7 +19675,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -19695,7 +19695,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -19717,7 +19717,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Amarelo",
@@ -19743,7 +19743,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo",
          "Caramelo"
@@ -19765,7 +19765,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo",
          "Caramelo"
@@ -19787,7 +19787,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Rajado"
       ],
       "gender": "Macho",
@@ -19808,7 +19808,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Rajado"
@@ -19830,7 +19830,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Rajado"
@@ -19853,7 +19853,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo",
          "Caramelo",
@@ -19876,7 +19876,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Fêmea",
@@ -19896,7 +19896,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Rajado"
       ],
@@ -19917,7 +19917,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Cinza"
       ],
       "gender": "Macho",
@@ -19937,7 +19937,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -19958,7 +19958,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Rajado"
@@ -19980,7 +19980,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -20001,7 +20001,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Cinza",
          "Rajado"
       ],
@@ -20024,7 +20024,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege"
@@ -20047,7 +20047,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo",
          "Caramelo"
@@ -20071,7 +20071,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -20091,7 +20091,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Amarelo",
@@ -20114,7 +20114,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -20135,7 +20135,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -20156,7 +20156,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -20175,7 +20175,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Amarelo",
          "Caramelo"
@@ -20198,7 +20198,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -20219,7 +20219,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Rajado"
       ],
@@ -20241,7 +20241,7 @@ let dogs = [
          "Pequeno",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -20264,7 +20264,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Rajado"
       ],
@@ -20285,7 +20285,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -20302,7 +20302,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -20325,7 +20325,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Fêmea",
@@ -20341,7 +20341,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -20360,7 +20360,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Cinza",
          "Rajado"
       ],
@@ -20382,7 +20382,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo",
          "Caramelo",
@@ -20403,7 +20403,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Rajado"
@@ -20427,7 +20427,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Rajado"
       ],
@@ -20445,7 +20445,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege",
          "Amarelo"
@@ -20468,7 +20468,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege",
@@ -20492,7 +20492,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -20514,7 +20514,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -20536,7 +20536,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom",
@@ -20560,7 +20560,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -20580,7 +20580,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -20599,7 +20599,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -20618,7 +20618,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -20640,7 +20640,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -20661,7 +20661,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege",
@@ -20684,7 +20684,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -20703,7 +20703,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Bege",
@@ -20726,7 +20726,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -20747,7 +20747,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Caramelo"
@@ -20770,7 +20770,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -20789,7 +20789,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Amarelo"
       ],
       "age": [
@@ -20807,7 +20807,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -20825,7 +20825,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -20845,7 +20845,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "age": [
@@ -20863,7 +20863,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -20882,7 +20882,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -20901,7 +20901,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "age": [
@@ -20919,7 +20919,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -20937,7 +20937,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -20955,7 +20955,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -20974,7 +20974,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Caramelo"
       ],
@@ -20994,7 +20994,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Caramelo"
       ],
@@ -21014,7 +21014,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "age": [
@@ -21032,7 +21032,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -21050,7 +21050,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -21068,7 +21068,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "age": [
@@ -21087,7 +21087,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -21106,7 +21106,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -21124,7 +21124,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -21143,7 +21143,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "age": [
@@ -21161,7 +21161,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -21179,7 +21179,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -21198,7 +21198,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "age": [
@@ -21216,7 +21216,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -21235,7 +21235,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -21255,7 +21255,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -21274,7 +21274,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -21292,7 +21292,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -21310,7 +21310,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -21328,7 +21328,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -21346,7 +21346,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "age": [
@@ -21364,7 +21364,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -21383,7 +21383,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -21401,7 +21401,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -21419,7 +21419,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -21438,7 +21438,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -21456,7 +21456,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -21476,7 +21476,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -21494,7 +21494,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -21513,7 +21513,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -21531,7 +21531,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -21549,7 +21549,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -21568,7 +21568,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -21587,7 +21587,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -21607,7 +21607,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Amarelo"
       ],
@@ -21627,7 +21627,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "age": [
@@ -21645,7 +21645,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -21664,7 +21664,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Fêmea",
@@ -21683,7 +21683,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -21701,7 +21701,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -21720,7 +21720,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -21740,7 +21740,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -21761,7 +21761,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -21781,7 +21781,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -21800,7 +21800,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -21819,7 +21819,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -21838,7 +21838,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -21857,7 +21857,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -21876,7 +21876,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -21895,7 +21895,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -21914,7 +21914,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -21933,7 +21933,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -21953,7 +21953,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -21972,7 +21972,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -21991,7 +21991,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Macho",
@@ -22010,7 +22010,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -22030,7 +22030,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -22050,7 +22050,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -22069,7 +22069,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -22089,7 +22089,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -22109,7 +22109,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -22128,7 +22128,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -22147,7 +22147,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -22167,7 +22167,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -22189,7 +22189,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -22208,7 +22208,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -22227,7 +22227,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Fêmea",
@@ -22246,7 +22246,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -22265,7 +22265,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -22284,7 +22284,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -22305,7 +22305,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -22325,7 +22325,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -22344,7 +22344,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -22363,7 +22363,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -22382,7 +22382,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -22401,7 +22401,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -22422,7 +22422,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -22441,7 +22441,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -22460,7 +22460,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -22480,7 +22480,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -22499,7 +22499,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -22535,7 +22535,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -22555,7 +22555,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -22574,7 +22574,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -22593,7 +22593,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -22612,7 +22612,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -22631,7 +22631,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -22651,7 +22651,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -22670,7 +22670,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -22689,7 +22689,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -22708,7 +22708,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege"
       ],
@@ -22728,7 +22728,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Fêmea",
@@ -22747,7 +22747,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -22766,7 +22766,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -22786,7 +22786,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -22806,7 +22806,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Caramelo"
       ],
@@ -22826,7 +22826,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -22846,7 +22846,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -22865,7 +22865,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -22884,7 +22884,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Macho",
@@ -22903,7 +22903,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -22922,7 +22922,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -22942,7 +22942,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -22961,7 +22961,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -22980,7 +22980,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Fêmea",
@@ -22999,7 +22999,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -23019,7 +23019,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -23039,7 +23039,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -23059,7 +23059,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -23079,7 +23079,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -23098,7 +23098,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -23117,7 +23117,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege"
       ],
@@ -23137,7 +23137,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Macho",
@@ -23156,7 +23156,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -23176,7 +23176,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -23195,7 +23195,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -23214,7 +23214,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -23234,7 +23234,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -23253,7 +23253,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -23272,7 +23272,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Fêmea",
@@ -23291,7 +23291,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -23310,7 +23310,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -23329,7 +23329,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Fêmea",
@@ -23349,7 +23349,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -23370,7 +23370,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -23389,7 +23389,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Cinza"
       ],
       "gender": "Macho",
@@ -23408,7 +23408,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Macho",
@@ -23427,7 +23427,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -23448,7 +23448,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -23467,7 +23467,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -23486,7 +23486,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -23506,7 +23506,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -23525,7 +23525,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -23544,7 +23544,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -23563,7 +23563,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -23583,7 +23583,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -23603,7 +23603,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -23622,7 +23622,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -23642,7 +23642,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -23659,7 +23659,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -23679,7 +23679,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -23698,7 +23698,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -23717,7 +23717,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Fêmea",
@@ -23736,7 +23736,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -23755,7 +23755,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Macho",
@@ -23775,7 +23775,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -23794,7 +23794,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -23813,7 +23813,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -23832,7 +23832,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -23851,7 +23851,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -23873,7 +23873,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Fêmea",
@@ -23892,7 +23892,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -23911,7 +23911,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -23931,7 +23931,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -23949,7 +23949,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -23969,7 +23969,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -23989,7 +23989,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -24008,7 +24008,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -24027,7 +24027,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -24046,7 +24046,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -24066,7 +24066,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -24085,7 +24085,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -24105,7 +24105,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -24124,7 +24124,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -24143,7 +24143,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -24162,7 +24162,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -24181,7 +24181,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -24200,7 +24200,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -24219,7 +24219,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -24239,7 +24239,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Fêmea",
@@ -24260,7 +24260,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Macho",
@@ -24280,7 +24280,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -24300,7 +24300,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -24319,7 +24319,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -24338,7 +24338,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Fêmea",
@@ -24357,7 +24357,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -24377,7 +24377,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -24397,7 +24397,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Cinza"
       ],
@@ -24418,7 +24418,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Macho",
@@ -24438,7 +24438,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Caramelo"
       ],
@@ -24455,7 +24455,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Cinza"
       ],
       "gender": "Fêmea",
@@ -24474,7 +24474,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -24494,7 +24494,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -24514,7 +24514,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -24534,7 +24534,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Fêmea",
@@ -24553,7 +24553,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -24572,7 +24572,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -24590,7 +24590,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -24608,7 +24608,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -24628,7 +24628,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -24648,7 +24648,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -24667,7 +24667,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -24685,7 +24685,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Bege"
       ],
@@ -24706,7 +24706,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -24726,7 +24726,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -24746,7 +24746,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -24766,7 +24766,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -24786,7 +24786,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -24806,7 +24806,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Fêmea",
@@ -24825,7 +24825,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -24844,7 +24844,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -24863,7 +24863,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -24881,7 +24881,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -24901,7 +24901,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -24920,7 +24920,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -24940,7 +24940,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -24959,7 +24959,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -24978,7 +24978,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -24997,7 +24997,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -25016,7 +25016,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "age": [
@@ -25034,7 +25034,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -25053,7 +25053,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Fêmea",
@@ -25072,7 +25072,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -25091,7 +25091,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -25110,7 +25110,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Caramelo"
       ],
@@ -25146,7 +25146,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -25166,7 +25166,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -25186,7 +25186,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -25205,7 +25205,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Fêmea",
@@ -25224,7 +25224,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -25243,7 +25243,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Fêmea",
@@ -25262,7 +25262,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -25281,7 +25281,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Fêmea",
@@ -25300,7 +25300,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -25320,7 +25320,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -25339,7 +25339,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -25358,7 +25358,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -25378,7 +25378,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -25397,7 +25397,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -25416,7 +25416,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -25436,7 +25436,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -25456,7 +25456,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Cinza"
       ],
       "age": [
@@ -25474,7 +25474,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -25493,7 +25493,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -25512,7 +25512,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -25531,7 +25531,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -25550,7 +25550,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -25570,7 +25570,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -25589,7 +25589,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -25608,7 +25608,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -25627,7 +25627,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -25646,7 +25646,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -25665,7 +25665,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -25684,7 +25684,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -25703,7 +25703,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -25722,7 +25722,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -25741,7 +25741,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -25760,7 +25760,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -25779,7 +25779,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Macho",
@@ -25798,7 +25798,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -25818,7 +25818,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -25837,7 +25837,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -25856,7 +25856,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -25877,7 +25877,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -25896,7 +25896,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -25916,7 +25916,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "age": [
@@ -25934,7 +25934,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Macho",
@@ -25953,7 +25953,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Fêmea",
@@ -25972,7 +25972,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Rajado"
       ],
       "gender": "Fêmea",
@@ -25991,7 +25991,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -26012,7 +26012,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Bege"
       ],
       "gender": "Fêmea",
@@ -26031,7 +26031,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege"
@@ -26052,7 +26052,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege"
       ],
@@ -26072,7 +26072,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -26091,7 +26091,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -26110,7 +26110,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Cinza"
       ],
@@ -26131,7 +26131,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -26151,7 +26151,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom"
       ],
@@ -26170,7 +26170,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Fêmea",
@@ -26189,7 +26189,7 @@ let dogs = [
       "porte": [
          "Mini"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Fêmea",
@@ -26208,7 +26208,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom"
       ],
       "gender": "Fêmea",
@@ -26227,7 +26227,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -26246,7 +26246,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Fêmea",
@@ -26265,7 +26265,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Caramelo"
       ],
       "gender": "Fêmea",
@@ -26284,7 +26284,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -26304,7 +26304,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -26325,7 +26325,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Cinza"
@@ -26347,7 +26347,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -26367,7 +26367,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -26388,7 +26388,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -26410,7 +26410,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -26430,7 +26430,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
@@ -26449,7 +26449,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege",
          "Cinza"
@@ -26471,7 +26471,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Branco"
       ],
       "gender": "Macho",
@@ -26491,7 +26491,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Cinza"
       ],
@@ -26512,7 +26512,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege"
@@ -26533,7 +26533,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Bege"
@@ -26554,7 +26554,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Fêmea",
@@ -26574,7 +26574,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Cinza",
          "Rajado"
@@ -26595,7 +26595,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Cinza",
          "Rajado"
@@ -26618,7 +26618,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -26639,7 +26639,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -26660,7 +26660,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Bege"
       ],
@@ -26680,7 +26680,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Amarelo"
       ],
       "gender": "Macho",
@@ -26700,7 +26700,7 @@ let dogs = [
       "porte": [
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Amarelo"
       ],
       "gender": "Fêmea",
@@ -26719,7 +26719,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Rajado"
       ],
       "gender": "Macho",
@@ -26738,7 +26738,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Bege"
       ],
@@ -26758,7 +26758,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -26792,7 +26792,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -26807,7 +26807,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Caramelo"
@@ -26829,7 +26829,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -26848,7 +26848,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -26868,7 +26868,7 @@ let dogs = [
          "Pequeno",
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco"
       ],
@@ -26885,7 +26885,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Branco",
          "Marrom"
@@ -26903,7 +26903,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Bege",
          "Amarelo"
       ],
@@ -26924,7 +26924,7 @@ let dogs = [
       "porte": [
          "Pequeno"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Caramelo"
@@ -26944,7 +26944,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "age": [
@@ -26959,7 +26959,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Branco",
          "Marrom",
          "Caramelo"
@@ -26976,7 +26976,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom",
          "Bege",
@@ -26994,7 +26994,7 @@ let dogs = [
       "breeds": [
          "Sem raça definida"
       ],
-      "color": [
+      "colors": [
          "Marrom",
          "Caramelo"
       ],
@@ -27015,7 +27015,7 @@ let dogs = [
          "Médio",
          "Grande"
       ],
-      "color": [
+      "colors": [
          "Preto",
          "Marrom"
       ],
@@ -27036,7 +27036,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Amarelo"
       ],
       "gender": "Fêmea",
@@ -27055,7 +27055,7 @@ let dogs = [
       "porte": [
          "Médio"
       ],
-      "color": [
+      "colors": [
          "Preto"
       ],
       "gender": "Macho",
