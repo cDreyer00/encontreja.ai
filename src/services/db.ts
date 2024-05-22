@@ -1,8 +1,8 @@
 import { MongoClient, Collection, Db } from "mongodb";
 import Pet from "@/models/pet";
 
-export const collections: { 
-   pets?: Collection<Pet> ,
+export const collections: {
+   pets?: Collection<Pet>,
    temp?: Collection<Pet>
 } = {}
 
@@ -26,3 +26,26 @@ export async function connectToDatabase() {
       console.error(error);
    }
 }
+
+// async function insertOnePet(pet: Pet, updateImg: boolean = true): Promise<void> {
+//    if (!collections.temp)
+//       await connectToDatabase();
+
+//    if (updateImg)
+//       pet = await updatePetImage(pet);
+
+//    await collections.temp?.insertOne(pet);
+// }
+
+// async function insertManyPets(pets: Pet[], updateImg: boolean = true): Promise<void> {
+//    if (!collections.temp)
+//       await connectToDatabase();
+
+//    if (!updateImg) {
+//       for (let pet of pets) {
+//          pet = await updatePetImage(pet);
+//       }
+//    }
+
+//    await collections.temp?.insertMany(pets);
+// }

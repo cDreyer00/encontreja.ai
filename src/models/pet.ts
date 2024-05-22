@@ -24,3 +24,38 @@ export default class Pet {
       public infoOrigin?: string,
    ) { }
 }
+
+export function fixPet(target: any) {
+   const date = new Date();
+
+   const pet = new Pet()
+
+   pet.createdAt = date;
+   pet.type = target.type;
+   pet.breeds = validateArr(target.breeds);
+   pet.colors = validateArr(target.colors);
+   pet.age = validateArr(target.age, 'indefinido');
+   pet.size = validateArr(target.size, 'indefinido');
+   pet.imgUrl = target.imgUrl;
+
+   pet.healthCondition = target.healthCondition;
+   pet.locationFound = target.locationFound;
+   pet.infoOrigin = target.infoOrigin;
+
+   return pet;
+}
+
+export function validateArr(arr: any, defaultValueIfEmpty: string | undefined = undefined) {
+   // if is array, return it
+   if (Array.isArray(arr))
+      return arr;
+
+   // if is string, return it as array of single element
+   if (typeof arr === 'string')
+      return [arr]
+
+   if (defaultValueIfEmpty === undefined)
+      return [];
+
+   return [defaultValueIfEmpty];
+}
