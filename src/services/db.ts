@@ -1,7 +1,10 @@
 import { MongoClient, Collection, Db } from "mongodb";
 import Pet from "@/models/pet";
 
-export const collections: { pets?: Collection<Pet> } = {}
+export const collections: { 
+   pets?: Collection<Pet> ,
+   temp?: Collection<Pet>
+} = {}
 
 const dbPass = process.env.DB_PASS
 const collectionName = process.env.DB_COLLECTION_NAME as string
@@ -14,7 +17,10 @@ export async function connectToDatabase() {
       await client.connect();
       const db: Db = client.db(dbName);
       const petsCollection: Collection<Pet> = db.collection(collectionName);
+      const tempColelction: Collection<Pet> = db.collection('temp');
+
       collections.pets = petsCollection;
+      collections.temp = tempColelction;
    }
    catch (error) {
       console.error(error);

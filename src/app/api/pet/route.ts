@@ -125,6 +125,8 @@ export async function POST(req: NextRequest): Promise<Response> {
       const data = await req.json();
       const isArray = Array.isArray(data);
 
+      let updateUrl = data.updateUrl
+
       if (isArray) {
          const pets = data as Pet[];
          pets.forEach((p) => {
@@ -132,7 +134,7 @@ export async function POST(req: NextRequest): Promise<Response> {
                throw new Error('Missing imgUrl in one or more pets');
          });
          pets.forEach((p) => p = fixPet(p));
-         await insertManyPets(pets);
+         await insertManyPets(pets, updateUrl);
          return new Response(JSON.stringify(pets), { status: 201 });
       }
 
@@ -140,7 +142,7 @@ export async function POST(req: NextRequest): Promise<Response> {
          throw new Error('Missing imgUrl in pet');
 
       let pet = fixPet(data);
-      await insertOnePet(pet);
+      await insertOnePet(pet, updateUrl);
       return new Response(JSON.stringify(pet), { status: 201 });
    } catch (error) {
       console.error(error);
@@ -152,24 +154,27 @@ export async function DELETE(req: NextRequest): Promise<Response> {
    return new Response("Not implemented", { status: 501 });
 }
 
-async function insertOnePet(pet: Pet): Promise<void> {
-   if (!collections.pets)
+async function insertOnePet(pet: Pet, updateImg: boolean = true): Promise<void> {
+   if (!collections.temp)
       await connectToDatabase();
 
-   pet = await updatePetImage(pet);
+   if (updateImg)
+      pet = await updatePetImage(pet);
 
-   await collections.pets?.insertOne(pet);
+   await collections.temp?.insertOne(pet);
 }
 
-async function insertManyPets(pets: Pet[]): Promise<void> {
-   if (!collections.pets)
+async function insertManyPets(pets: Pet[], updateImg: boolean = true): Promise<void> {
+   if (!collections.temp)
       await connectToDatabase();
 
-   for (let pet of pets) {
-      pet = await updatePetImage(pet);
+   if (!updateImg) {
+      for (let pet of pets) {
+         pet = await updatePetImage(pet);
+      }
    }
 
-   await collections.pets?.insertMany(pets);
+   await collections.temp?.insertMany(pets);
 }
 
 function validateArr(arr: any, defaultValueIfEmpty: string | undefined = undefined) {
