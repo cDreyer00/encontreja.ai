@@ -6,41 +6,26 @@ import { NextRequest } from "next/server"
 import { Filter, AggregationCursor } from "mongodb"
 
 export async function GET(req: NextRequest) {
+   return new Response('not allowed');
+
    if (!collections.temp)
       await connectToDatabase();
 
-   let col = collections.pets;
+   let col = collections.temp;
+   
    if (!col)
       return new Response('Erro ao conectar ao banco de dados', { status: 500 });
 
-   let data = await col.find({createdAt: {$exists: false}}).toArray();
-   console.log(`total of ${data.length} pets to fix`);
-   return new Response(JSON.stringify(data), { headers: { 'content-type': 'application/json' } });
+   await col.deleteMany({});
 
-   // let pets = cats.map(fixPet);
-   // await col!.insertMany(pets);
+   let pets = dogs.map(fixPet);
+   pets.push(...cats.map(fixPet));
+   await col!.insertMany(pets);
 
    return new Response('ok');
 }
 
 let cats = [
-   {
-      "type": "Gato",
-      "imgUrl": "https://lh3.googleusercontent.com/d/1p70NRm5YENJgLKY-34Zq0QqjZ_9jeObX",
-      "location": "a",
-      "breeds": [
-         "Sem raça definida",
-         "Bengal"
-      ],
-      "colors": [
-         "a"
-      ],
-      "gender": "Macho",
-      "age": [
-         "Idoso"
-      ],
-      "observations": "a"
-   },
    {
       "type": "Gato",
       "imgUrl": "https://lh3.googleusercontent.com/d/1bb7Tjq9rpnCcDGhji7S6hXh7nqTCgDiu",
