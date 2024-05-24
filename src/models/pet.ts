@@ -76,12 +76,13 @@ export function validateArr(arr: any, defaultValueIfEmpty: string | undefined = 
    if (typeof arr === 'string') {
       // split by comma and remove empty strings and dots
       if (splitString) {
-         arr = arr
+         return arr
             .split(',')
             .map((el: string) => el.trim())
             .filter((el: string) => el !== '' && el !== '.');
-      }
 
+      }
+      
       return [arr];
    }
 
