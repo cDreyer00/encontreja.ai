@@ -8,32 +8,50 @@ import { Filter, AggregationCursor } from "mongodb"
 export async function GET(req: NextRequest) {
    // return new Response('not allowed');
 
-   let sizes = await getByPet();
-   return new Response(JSON.stringify(sizes), { status: 200 });
+   let res = await fixBreeds();
+   return new Response(JSON.stringify(res), { status: 200 });
+}
 
-   // if (!collections.temp)
-   //    await connectToDatabase();
+async function updateValues() {
+   if (!collections.lab)
+      await connectToDatabase();
 
-   // let col = collections.temp;
+   let col = collections.lab;
+   if (!col)
+      return new Response('Erro ao conectar ao banco de dados', { status: 500 });
 
-   // if (!col)
-   //    return new Response('Erro ao conectar ao banco de dados', { status: 500 });
+   await col.deleteMany({});
 
-   // await col.deleteMany({});
+   let pets = dogs.map(fixPet);
+   pets.push(...cats.map(fixPet));
+   await col!.insertMany(pets);
+}
 
-   // let pets = dogs.map(fixPet);
-   // pets.push(...cats.map(fixPet));
-   // await col!.insertMany(pets);
+async function fixBreeds() {
+   if (!collections.lab)
+      await connectToDatabase();
 
-   // return new Response('ok');
+   let col = collections.lab;
+   if (!col)
+      return new Response('Erro ao conectar ao banco de dados', { status: 500 });
 
+   let pets = await col.find({}).toArray();
+   for (let pet of pets) {
+      if (pet.breeds?.includes('Pitbull'))
+         console.log(`pitbull found in ${pet._id} img: ${pet.imgUrl}`);
+      let breeds = pet.breeds?.map(b => b.replace('Pitbull', 'Pit Bull'));
+      await col.updateOne({ _id: pet._id }, { $set: { breeds } });
+   }
+
+   // return pets;
+   return 'ok';
 }
 
 async function getByPet() {
-   if (!collections.temp)
+   if (!collections.lab)
       await connectToDatabase();
 
-   let col = collections.temp;
+   let col = collections.lab;
 
    if (!col)
       return new Response('Erro ao conectar ao banco de dados', { status: 500 });
@@ -42,7 +60,7 @@ async function getByPet() {
 
    let cats = await col.find({ type: "Gato" }).toArray();
    let dogs = await col.find({ type: "Cachorro" }).toArray();
-   
+
    sizes.dogs = dogs.length;
    sizes.cats = cats.length;
 
@@ -50,10 +68,10 @@ async function getByPet() {
 }
 
 async function countSizeValues() {
-   if (!collections.temp)
+   if (!collections.lab)
       await connectToDatabase();
 
-   let col = collections.temp;
+   let col = collections.lab;
 
    if (!col)
       return new Response('Erro ao conectar ao banco de dados', { status: 500 });

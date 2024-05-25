@@ -68,7 +68,6 @@ export function validateArr(arr: any, defaultValueIfEmpty: string | undefined = 
          return newArr;
       }
 
-
       return arr;
    }
 

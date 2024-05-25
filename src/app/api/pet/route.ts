@@ -8,129 +8,31 @@ import Pet, { fixPet } from "@/models/pet";
 let submitImgUrl = "https://encontreja-ai.vercel.app/api/image"
 
 export async function GET(req: NextRequest): Promise<Response> {
-   if (!collections.temp)
+   if (!collections.pets)
       await connectToDatabase()
 
-   const col = collections.temp;
+   const col = collections.pets;
    if (!col) {
       console.error('Error connecting to database');
       return new Response('Internal server error', { status: 500 });
    }
 
    let params = req.nextUrl.searchParams;
+   let pet = mountPet(params);
 
-   let type = params.get('type') ?? null;
-   let gender = params.get('gender') ?? null;
+   console.log(pet)
 
-   let breedsParam = params.get('breeds');
-   let breeds: string[] = breedsParam ? breedsParam.split(',') : [];
-
-   let colorsParam = params.get('colors');
-   let colors: string[] = colorsParam ? colorsParam.split(',') : [];
-
-
-   let ageParams = params.get('age');
-   let age: string[] = ageParams ? ageParams.split(',') : [];
-
-   let sizeParams = params.get('size');
-   let size: string[] = sizeParams ? sizeParams.split(',') : [];
-
-   let observations = params.get('observations') ?? null;
-
+   let pipeline = weightsPipeline(pet);
    let collation = { locale: 'pt', strength: 2 }
-
-   console.log({
-      type,
-      gender,
-      breeds,
-      colors,
-      age,
-      size,
-      observations
-   })
-
-   const weights = {
-      breeds: 4,
-      colors: 3,
-      age: 2,
-      sizes: 1
-   };
-
-   let matchingType = type ? { $match: { type: type } } : { $match: {} }
-
-   let pipeline = [
-      matchingType,
-      {
-         $addFields: {
-            countBreeds: { $size: { $setIntersection: ["$breeds", breeds] } },
-            countColors: { $size: { $setIntersection: ["$colors", colors] } },
-            countAge: { $size: { $setIntersection: ["$age", age] } },
-            // countSize: { $size: { $setIntersection: ["$size", size] } },
-            nonMatchingTagsCount: {
-               $size: {
-                  $setDifference: ["$breeds", breeds]
-               }
-            },
-            hasMuttTag: {
-               $cond: {
-                  if: { $in: ["Sem raça definida", "$breeds"] },
-                  then: 1,
-                  else: 0
-               }
-            },
-         }
-      },
-      {
-         $addFields: {
-            combinedScore: {
-               $add: [
-                  { $multiply: ["$countBreeds", weights.breeds] },
-                  { $multiply: ["$countColors", weights.colors] },
-                  { $multiply: ["$countAge", weights.age] },
-                  // { $multiply: ["$countSize", weights.sizes] },
-               ]
-            }
-         }
-      },
-      {
-         $sort: {
-            // matchingTypes: -1,
-            // countColors: -1,
-            // matchingGender: -1,
-            // countAge: -1,
-            // nonMatchingTagsCount: 1,
-            // hasMuttTag: 1,
-            // countBreeds: -1,
-            // // countSize: -1,
-            combinedScore: -1
-         }
-      },
-   ]
-
 
    const pets = await col?.aggregate(pipeline, { collation }).toArray()
    return new Response(JSON.stringify(pets), { status: 200 });
-
-   // let params = req.nextUrl.searchParams;
-   // try {
-   //    const filter = getPetFilterFromParams(params);
-   //    const amount: number = params.has('amount') ? parseInt(params.get('amount') as string) : 0;
-   //    const result = await searchPets(filter, amount);
-   //    console.log(result);
-   //    return new Response(JSON.stringify(result), { status: 200 });
-   // }
-   // catch (error) {
-   //    console.error(error);
-   //    return new Response("An error occurred", { status: 500 });
-   // }
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
    try {
       const data = await req.json();
       const isArray = Array.isArray(data);
-
-      let updateUrl = data.updateUrl
 
       if (isArray) {
          const pets = data as Pet[];
@@ -139,7 +41,7 @@ export async function POST(req: NextRequest): Promise<Response> {
                throw new Error('Missing imgUrl in one or more pets');
          });
          pets.forEach((p) => p = fixPet(p));
-         await insertManyPets(pets, updateUrl);
+         await insertManyPets(pets);
          return new Response(JSON.stringify(pets), { status: 201 });
       }
 
@@ -147,7 +49,7 @@ export async function POST(req: NextRequest): Promise<Response> {
          throw new Error('Missing imgUrl in pet');
 
       let pet = fixPet(data);
-      await insertOnePet(pet, updateUrl);
+      await insertOnePet(pet);
       return new Response(JSON.stringify(pet), { status: 201 });
    } catch (error) {
       console.error(error);
@@ -159,27 +61,24 @@ export async function DELETE(req: NextRequest): Promise<Response> {
    return new Response("Not implemented", { status: 501 });
 }
 
-async function insertOnePet(pet: Pet, updateImg: boolean = true): Promise<void> {
-   if (!collections.temp)
+async function insertOnePet(pet: Pet): Promise<void> {
+   if (!collections.lab)
       await connectToDatabase();
 
-   if (updateImg)
-      pet = await updatePetImage(pet);
+   pet = await updatePetImage(pet);
 
-   await collections.temp?.insertOne(pet);
+   await collections.lab?.insertOne(pet);
 }
 
-async function insertManyPets(pets: Pet[], updateImg: boolean = true): Promise<void> {
-   if (!collections.temp)
+async function insertManyPets(pets: Pet[]): Promise<void> {
+   if (!collections.lab)
       await connectToDatabase();
 
-   if (!updateImg) {
-      for (let pet of pets) {
-         pet = await updatePetImage(pet);
-      }
+   for (let pet of pets) {
+      pet = await updatePetImage(pet);
    }
 
-   await collections.temp?.insertMany(pets);
+   await collections.lab?.insertMany(pets);
 }
 
 async function updatePetImage(pet: Pet) {
@@ -202,4 +101,132 @@ async function updatePetImage(pet: Pet) {
    pet.imgUrl = imgData.imgUrl;
 
    return pet;
+}
+
+function mountPet(params: URLSearchParams): Pet {
+   let pet = new Pet();
+
+   pet.type = params.get('type') as string ?? null;
+   pet.gender = params.get('gender') as string ?? null;
+
+   let breedsParam = params.get('breeds');
+   let breeds: string[] = breedsParam ? breedsParam.split(',') : [];
+   pet.breeds = breeds;
+
+   let colorsParam = params.get('colors');
+   let colors: string[] = colorsParam ? colorsParam.split(',') : [];
+   pet.colors = colors;
+
+   let ageParams = params.get('age');
+   let age: string[] = ageParams ? ageParams.split(',') : [];
+   pet.age = age;
+
+   let sizeParams = params.get('size');
+   let size: string[] = sizeParams ? sizeParams.split(',') : [];
+   pet.size = size;
+
+   let observations = params.get('observations') as string ?? null;
+   pet.observations = observations;
+
+   return pet;
+}
+
+const weightsPipeline = (pet: Pet) => {
+   const weights = {
+      breeds: 4,
+      colors: 3,
+      age: 2,
+      sizes: 1
+   };
+
+   let matchingType = pet.type ? { $match: { type: pet.type } } : { $match: {} }
+
+   let pipeline = [
+      matchingType,
+      {
+         $addFields: {
+            countBreeds: { $size: { $setIntersection: ["$breeds", pet.breeds] } },
+            countColors: { $size: { $setIntersection: ["$colors", pet.colors] } },
+            countAge: { $size: { $setIntersection: ["$age", pet.age] } },
+            countSize: { $size: { $setIntersection: ["$size", pet.size] } },
+            nonMatchingTagsCount: {
+               $size: {
+                  $setDifference: ["$breeds", pet.breeds]
+               }
+            },
+            hasMuttTag: {
+               $cond: {
+                  if: { $in: ["Sem raça definida", "$breeds"] },
+                  then: 1,
+                  else: 0
+               }
+            },
+         }
+      },
+      {
+         $addFields: {
+            combinedScore: {
+               $add: [
+                  { $multiply: ["$countBreeds", weights.breeds] },
+                  { $multiply: ["$countColors", weights.colors] },
+                  { $multiply: ["$countAge", weights.age] },
+                  { $multiply: ["$countSize", weights.sizes] },
+                  { $multiply: ["$nonMatchingTagsCount", -1] },
+                  { $multiply: ["$hasMuttTag", 2] },
+               ]
+            }
+         }
+      },
+      {
+         $sort: {
+
+            combinedScore: -1
+         }
+      },
+   ]
+
+   return pipeline;
+}
+
+const labPipeline = (pet: Pet) => {
+   const weights = {
+      breeds: 4,
+      colors: 4,
+      age: 2,
+      sizes: 1
+   };
+
+   let matchingType = pet.type ? { $match: { type: pet.type } } : { $match: {} }
+
+   let pipeline = [
+      matchingType,
+      {
+         $addFields: {
+            countBreeds: { $size: { $setIntersection: ["$breeds", pet.breeds] } },
+            countColors: { $size: { $setIntersection: ["$colors", pet.colors] } },
+            countAge: { $size: { $setIntersection: ["$age", pet.age] } },
+            countSize: { $size: { $setIntersection: ["$size", pet.size] } },
+         }
+      },
+      {
+         $addFields: {
+            combinedScore: {
+               $add: [
+                  { $multiply: ["$countBreeds", weights.breeds] },
+                  { $multiply: ["$countColors", weights.colors] },
+                  { $multiply: ["$countAge", weights.age] },
+                  { $multiply: ["$countSize", weights.sizes] },
+               ]
+            }
+         }
+      },
+      {
+         $sort: {
+
+            combinedScore: -1
+         }
+      },
+   ]
+
+   return pipeline;
 }

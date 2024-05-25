@@ -3,7 +3,8 @@ import Pet from "@/models/pet";
 
 export const collections: {
    pets?: Collection<Pet>,
-   temp?: Collection<Pet>
+   lab?: Collection<Pet>,
+
 } = {}
 
 const dbPass = process.env.DB_PASS
@@ -17,10 +18,10 @@ export async function connectToDatabase() {
       await client.connect();
       const db: Db = client.db(dbName);
       const petsCollection: Collection<Pet> = db.collection(collectionName);
-      const tempColelction: Collection<Pet> = db.collection('temp');
+      const tempColelction: Collection<Pet> = db.collection('lab');
 
       collections.pets = petsCollection;
-      collections.temp = tempColelction;
+      collections.lab = tempColelction;
    }
    catch (error) {
       console.error(error);

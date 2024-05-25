@@ -1,4 +1,6 @@
 import '@/app/globals.css';
+import SubmitPet from '@/components/SubmitPet';
+import Pet from '@/models/pet';
 
 import { useEffect, useState } from "react";
 
@@ -40,6 +42,12 @@ export default function Submit() {
       ev.preventDefault();
    }
 
+   const [petTest, setPetTest] = useState<Pet>({});
+
+   function handleupdatePet(newPet: Pet) {
+      setPetTest(pet => ({ ...newPet }));
+   }
+
    return (
       <>
          <div
@@ -56,9 +64,7 @@ export default function Submit() {
             <div>
                <h1 className='text-white'>Uploaded images</h1>
                <div className='flex flex-wrap'>
-                  {images.map((img, i) => (
-                     <img key={i} src={URL.createObjectURL(img)} alt={img.name} className='w-24' />
-                  ))}
+                  <SubmitPet imgUrl={petTest} updatePet={handleupdatePet} />
                </div>
             </div>
          </div>

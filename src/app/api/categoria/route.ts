@@ -5,27 +5,29 @@ export async function GET(req: NextRequest): Promise<Response> {
    const params = req.nextUrl.searchParams;
    const category = params.get('q');
    console.log(`category: ${category}`);
-   if(category === 'abrigo'){
+
+   if (category === 'abrigo') {
       let locations = await getAllLocations();
-      return new Response(JSON.stringify(locations));      
+      return new Response(JSON.stringify(locations));
    }
 
    const res =
       category === 'raca_cachorro' ? dogBreeds :
-      category === 'raca_gato' ? catBreeds :
-      category === 'cor' ? colors :
-      category === 'idade' ? ages :
-      category === 'tamanho' ? sizes :
-      category === 'genero' ? genders :
-      {
-         dogBreeds,
-         catBreeds,
-         colors,
-         ages,
-         sizes,
-         genders
-      }
-      
+         category === 'raca_gato' ? catBreeds :
+            category === 'cor' ? colors :
+               category === 'idade' ? ages :
+                  category === 'tamanho' ? sizes :
+                     category === 'genero' ? genders :
+                        {
+                           dogBreeds,
+                           catBreeds,
+                           colors,
+                           ages,
+                           sizes,
+                           genders,
+                           locations: await getAllLocations(),
+                        }
+
    return new Response(JSON.stringify(res));
 }
 
@@ -57,7 +59,7 @@ const dogBreeds = [
    'golden retriever',
    'husky siberiano',
    'labrador retriever',
-   'lhasa',
+   'Lhasa Apso',
    'maltese',
    'pastor alemão',
    'pinscher',
@@ -68,6 +70,20 @@ const dogBreeds = [
    'salsicha (dachshund)',
    'shih tzu',
    'yorkshire',
+   'chow chow',
+   'jack russel',
+   'poodle',
+   'cavalier king',
+   'pointer',
+   'fox terrier',
+   'collie',
+   'ovelheiro',
+   'schnauzer',
+   'sheepdog',
+   'pastor belga',
+   'blue heeler',
+   'dálmata',
+   'fila'
 ]
 
 const catBreeds = [
@@ -84,18 +100,26 @@ const catBreeds = [
    'siamês',
    'sphynx',
    'abissínio',
+   'pelo curto brasileiro'
 ]
 
 const colors = [
-   'preto',
-   'branco',
    'marrom',
-   'bege',
-   'amarelo',
    'caramelo',
+   'branco',
+   'preto',
+   'marrom claro',
+   'marrom escuro',
+   'marrom avermelhado',
+   'vermelho',
    'cinza',
-   'rajado',
+   'vermelho claro',
+   'cinza escuro',
+   'cinza claro',
+   'amarelo',
+   'bege',
    'laranja',
+   'rajado',
 ]
 
 const ages = [
