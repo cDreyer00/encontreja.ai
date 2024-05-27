@@ -25,6 +25,20 @@ export default class Pet {
    ) { }
 }
 
+export function MountPet({ type,
+   gender,
+   location,
+   age,
+   breeds,
+   colors,
+   imgUrl,
+   size,
+   observations,
+   createdAt }: Pet
+) {
+   return fixPet({ type, breeds, colors, age, location, gender, imgUrl, size, observations, createdAt });
+}
+
 export function fixPet(target: any) {
    const date = new Date();
 
@@ -39,6 +53,7 @@ export function fixPet(target: any) {
    pet.imgUrl = target.imgUrl;
    pet.observations = target.observations;
    pet.location = target.location;
+   // pet.gender = validate
 
    pet.healthCondition = target.healthCondition;
    pet.locationFound = target.locationFound;
@@ -81,7 +96,7 @@ export function validateArr(arr: any, defaultValueIfEmpty: string | undefined = 
             .filter((el: string) => el !== '' && el !== '.');
 
       }
-      
+
       return [arr];
    }
 

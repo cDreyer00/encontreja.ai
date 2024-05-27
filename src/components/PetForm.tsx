@@ -35,7 +35,6 @@ export default function PetForm({ onSubmit }: { onSubmit: SubmitPet }) {
    ]);
 
    let tempFolderId = '1v4_bvJ9P8JJWICK9dLATd6IQCMJRiiuY';
-
    const formSectionClass = 'mt-4';
 
    useEffect(() => {

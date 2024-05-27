@@ -62,23 +62,23 @@ export async function DELETE(req: NextRequest): Promise<Response> {
 }
 
 async function insertOnePet(pet: Pet): Promise<void> {
-   if (!collections.lab)
+   if (!collections.frontTests)
       await connectToDatabase();
 
    pet = await updatePetImage(pet);
 
-   await collections.lab?.insertOne(pet);
+   await collections.frontTests?.insertOne(pet);
 }
 
 async function insertManyPets(pets: Pet[]): Promise<void> {
-   if (!collections.lab)
+   if (!collections.frontTests)
       await connectToDatabase();
 
    for (let pet of pets) {
       pet = await updatePetImage(pet);
    }
 
-   await collections.lab?.insertMany(pets);
+   await collections.frontTests?.insertMany(pets);
 }
 
 async function updatePetImage(pet: Pet) {

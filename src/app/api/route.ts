@@ -6,10 +6,10 @@ import { NextRequest } from "next/server"
 import { Filter, AggregationCursor } from "mongodb"
 
 export async function GET(req: NextRequest) {
-   // return new Response('not allowed');
+   return new Response('not allowed');
 
-   let res = await fixBreeds();
-   return new Response(JSON.stringify(res), { status: 200 });
+   // let res = await fixBreeds();
+   // return new Response(JSON.stringify(res), { status: 200 });
 }
 
 async function updateValues() {
