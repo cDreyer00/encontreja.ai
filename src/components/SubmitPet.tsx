@@ -7,7 +7,7 @@ export interface PetFormProps {
    id: number
    pet: Pet;
    state?: 'loading' | 'error' | 'success';
-   onUpdate?: (id: number, pet: Pet) => void;
+   onUpdate?: (props: PetFormProps) => void;
    onSubmit?: (id: number) => void;
    onDelete?: (id: number) => void;
    onRetry?: (id: number) => void;
@@ -27,8 +27,9 @@ export default function PetForm(props: PetFormProps) {
       if(props.onDelete) props.onDelete(props.id)
    }
 
-   function handleUpdate(pet: Pet){
-      if(props.onUpdate) props.onUpdate(props.id, pet)
+   function handleUpdate(props: PetFormProps){
+      let pet = props.pet
+      if(props.onUpdate) props.onUpdate({ ...props, pet })
    }
 
    function handleLog() {

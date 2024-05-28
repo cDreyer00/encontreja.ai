@@ -43,8 +43,8 @@ export default function Submit() {
       setPetsProps([...petsProps, ...newPets]);
    }
 
-   function handleUpdate(id: number, pet: Pet) {
-      let newPets = petsProps.map(p => p.id === id ? { id, pet } : p);
+   function handleUpdate(props: PetFormProps) {
+      let newPets = petsProps.map(p => p.id === props.id ? { ...p, ...props } : p);
       setPetsProps(newPets);
    }
 
@@ -70,39 +70,18 @@ export default function Submit() {
       handleDelete(id);
    }
 
-   async function handleLoadAll() {
-      // run all promises in parallel
-      let promises = []
+   function handleLoadAll() {
       for (let i = 0; i < petsProps.length; i++) {
-         let pet = petsProps[i].pet;
-         if (!pet.imgUrl) continue;
-
-         let promise = startAnalysesProcess(pet.imgUrl);
-         promises.push(promise);
+         let props = petsProps[i];
+         if (!props.pet?.imgUrl) continue;
+         
+         startAnalysesProcess(props.pet.imgUrl)
+            .then((res) => handleUpdate({ ...props, pet: res, state: 'success' })) 
+            .catch(() => handleUpdate({ ...props, state: 'error' }));
+         
+         props.state = 'loading';
+         handleUpdate(props);
       }
-
-      petsProps.map(p => p.state = 'loading');
-      setPetsProps([...petsProps]);
-
-      let results = await Promise.allSettled(promises);
-      let newPets = petsProps.map((p, i) => {
-         let status = results[i].status;
-         if (results[i].status === 'fulfilled') {
-            let value = (results[i] as PromiseFulfilledResult<any>).value;
-            return {
-               ...p,
-               pet: { ...p.pet, ...value },
-               state: 'success'
-            };
-         } else {
-            return {
-               ...p,
-               state: 'error',
-               error: (results[i] as PromiseRejectedResult).reason,
-            };
-         }
-      }) as PetFormProps[];
-      setPetsProps(newPets);
    }
 
    async function startAnalysesProcess(img: string) {
@@ -113,6 +92,7 @@ export default function Submit() {
          data.imgUrl = url;
          return data;
       } catch (e) {
+         console.error(e);
          throw new Error(e as string);
       }
    }
@@ -156,7 +136,7 @@ export default function Submit() {
    async function handleRetry(id: number) {
       let pet = petsProps.find(p => p.id === id)?.pet;
       if (!pet) return;
-      
+
       let res = await startAnalysesProcess(pet.imgUrl!);
       let newPets = petsProps.map(p => p.id === id ? { id, pet: res } : p);
       setPetsProps(newPets);
@@ -195,9 +175,9 @@ export default function Submit() {
                               key={i} id={props.id} pet={props.pet}
                               state={props.state}
                               onSubmit={(id) => handleSubmit(id)}
-                              onUpdate={(id, pet) => handleUpdate(id, pet)}
+                              onUpdate={(props) => handleUpdate(props)}
                               onDelete={(id) => handleDelete(id)}
-                              onRetry={() => console.log(`Retry ${i}`)}
+                              onRetry={(id) => handleRetry(id)}
                            />
                         ))}
                      </div>
