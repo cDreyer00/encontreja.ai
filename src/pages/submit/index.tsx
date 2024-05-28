@@ -1,13 +1,14 @@
 import '@/app/globals.css';
-import SubmitPet from '@/components/SubmitPet';
-import Pet from '@/models/pet';
+import PetForm, { PetFormProps } from '@/components/SubmitPet';
+import Pet, { MountPet } from '@/models/pet';
 
 import { useEffect, useState } from "react";
-import PetsAIManager from '@/components/PetsAIManager';
-import { Input } from '@nextui-org/react';
+import { Button, Input } from '@nextui-org/react';
 
 export default function Submit() {
-   const [images, setImages] = useState<File[]>([]);
+   const [petsProps, setPetsProps] = useState<PetFormProps[]>([]);
+
+
    const [location, setLocation] = useState<string>('');
 
    useEffect(() => {
@@ -21,29 +22,144 @@ export default function Submit() {
 
    }, []);
 
+   function dragOverHandler(ev: React.DragEvent<HTMLDivElement>) {
+      ev.preventDefault();
+   }
+
    function dropHandler(ev: React.DragEvent<HTMLDivElement>) {
       ev.preventDefault();
       let files = ev.dataTransfer.files;
       if (files.length == 0) return;
 
-      let imgs = images.map(img => img.name);
+      let newPets = []
       for (let i = 0; i < files.length; i++) {
          let isImg = files[i].type.split('/')[0] === 'image';
          if (!isImg) continue
-         if (imgs.includes(files[i].name)) continue
-         imgs.push(files[i].name);
+         let id = petsProps.length + newPets.length as number;
+         let pet = MountPet({ imgUrl: URL.createObjectURL(files[i]) });
+         newPets.push({ id, pet });
       }
 
-      setImages([...images, ...Array.from(files)]);
+      setPetsProps([...petsProps, ...newPets]);
    }
 
-   function dragOverHandler(ev: React.DragEvent<HTMLDivElement>) {
-      ev.preventDefault();
+   function handleUpdate(id: number, pet: Pet) {
+      let newPets = petsProps.map(p => p.id === id ? { id, pet } : p);
+      setPetsProps(newPets);
    }
 
-   function handleRemoveImg(index: number) {
-      let imgs = images.filter((_, i) => i !== index);
-      setImages(imgs);
+   function handleDelete(id: number) {
+      let newPets = petsProps.filter(p => p.id !== id);
+      setPetsProps(newPets);
+   }
+
+   async function handleSubmit(id: number) {
+      let pet = petsProps.find(p => p.id === id)?.pet;
+      if (!pet) return;
+
+      let res = await fetch('/api/pet', {
+         method: 'POST',
+         body: JSON.stringify(pet)
+      });
+
+      if (!res.ok) {
+         console.error('Failed to submit pet');
+         return;
+      }
+
+      handleDelete(id);
+   }
+
+   async function handleLoadAll() {
+      // run all promises in parallel
+      let promises = []
+      for (let i = 0; i < petsProps.length; i++) {
+         let pet = petsProps[i].pet;
+         if (!pet.imgUrl) continue;
+
+         let promise = startAnalysesProcess(pet.imgUrl);
+         promises.push(promise);
+      }
+
+      petsProps.map(p => p.state = 'loading');
+      setPetsProps([...petsProps]);
+
+      let results = await Promise.allSettled(promises);
+      let newPets = petsProps.map((p, i) => {
+         let status = results[i].status;
+         if (results[i].status === 'fulfilled') {
+            let value = (results[i] as PromiseFulfilledResult<any>).value;
+            return {
+               ...p,
+               pet: { ...p.pet, ...value },
+               state: 'success'
+            };
+         } else {
+            return {
+               ...p,
+               state: 'error',
+               error: (results[i] as PromiseRejectedResult).reason,
+            };
+         }
+      }) as PetFormProps[];
+      setPetsProps(newPets);
+   }
+
+   async function startAnalysesProcess(img: string) {
+      try {
+         let file = await convertToFile(img);
+         let url = await submitImgToDrive(file);
+         let data = await getAiResponse(url);
+         data.imgUrl = url;
+         return data;
+      } catch (e) {
+         throw new Error(e as string);
+      }
+   }
+
+   async function submitImgToDrive(img: File): Promise<string> {
+      let tempFolderId = '1v4_bvJ9P8JJWICK9dLATd6IQCMJRiiuY';
+
+      let form = new FormData();
+      form.append('image', img);
+      form.append('folderId', tempFolderId);
+
+      let res = await fetch('api/image', {
+         method: 'POST',
+         body: form,
+      });
+
+      if (!res.ok) {
+         throw new Error('Failed to submit image to drive');
+      }
+
+      let data = await res.json();
+      return data.imgUrl;
+   }
+
+   async function getAiResponse(imgUrl: string) {
+      let res = await fetch(`/api/analisar?img=${imgUrl}`)
+      if (!res.ok) {
+         throw new Error('Failed to fetch AI response');
+      }
+
+      let data = await res.json();
+      return data;
+   }
+
+   async function convertToFile(url: string) {
+      let res = await fetch(url);
+      let blob = await res.blob();
+      return new File([blob], 'img');
+   }
+
+   async function handleRetry(id: number) {
+      let pet = petsProps.find(p => p.id === id)?.pet;
+      if (!pet) return;
+      
+      let res = await startAnalysesProcess(pet.imgUrl!);
+      let newPets = petsProps.map(p => p.id === id ? { id, pet: res } : p);
+      setPetsProps(newPets);
    }
 
    return (
@@ -51,21 +167,42 @@ export default function Submit() {
          <div
             id='container'
             className="min-h-screen h-max w-full bg-soft-black">
-            <div className='flex flex-row gap-10'>
+            <div className='flex flex-col gap-5 justify-center align-middle'>
                <div
                   onDrop={dropHandler}
                   onDragOver={dragOverHandler}
-                  className="border-solid border-2 border-white p-5 w-[30vw] h-48">
+                  className="border-solid border-2 border-white p-5 w-[90vw] h-20 self-center">
                   <p className='text-white'>Drag one or more files to this <i>drop zone</i>.</p>
                </div>
 
-               <div className='text-white w-96 flex flex-col gap-5'>
-                  <Input placeholder='Location' onChange={(e) => setLocation(e.target.value)} value={location} width={500} height={300} />
+               <div className='text-white w-96 flex flex-col gap-5 self-center'>
+                  <Input placeholder='Location' onChange={(e) => setLocation(e.target.value)} value={location} width={400} height={300} />
                </div>
             </div>
 
-            {(images.length > 0 &&
-               <PetsAIManager images={images} sharedLocation={location} removeImg={handleRemoveImg} />
+            {petsProps.length > 0 && (
+               <div>
+                  <div>
+                     <Button onClick={handleLoadAll}>
+                        Load all pets
+                     </Button>
+                  </div>
+                  <div>
+                     <h1 className='text-white'>Uploaded images</h1>
+                     <div className='flex flex-wrap gap-10'>
+                        {petsProps.map((props, i) => (
+                           <PetForm
+                              key={i} id={props.id} pet={props.pet}
+                              state={props.state}
+                              onSubmit={(id) => handleSubmit(id)}
+                              onUpdate={(id, pet) => handleUpdate(id, pet)}
+                              onDelete={(id) => handleDelete(id)}
+                              onRetry={() => console.log(`Retry ${i}`)}
+                           />
+                        ))}
+                     </div>
+                  </div>
+               </div>
             )}
          </div>
       </>

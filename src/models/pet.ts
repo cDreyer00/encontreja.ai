@@ -48,12 +48,12 @@ export function fixPet(target: any) {
    pet.type = target.type;
    pet.breeds = validateArr(target.breeds, undefined, true);
    pet.colors = validateArr(target.colors, undefined, true);
-   pet.age = validateArr(target.age, 'indefinido');
-   pet.size = validateArr(target.size, 'indefinido');
+   pet.age = validateArr(target.age, 'incerto');
+   pet.size = validateArr(target.size, 'incerto');
    pet.imgUrl = target.imgUrl;
    pet.observations = target.observations;
    pet.location = target.location;
-   // pet.gender = validate
+   pet.gender = validateStr(target.gender, 'incerto')
 
    pet.healthCondition = target.healthCondition;
    pet.locationFound = target.locationFound;

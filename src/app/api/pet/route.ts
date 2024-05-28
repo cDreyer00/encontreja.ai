@@ -32,6 +32,7 @@ export async function GET(req: NextRequest): Promise<Response> {
 export async function POST(req: NextRequest): Promise<Response> {
    try {
       const data = await req.json();
+      console.log(data)
       const isArray = Array.isArray(data);
 
       if (isArray) {
