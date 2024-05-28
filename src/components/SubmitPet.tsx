@@ -27,8 +27,7 @@ export default function PetForm(props: PetFormProps) {
       if(props.onDelete) props.onDelete(props.id)
    }
 
-   function handleUpdate(props: PetFormProps){
-      let pet = props.pet
+   function handleUpdate(pet: Pet){
       if(props.onUpdate) props.onUpdate({ ...props, pet })
    }
 

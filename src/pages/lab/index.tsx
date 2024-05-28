@@ -5,9 +5,45 @@ import Pet, { MountPet } from '@/models/pet';
 import { useEffect, useState } from "react";
 import { Button, Input } from '@nextui-org/react';
 
-export default function Submit() {
+export default function Lab() {
    const [petsProps, setPetsProps] = useState<PetFormProps[]>([]);
    const [location, setLocation] = useState<string>('');
+   const [totalPets, setTotalPets] = useState<number>(0);
+
+   const [labProps, setLabProps] = useState<LabComponentProps[]>([
+      {
+         id: 0,
+         text: 'teste',
+         imgUrl: 'https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b',
+      },
+      {
+         id: 1,
+         text: 'teste2',
+         imgUrl: 'https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b',
+      },
+      {
+         id: 2,
+         text: 'teste3',
+         imgUrl: 'https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b',
+      },
+      {
+         id: 3,
+         text: 'teste4',
+         imgUrl: 'https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b',
+      },
+   ]);
+
+   // let pet = {
+   //    id: 0,
+   //    pet: {
+   //       type: 'cachorro',
+   //       breeds: ['sem raça definida'],
+   //       colors: ['marrom', 'preto'],
+   //       age: ['adulto'],
+   //       size: ['pequeno', 'médio'],
+   //       imgUrl: 'https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b',
+   //    }
+   // } as PetFormProps;
 
    useEffect(() => {
       // Prevent default behavior when dragging files
@@ -18,7 +54,9 @@ export default function Submit() {
          e.preventDefault();
       }, false);
 
-   }, []);
+      console.log(petsProps)
+
+   }, [petsProps]);
 
    function dragOverHandler(ev: React.DragEvent<HTMLDivElement>) {
       ev.preventDefault();
@@ -33,17 +71,18 @@ export default function Submit() {
       for (let i = 0; i < files.length; i++) {
          let isImg = files[i].type.split('/')[0] === 'image';
          if (!isImg) continue
-         let id = petsProps.length + newPets.length as number;
+         let id = totalPets + newPets.length as number;
          let pet = MountPet({ imgUrl: URL.createObjectURL(files[i]) });
          newPets.push({ id, pet });
       }
 
       setPetsProps([...petsProps, ...newPets]);
+      setTotalPets(totalPets + newPets.length);
    }
 
-   function handleUpdate(props: PetFormProps) {
-      let newPets = petsProps.map(p => p.id === props.id ? { ...props } : p);
-      setPetsProps(newPets);
+   function handleUpdate(newProps: PetFormProps) {
+      let props = petsProps.map(p => p.id === newProps.id ? { ...p, ...newProps } : p);
+      setPetsProps(props);
    }
 
    function handleDelete(id: number) {
@@ -54,17 +93,7 @@ export default function Submit() {
    async function handleSubmit(id: number) {
       let pet = petsProps.find(p => p.id === id)?.pet;
       if (!pet) return;
-
-      let res = await fetch('/api/pet', {
-         method: 'POST',
-         body: JSON.stringify(pet)
-      });
-
-      if (!res.ok) {
-         console.error('Failed to submit pet');
-         return;
-      }
-
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       handleDelete(id);
    }
 
@@ -85,6 +114,20 @@ export default function Submit() {
       }
    }
 
+   function loadAllLab() {
+      for (let i = 0; i < labProps.length; i++) {
+         let props = labProps[i];
+         let random = Math.random();
+         new Promise(resolve => setTimeout(resolve, random * 3000))
+            .then(() => {
+               props.text = props.text + ' - loaded';
+               let newProps = labProps.map(p => p.id === props.id ? { ...p, ...props } : p);
+               setLabProps(newProps);
+            })
+
+      }
+   }
+
    async function startAnalysesProcess(img: string) {
       try {
          // let file = await convertToFile(img);
@@ -100,6 +143,10 @@ export default function Submit() {
          console.error(e);
          throw new Error(e as string);
       }
+   }
+   function updateLabProps(props: LabComponentProps) {
+      let newProps = labProps.map(p => p.id === props.id ? { ...p, ...props } : p);
+      setLabProps(newProps);
    }
 
    async function submitImgToDrive(img: File): Promise<string> {
@@ -165,32 +212,68 @@ export default function Submit() {
                </div>
             </div>
 
-            {petsProps.length > 0 && (
+            {/* <PetForm
+               id={pet.id} pet={pet.pet}
+               state={pet.state}
+               onSubmit={() => { }}
+               onUpdate={(props) => { setPet(props) }}
+               onDelete={() => { }}
+               onRetry={() => { }}
+            /> */}
+
+            <div>
                <div>
-                  <div>
-                     <Button onClick={handleLoadAll}>
-                        Load all pets
-                     </Button>
-                  </div>
-                  <div>
-                     <h1 className='text-white'>Uploaded images</h1>
-                     <div className='flex flex-wrap gap-10'>
-                        {petsProps.map((props, i) => (
+                  <Button onClick={loadAllLab}>
+                     Load all pets
+                  </Button>
+               </div>
+               <div>
+                  <h1 className='text-white'>Uploaded images</h1>
+                  <div className='flex flex-wrap gap-10'>
+                     {/* {petsProps.map((props) => (
                            <PetForm
-                              key={i} id={props.id} pet={props.pet}
+                              key={props.id} id={props.id} pet={props.pet}
                               state={props.state}
                               onSubmit={(id) => handleSubmit(id)}
                               onUpdate={(props) => handleUpdate(props)}
                               onDelete={(id) => handleDelete(id)}
                               onRetry={(id) => handleRetry(id)}
                            />
-                        ))}
-                     </div>
+                        ))} */}
+
+                     {labProps.map((props) => (
+                        <LabComponent
+                           key={props.id}
+                           id={props.id}
+                           text={props.text}
+                           imgUrl={props.imgUrl}
+                           onUpdate={(props) => updateLabProps(props)} />
+                     ))}
                   </div>
                </div>
-            )}
+            </div>
          </div>
       </>
+   )
+}
+
+interface LabComponentProps {
+   id: number,
+   text: string,
+   imgUrl: string,
+   onUpdate?: (props: LabComponentProps) => void,
+}
+
+function LabComponent(props: LabComponentProps) {
+   function handleUpdateText(text: string) {
+      props.onUpdate?.({ ...props, text });
+   }
+
+   return (
+      <div>
+         <Input placeholder='text' value={props.text} onChange={(e) => handleUpdateText(e.target.value)} />
+         <img src={props.imgUrl} />
+      </div>
    )
 }
 
