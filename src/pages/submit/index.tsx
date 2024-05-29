@@ -42,7 +42,7 @@ export default function Submit() {
    }
 
    function handleUpdate(props: PetFormProps) {
-      let newPets = petsProps.map(p => p.id === props.id ? { ...props } : p);
+      let newPets = petsProps.map(p => p.id === props.id ? props : p);
       setPetsProps(newPets);
    }
 
@@ -75,8 +75,10 @@ export default function Submit() {
 
          startAnalysesProcess(props.pet.imgUrl)
             .then((res) => {
-               let pet = { ...props.pet, ...res };
-               handleUpdate({ ...props, pet, state: 'success' });
+               let p = props;
+               p.pet = { ...props.pet, ...res };
+               p.state = 'success';
+               handleUpdate(p);
             })
             .catch(() => handleUpdate({ ...props, state: 'error' }));
 

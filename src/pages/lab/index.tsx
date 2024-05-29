@@ -123,22 +123,21 @@ export default function Lab() {
                props.text = props.text + ' - loaded';
                let newProps = labProps.map(p => p.id === props.id ? { ...p, ...props } : p);
                setLabProps(newProps);
+
+               // let newProps = labProps.map(p => p.id === props.id ? { ...p, text: p.text + ' - loaded' } : p);
+               // setLabProps(newProps);
             })
 
+         // let newProps = labProps.map(p => { p.text = 'loading'; return p; });
+         // setLabProps(newProps);
       }
    }
 
-   async function startAnalysesProcess(img: string) {
+   async function startAnalysesProcess() {
       try {
-         // let file = await convertToFile(img);
-         // let url = await submitImgToDrive(file);
-         // let data = await getAiResponse(url);
-         // data.imgUrl = url;
-
-         let data = allDogs[Math.floor(Math.random() * allDogs.length)];
          let random = Math.random();
-         await new Promise((resolve) => setTimeout(resolve, random * 2000));
-         return data;
+         await new Promise(resolve => setTimeout(resolve, random * 3000))
+         return { text: 'loaded' };
       } catch (e) {
          console.error(e);
          throw new Error(e as string);
