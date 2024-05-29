@@ -15,32 +15,28 @@ export interface PetFormProps {
 
 export default function PetForm(props: PetFormProps) {
 
-   function handleRetry(){
-      if(props.onRetry) props.onRetry(props.id)
+   function handleRetry() {
+      if (props.onRetry) props.onRetry(props.id)
    }
 
-   function handleSubmit(){
-      if(props.onSubmit) props.onSubmit(props.id)
+   function handleSubmit() {
+      if (props.onSubmit) props.onSubmit(props.id)
    }
 
-   function handleDelete(){
-      if(props.onDelete) props.onDelete(props.id)
+   function handleDelete() {
+      if (props.onDelete) props.onDelete(props.id)
    }
 
-   function handleUpdate(props: PetFormProps){
-      let pet = props.pet
-      if(props.onUpdate) props.onUpdate({ ...props, pet })
-   }
-
-   function handleLog() {
-      console.log(props.pet)
-   }
+   function handleUpdatePet(newPet: Pet) {
+      let pet = { ...props.pet, ...newPet }
+      if (props.onUpdate) props.onUpdate({ ...props, pet })
+   }   
 
    return (
       <>
          <div>
-            <button onClick={handleLog}>
-               <img src={props.pet.imgUrl} width={300} height={300} />
+            <button onClick={() => window.open(props.pet.imgUrl)}>
+               <img src={props.pet.imgUrl} width={500} referrerPolicy="no-referrer" />
             </button>
             <div>
                {props.state === 'loading' && (
@@ -50,9 +46,9 @@ export default function PetForm(props: PetFormProps) {
                {props.state === 'error' && (
                   <div>
                      <p>❌</p>
-                     <Button onClick={handleRetry}>
+                     {/* <Button onClick={handleRetry}>
                         Retry
-                     </Button>
+                     </Button> */}
                   </div>
                )}
 
@@ -62,9 +58,9 @@ export default function PetForm(props: PetFormProps) {
                      <Button onClick={handleSubmit}>
                         submit
                      </Button>
-                     <Button onClick={handleRetry}>
+                     {/* <Button onClick={handleRetry}>
                         Retry
-                     </Button>
+                     </Button> */}
                   </div>
                )}
             </div>
@@ -74,12 +70,13 @@ export default function PetForm(props: PetFormProps) {
             <div>
                {props.pet.type && (
                   <div>
-                     <Input placeholder='type' value={!props.pet.type ? '' : props.pet.type} onChange={(e) => handleUpdate({ ...props.pet, type: e.target.value })} />
-                     <Input placeholder='breeds' value={!props.pet.breeds ? '' : props.pet.breeds!.join(',')} onChange={(e) => handleUpdate({ ...props.pet, breeds: e.target.value.split(',') })} />
-                     <Input placeholder='colors' value={!props.pet.colors ? '' : props.pet.colors!.join(',')} onChange={(e) => handleUpdate({ ...props.pet, colors: e.target.value.split(',') })} />
-                     <Input placeholder='size' value={!props.pet.size ? '' : props.pet.size!.join(',')} onChange={(e) => handleUpdate({ ...props.pet, size: e.target.value.split(',') })} />
-                     <Input placeholder='age' value={!props.pet.age ? '' : props.pet.age!.join(',')} onChange={(e) => handleUpdate({ ...props.pet, age: e.target.value.split(',') })} />
-                     <Input placeholder='observations' value={!props.pet.observations ? '' : props.pet.observations} onChange={(e) => handleUpdate({ ...props.pet, observations: e.target.value })} />
+                     <Input placeholder='type' value={!props.pet.type ? '' : props.pet.type} onChange={(e) => handleUpdatePet({ ...props.pet, type: e.target.value })} />
+                     <Input placeholder='breeds' value={!props.pet.breeds ? '' : props.pet.breeds!.join(',')} onChange={(e) => handleUpdatePet({ ...props.pet, breeds: e.target.value.split(',') })} />
+                     <Input placeholder='colors' value={!props.pet.colors ? '' : props.pet.colors!.join(',')} onChange={(e) => handleUpdatePet({ ...props.pet, colors: e.target.value.split(',') })} />
+                     <Input placeholder='size' value={!props.pet.size ? '' : props.pet.size!.join(',')} onChange={(e) => handleUpdatePet({ ...props.pet, size: e.target.value.split(',') })} />
+                     <Input placeholder='age' value={!props.pet.age ? '' : props.pet.age!.join(',')} onChange={(e) => handleUpdatePet({ ...props.pet, age: e.target.value.split(',') })} />
+                     <Input placeholder='gender' value={!props.pet.gender ? '' : props.pet.gender} onChange={(e) => handleUpdatePet({ ...props.pet, gender: e.target.value })} />
+                     <Input placeholder='observations' value={!props.pet.observations ? '' : props.pet.observations} onChange={(e) => handleUpdatePet({ ...props.pet, observations: e.target.value })} />
                   </div>
                )}
             </div>

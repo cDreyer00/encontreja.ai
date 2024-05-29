@@ -7,9 +7,9 @@ import { Button, Input } from '@nextui-org/react';
 
 export default function Submit() {
    const [petsProps, setPetsProps] = useState<PetFormProps[]>([]);
-
-
    const [location, setLocation] = useState<string>('');
+   const [totalPets, setTotalPets] = useState<number>(0);
+   const [driveFolder, setDriveFolder] = useState<string>('');
 
    useEffect(() => {
       // Prevent default behavior when dragging files
@@ -35,12 +35,13 @@ export default function Submit() {
       for (let i = 0; i < files.length; i++) {
          let isImg = files[i].type.split('/')[0] === 'image';
          if (!isImg) continue
-         let id = petsProps.length + newPets.length as number;
+         let id = totalPets + newPets.length as number;
          let pet = MountPet({ imgUrl: URL.createObjectURL(files[i]) });
          newPets.push({ id, pet });
       }
 
       setPetsProps([...petsProps, ...newPets]);
+      setTotalPets(totalPets + newPets.length);
    }
 
    function handleUpdate(props: PetFormProps) {
@@ -51,6 +52,24 @@ export default function Submit() {
    function handleDelete(id: number) {
       let newPets = petsProps.filter(p => p.id !== id);
       setPetsProps(newPets);
+   }
+
+   async function handleLoadDriveImages(){
+      let res = await fetch(`/api/gdrive?q=${driveFolder}`);
+      if(!res.ok){
+         console.error('Failed to fetch images from drive');
+         return;
+      }
+
+      let data = await res.json();
+
+      let newPets = data.map((img: string, i: number) => {
+         let id = totalPets + i;
+         let pet = MountPet({ imgUrl: img });
+         return { id, pet };
+      });
+
+      setPetsProps([...petsProps, ...newPets]);
    }
 
    async function handleSubmit(id: number) {
@@ -71,14 +90,23 @@ export default function Submit() {
    }
 
    function handleLoadAll() {
-      for (let i = 0; i < petsProps.length; i++) {
-         let props = petsProps[i];
+      let availablePets = petsProps.filter(p => !p.state || p.state === 'error');
+
+      for (let i = 0; i < availablePets.length; i++) {
+         let props = availablePets[i];
          if (!props.pet?.imgUrl) continue;
-         
+
          startAnalysesProcess(props.pet.imgUrl)
-            .then((res) => handleUpdate({ ...props, pet: res, state: 'success' })) 
-            .catch(() => handleUpdate({ ...props, state: 'error' }));
-         
+            .then((res) => {
+               props.pet = { ...props.pet, ...res }
+               props.state = 'success';
+               handleUpdate(props);
+            })
+            .catch(() => {
+               props.state = 'error';
+               handleUpdate(props);
+            });
+
          props.state = 'loading';
          handleUpdate(props);
       }
@@ -133,13 +161,24 @@ export default function Submit() {
       return new File([blob], 'img');
    }
 
-   async function handleRetry(id: number) {
-      let pet = petsProps.find(p => p.id === id)?.pet;
-      if (!pet) return;
+   function handleRetry(id: number) {
+      let props = petsProps.find(p => p.id === id) as PetFormProps;
+      if (!props) return;
 
-      let res = await startAnalysesProcess(pet.imgUrl!);
-      let newPets = petsProps.map(p => p.id === id ? { id, pet: res } : p);
-      setPetsProps(newPets);
+      props = { ...props, state: 'loading' };
+      handleUpdate(props);
+
+      startAnalysesProcess(props.pet.imgUrl!)
+         .then((res) => {
+            props.pet = { ...props.pet, ...res }
+            props.state = 'success';
+            handleUpdate(props);
+         })
+         .catch(() => {
+            props.state = 'error';
+            handleUpdate(props);
+         });
+
    }
 
    return (
@@ -157,6 +196,13 @@ export default function Submit() {
 
                <div className='text-white w-96 flex flex-col gap-5 self-center'>
                   <Input placeholder='Location' onChange={(e) => setLocation(e.target.value)} value={location} width={400} height={300} />
+                  <div className='flex flex-row gap-5'>
+                     <Input placeholder='drive folder url' onChange={(e) => setDriveFolder(e.target.value)} value={driveFolder} width={400} height={300} />
+                     <Button onClick={handleLoadDriveImages}>
+                        Load
+                     </Button>
+                  </div>
+
                </div>
             </div>
 
@@ -188,3 +234,13 @@ export default function Submit() {
       </>
    )
 }
+
+let testPets = [
+   {
+      type: 'dog',
+      breeds: ['labrador'],
+      colors: ['black'],
+      age: ['adult'],
+      size: ['large'],
+   }
+]
