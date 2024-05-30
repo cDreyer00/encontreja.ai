@@ -6,7 +6,14 @@ import { useEffect, useState } from "react";
 import { Button, Input } from '@nextui-org/react';
 
 export default function Submit() {
-   const [petsProps, setPetsProps] = useState<PetFormProps[]>([]);
+   const [petsProps, setPetsProps] = useState<PetFormProps[]>([/* {
+      id: 0,
+      pet: MountPet(testPets[0]),
+   },
+   {
+      id: 0,
+      pet: MountPet(testPets[0]),
+   }, */]);
    const [location, setLocation] = useState<string>('');
    const [totalPets, setTotalPets] = useState<number>(0);
    const [driveFolder, setDriveFolder] = useState<string>('');
@@ -54,9 +61,9 @@ export default function Submit() {
       setPetsProps(newPets);
    }
 
-   async function handleLoadDriveImages(){
+   async function handleLoadDriveImages() {
       let res = await fetch(`/api/gdrive?q=${driveFolder}`);
-      if(!res.ok){
+      if (!res.ok) {
          console.error('Failed to fetch images from drive');
          return;
       }
@@ -207,15 +214,14 @@ export default function Submit() {
             </div>
 
             {petsProps.length > 0 && (
-               <div>
+               <div className=''>
                   <div>
                      <Button onClick={handleLoadAll}>
                         Load all pets
                      </Button>
                   </div>
-                  <div>
-                     <h1 className='text-white'>Uploaded images</h1>
-                     <div className='flex flex-wrap gap-10'>
+                  <div className='m-5 flex justify-center'>
+                     <div className='flex flex-col gap-10'>
                         {petsProps.map((props, i) => (
                            <PetForm
                               key={i} id={props.id} pet={props.pet}
@@ -242,5 +248,6 @@ let testPets = [
       colors: ['black'],
       age: ['adult'],
       size: ['large'],
+      imgUrl: 'https://lh3.googleusercontent.com/d/1NFtxlSa-gOvB0w3Wz0V31OZxdPAtgZCD'
    }
 ]

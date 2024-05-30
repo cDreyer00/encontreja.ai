@@ -4,20 +4,20 @@ import { NextRequest } from "next/server";
 export async function POST(req: NextRequest) {
    let body = await exportBody(req);
 
-   console.log("=================================== img req")
+   console.log("=================================== img req ===================================")
    console.log(body)
 
    if (body.isUrl) {
       let fileId = await submitImgUrlToDrive(body.folderId, body.img as string);
       if (!fileId) return new Response('Failed to submit image URL', { status: 500 });
-      let url = await getImageUrlFromDrive(fileId);
+      let url = getImageUrlFromDrive(fileId);
       let data = { fileId: fileId, imgUrl: url }
       return new Response(JSON.stringify(data), { status: 200 });
    }
 
    let fileId = await submitImageToDrive(body.folderId, body.img as File);
    if (!fileId) return new Response('Failed to submit image', { status: 500 });
-   let url = await getImageUrlFromDrive(fileId);
+   let url = getImageUrlFromDrive(fileId);
    let data = { fileId: fileId, imgUrl: url }
    return new Response(JSON.stringify(data), { status: 200 });
 }

@@ -30,53 +30,85 @@ export default function PetForm(props: PetFormProps) {
    function handleUpdatePet(newPet: Pet) {
       let pet = { ...props.pet, ...newPet }
       if (props.onUpdate) props.onUpdate({ ...props, pet })
-   }   
+   }
 
    return (
       <>
-         <div>
-            <button onClick={() => window.open(props.pet.imgUrl)}>
-               <img src={props.pet.imgUrl} width={500} referrerPolicy="no-referrer" />
-            </button>
+         <div className='flex flex-row gap-10'>
             <div>
-               {props.state === 'loading' && (
-                  <Spinner />
-               )}
+               <button onClick={() => window.open(props.pet.imgUrl)}>
+                  <img src={props.pet.imgUrl} width={500} referrerPolicy="no-referrer" />
+               </button>
 
-               {props.state === 'error' && (
-                  <div>
-                     <p>❌</p>
-                     {/* <Button onClick={handleRetry}>
+               <div>
+                  {props.state === 'loading' && (
+                     <Spinner />
+                  )}
+
+                  {props.state === 'error' && (
+                     <div>
+                        <p>❌</p>
+                        {/* <Button onClick={handleRetry}>
                         Retry
                      </Button> */}
-                  </div>
-               )}
+                     </div>
+                  )}
 
-               {props.state === 'success' && (
-                  <div>
-                     <p>✅</p>
-                     <Button onClick={handleSubmit}>
-                        submit
-                     </Button>
-                     {/* <Button onClick={handleRetry}>
+                  {props.state === 'success' && (
+                     <div>
+                        <p>✅</p>
+                        <Button onClick={handleSubmit}>
+                           submit
+                        </Button>
+                        {/* <Button onClick={handleRetry}>
                         Retry
                      </Button> */}
-                  </div>
-               )}
+                     </div>
+                  )}
+               </div>
+               <Button onClick={handleDelete}>
+                  Delete
+               </Button>
             </div>
-            <Button onClick={handleDelete}>
-               Delete
-            </Button>
-            <div>
+
+            <div className='w-[900px]'>
                {props.pet.type && (
-                  <div>
-                     <Input placeholder='type' value={!props.pet.type ? '' : props.pet.type} onChange={(e) => handleUpdatePet({ ...props.pet, type: e.target.value })} />
-                     <Input placeholder='breeds' value={!props.pet.breeds ? '' : props.pet.breeds!.join(',')} onChange={(e) => handleUpdatePet({ ...props.pet, breeds: e.target.value.split(',') })} />
-                     <Input placeholder='colors' value={!props.pet.colors ? '' : props.pet.colors!.join(',')} onChange={(e) => handleUpdatePet({ ...props.pet, colors: e.target.value.split(',') })} />
-                     <Input placeholder='size' value={!props.pet.size ? '' : props.pet.size!.join(',')} onChange={(e) => handleUpdatePet({ ...props.pet, size: e.target.value.split(',') })} />
-                     <Input placeholder='age' value={!props.pet.age ? '' : props.pet.age!.join(',')} onChange={(e) => handleUpdatePet({ ...props.pet, age: e.target.value.split(',') })} />
-                     <Input placeholder='gender' value={!props.pet.gender ? '' : props.pet.gender} onChange={(e) => handleUpdatePet({ ...props.pet, gender: e.target.value })} />
-                     <Input placeholder='observations' value={!props.pet.observations ? '' : props.pet.observations} onChange={(e) => handleUpdatePet({ ...props.pet, observations: e.target.value })} />
+                  <div className='flex flex-col gap-3'>
+                     <div>
+                        <label className='mb-1 text-white'>Tipo</label>
+                        <Input placeholder='type' value={!props.pet.type ? '' : props.pet.type} onChange={(e) => handleUpdatePet({ ...props.pet, type: e.target.value })} />
+                     </div>
+
+                     <div>
+                        <label className='mb-1 text-white'>Raças [ , ]</label>
+                        <Input placeholder='breeds' value={!props.pet.breeds ? '' : props.pet.breeds!.join(',')} onChange={(e) => handleUpdatePet({ ...props.pet, breeds: e.target.value.split(',') })} />
+                     </div>
+
+                     <div>
+                        <label className='mb-1 text-white'>Cores [ , ]</label>
+                        <Input placeholder='colors' value={!props.pet.colors ? '' : props.pet.colors!.join(',')} onChange={(e) => handleUpdatePet({ ...props.pet, colors: e.target.value.split(',') })} />
+                     </div>
+
+                     <div>
+                        <label className='mb-1 text-white'>Tamanho [ , ]</label>
+                        <Input placeholder='size' value={!props.pet.size ? '' : props.pet.size!.join(',')} onChange={(e) => handleUpdatePet({ ...props.pet, size: e.target.value.split(',') })} />
+                     </div>
+
+                     <div>
+                        <label className='mb-1 text-white'>Idade [ , ]</label>
+                        <Input placeholder='age' value={!props.pet.age ? '' : props.pet.age!.join(',')} onChange={(e) => handleUpdatePet({ ...props.pet, age: e.target.value.split(',') })} />
+                     </div>
+
+                     <div>
+                        <label className='mb-1 text-white'>Genero</label>
+                        <Input placeholder='gender' value={!props.pet.gender ? '' : props.pet.gender} onChange={(e) => handleUpdatePet({ ...props.pet, gender: e.target.value })} />
+                     </div>
+
+                     <div>
+                        <label className='mb-1 text-white'>Observações</label>
+                        <Input placeholder='observations' value={!props.pet.observations ? '' : props.pet.observations} onChange={(e) => handleUpdatePet({ ...props.pet, observations: e.target.value })} />
+                     </div>
+
                   </div>
                )}
             </div>
