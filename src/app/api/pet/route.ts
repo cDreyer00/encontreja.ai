@@ -20,8 +20,6 @@ export async function GET(req: NextRequest): Promise<Response> {
    let params = req.nextUrl.searchParams;
    let pet = mountPet(params);
 
-   console.log(pet)
-
    let pipeline = weightsPipeline(pet);
    let collation = { locale: 'pt', strength: 2 }
 
@@ -32,7 +30,6 @@ export async function GET(req: NextRequest): Promise<Response> {
 export async function POST(req: NextRequest): Promise<Response> {
    try {
       const data = await req.json();
-      console.log(data)
       const isArray = Array.isArray(data);
 
       if (isArray) {
@@ -87,7 +84,6 @@ async function updatePetImage(pet: Pet) {
    let catImgsDbFolderId = '1mO0QHnMX8HanFElrvh3CoOv9Ey2f0PO39Y0RqQp4M_QPBpltFyFLkKuGMfpo3bF-0GBZ_QbY';
 
    let folder = pet.type === 'cachorro' ? dogImgsDbFolderId : catImgsDbFolderId;
-   console.log(pet)
    let newImg = await fetch(submitImgUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
