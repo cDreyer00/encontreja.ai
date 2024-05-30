@@ -4,8 +4,8 @@ import { collections, connectToDatabase } from "@/services/db";
 
 import Pet, { fixPet } from "@/models/pet";
 
-let submitImgUrl = "http://localhost:3000/api/image"
-// let submitImgUrl = "https://encontreja-ai.vercel.app/api/image"
+// let submitImgUrl = "http://localhost:3000/api/image"
+let submitImgUrl = "https://encontreja-ai.vercel.app/api/image"
 
 export async function GET(req: NextRequest): Promise<Response> {
    if (!collections.pets)
