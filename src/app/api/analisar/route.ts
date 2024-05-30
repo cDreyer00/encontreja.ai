@@ -2,10 +2,9 @@ import { NextRequest } from "next/server";
 
 import OpenAI from "openai"
 
+export const maxDuration = 30;
+
 const apiKey = process.env.OPENAI_API_KEY
-
-
-const imageUrlRegex = new RegExp('^https?://.*\.(jpg|jpeg|png)$');
 
 const prompt = `
    - Você é um assistente classificador, seu objectivo é receber imagens de pets e extrair informações para ajudar seus donos a encontra-los.
