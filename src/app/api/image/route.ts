@@ -40,6 +40,7 @@ async function exportBody(req: NextRequest): Promise<ImgReq> {
       let data = await req.json();
       data.img = data.imgUrl as string;
       data.isUrl = true;
+      console.log("JSON data:", data);
       return data;
    } catch (e) {
       console.error('Failed to parse request body as JSON');
