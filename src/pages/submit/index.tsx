@@ -88,7 +88,9 @@ export default function Submit() {
 
       let pet = petsProps.find(p => p.id === id)?.pet;
       if (!pet) return;
-
+      
+      pet.location = location;
+      
       props.submitDisabled = true;
       handleUpdate(props);
 
