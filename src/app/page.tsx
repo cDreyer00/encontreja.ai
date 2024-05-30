@@ -5,6 +5,7 @@ import Pet from "@/models/pet";
 import { useRouter } from "next/navigation";
 import { Chivo, Hanken_Grotesk } from "next/font/google";
 import PetForm from "@/components/PetForm";
+import Submit from "@/pages/submit";
 
 const containerClass = "h-screen text-white flex flex-row"
 
@@ -35,9 +36,10 @@ export default function Home() {
 
   return (
     <>
-      <div className={`${containerClass} bg-soft-black justify-center align-middle`}>
+      {/* <div className={`${containerClass} bg-soft-black justify-center align-middle`}>
         <PetForm onSubmit={onSubmit} />
-      </div>
+      </div> */}
+      <Submit />
     </>
   );
 }
