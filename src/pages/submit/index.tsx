@@ -105,6 +105,7 @@ export default function Submit() {
 
          startAnalysesProcess(props.pet.imgUrl)
             .then((res) => {
+               console.log(`Pet ${i} analyzed, res:`, res)
                props.pet = { ...props.pet, ...res }
                props.state = 'success';
                handleUpdate(props);
@@ -154,11 +155,13 @@ export default function Submit() {
 
    async function getAiResponse(imgUrl: string) {
       let res = await fetch(`/api/analisar?img=${imgUrl}`)
+      
       if (!res.ok) {
          throw new Error('Failed to fetch AI response');
       }
-
+      
       let data = await res.json();
+      console.log('AI response:', data);
       return data;
    }
 

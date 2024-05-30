@@ -72,7 +72,6 @@ export default function PetForm(props: PetFormProps) {
             </div>
 
             <div className='w-[900px]'>
-               {props.pet.type && (
                   <div className='flex flex-col gap-3'>
                      <div>
                         <label className='mb-1 text-white'>Tipo</label>
@@ -110,7 +109,6 @@ export default function PetForm(props: PetFormProps) {
                      </div>
 
                   </div>
-               )}
             </div>
          </div>
       </>

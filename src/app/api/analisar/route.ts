@@ -243,9 +243,11 @@ export async function GET(req: NextRequest) {
       return new Response('Missing image URL', { status: 400 });
    }
 
-   const result = await analyse(image)
-   const filtered = await filter(result)
-
+   // const result = await analyse(image)
+   // const filtered = await filter(result)
+   const filtered = await analyseAndFilder(image)
+   console.log('filtered', filtered)
+   
    return new Response(JSON.stringify(filtered), {
       headers: {
          'Content-Type': 'application/json'
@@ -339,7 +341,8 @@ async function analyseAndFilder(image: string) {
    const infos = result.choices[0].message.content as string
    if (!infos) throw new Error('Failed to extract information');
 
-   let json = JSON.parse(infos)
-   if(!json) throw new Error('Failed to extract information')
-   return json
+   // extract only json from string
+   let json = infos.match(/\{.*\}/s)
+   if (!json) throw new Error('Failed to extract information')
+   return JSON.parse(json[0])
 }
