@@ -8,12 +8,14 @@ import { Button, Input } from '@nextui-org/react';
 export default function Submit() {
    const [petsProps, setPetsProps] = useState<PetFormProps[]>([/* {
       id: 0,
+      state:'success',
       pet: MountPet(testPets[0]),
    },
    {
       id: 0,
+      state:'success',
       pet: MountPet(testPets[0]),
-   }, */]);
+   }, */ ]);
    const [location, setLocation] = useState<string>('');
    const [totalPets, setTotalPets] = useState<number>(0);
    const [driveFolder, setDriveFolder] = useState<string>('');
@@ -52,7 +54,8 @@ export default function Submit() {
    }
 
    function handleUpdate(props: PetFormProps) {
-      let newPets = petsProps.map(p => p.id === props.id ? { ...p, ...props } : p);
+
+      let newPets = petsProps.map(p => p.id === props.id ? { ...p, ...props,  } : p);
       setPetsProps(newPets);
    }
 
@@ -80,8 +83,14 @@ export default function Submit() {
    }
 
    async function handleSubmit(id: number) {
+      let props = petsProps.find(p => p.id === id) as PetFormProps;
+      if (!props) return;
+
       let pet = petsProps.find(p => p.id === id)?.pet;
       if (!pet) return;
+
+      props.submitDisabled = true;
+      handleUpdate(props);
 
       let res = await fetch('/api/pet', {
          method: 'POST',
@@ -90,11 +99,15 @@ export default function Submit() {
 
       if (!res.ok) {
          console.error('Failed to submit pet');
+         props.submitDisabled = false
+         handleUpdate(props);
          return;
       }
 
       handleDelete(id);
    }
+
+ 
 
    function handleLoadAll() {
       let availablePets = petsProps.filter(p => !p.state || p.state === 'error');
@@ -155,11 +168,11 @@ export default function Submit() {
 
    async function getAiResponse(imgUrl: string) {
       let res = await fetch(`/api/analisar?img=${imgUrl}`)
-      
+
       if (!res.ok) {
          throw new Error('Failed to fetch AI response');
       }
-      
+
       let data = await res.json();
       console.log('AI response:', data);
       return data;
@@ -233,6 +246,7 @@ export default function Submit() {
                               onUpdate={(props) => handleUpdate(props)}
                               onDelete={(id) => handleDelete(id)}
                               onRetry={(id) => handleRetry(id)}
+                              submitDisabled={props.submitDisabled}
                            />
                         ))}
                      </div>

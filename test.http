@@ -52,6 +52,7 @@ Content-Type: application/json
 ###
 
 POST http://localhost:3000/api/image
+Content-Type: application/json
 
 {
     "imgUrl": "https://lh3.googleusercontent.com/d/1VlJoBuE-xi5yUY60NcCccTDZY3fgJ2fF",

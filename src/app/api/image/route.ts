@@ -6,7 +6,6 @@ export async function POST(req: NextRequest) {
    let body = await exportBody(req);
 
    console.log(body)
-   console.log('=================================== FINISH ===================================')
 
    if (body.isUrl) {
       let fileId = await submitImgUrlToDrive(body.folderId, body.img as string);

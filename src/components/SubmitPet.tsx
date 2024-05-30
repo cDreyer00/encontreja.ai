@@ -7,6 +7,7 @@ export interface PetFormProps {
    id: number
    pet: Pet;
    state?: 'loading' | 'error' | 'success';
+   submitDisabled?: boolean;
    onUpdate?: (props: PetFormProps) => void;
    onSubmit?: (id: number) => void;
    onDelete?: (id: number) => void;
@@ -57,7 +58,7 @@ export default function PetForm(props: PetFormProps) {
                   {props.state === 'success' && (
                      <div>
                         <p>✅</p>
-                        <Button onClick={handleSubmit}>
+                        <Button onClick={handleSubmit} isDisabled={props.submitDisabled}>
                            submit
                         </Button>
                         {/* <Button onClick={handleRetry}>
