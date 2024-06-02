@@ -26,8 +26,11 @@ export async function GET(req: NextRequest) {
 
    const petsResponse = await fetch(petsUrl)
    const pets = await petsResponse.json()
-   // console.log("res: ", pets)
-   return new Response(JSON.stringify(pets), { status: 200 });
+   let res = {
+      filter: pet,
+      pets: pets
+   }
+   return new Response(JSON.stringify(res), { status: 200 });
 };
 
 const queryString = (params: Object) => Object.entries(params)
