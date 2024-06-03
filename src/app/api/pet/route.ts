@@ -3,11 +3,13 @@ import { Filter, ObjectId, StrictFilter } from "mongodb";
 import { collections, connectToDatabase } from "@/services/db";
 
 import Pet, { fixPet } from "@/models/pet";
+import { CLIENT_PUBLIC_FILES_PATH } from "next/dist/shared/lib/constants";
 
 // let submitImgUrl = "http://localhost:3000/api/image"
 let submitImgUrl = "https://encontreja-ai.vercel.app/api/image"
 
 export async function GET(req: NextRequest): Promise<Response> {
+   console.log('GET /api/pet, params:', req.nextUrl.searchParams.toString());
    if (!collections.pets)
       await connectToDatabase()
 
