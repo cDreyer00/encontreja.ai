@@ -28,6 +28,8 @@ export async function GET(req: NextRequest): Promise<Response> {
    let pipeline = weightsPipeline(pet);
    let collation = { locale: 'pt', strength: 2 }
 
+   console.log("pet filter:", pet, "amount:", amount);
+
    let pets: Pet[] = [];
    if (amount === undefined)
       pets = await col?.aggregate(pipeline, { collation }).toArray();
