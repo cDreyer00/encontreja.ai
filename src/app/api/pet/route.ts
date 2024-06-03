@@ -19,11 +19,19 @@ export async function GET(req: NextRequest): Promise<Response> {
 
    let params = req.nextUrl.searchParams;
    let pet = mountPet(params);
+   let amount: number | undefined = undefined;
+   if (params.has('amount'))
+      amount = parseInt(params.get('amount') as string) as number;
 
    let pipeline = weightsPipeline(pet);
    let collation = { locale: 'pt', strength: 2 }
 
-   const pets = await col?.aggregate(pipeline, { collation }).toArray()
+   let pets: Pet[] = [];
+   if (amount === undefined)
+      pets = await col?.aggregate(pipeline, { collation }).toArray();
+   else
+      pets = await col?.aggregate(pipeline, { collation }).limit(amount).toArray();
+
    return new Response(JSON.stringify(pets), { status: 200 });
 }
 
