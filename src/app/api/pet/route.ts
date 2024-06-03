@@ -31,10 +31,10 @@ export async function GET(req: NextRequest): Promise<Response> {
    console.log("pet filter:", pet, "amount:", amount);
 
    let pets: Pet[] = [];
-   if (amount === undefined)
-      pets = await col?.aggregate(pipeline, { collation }).toArray();
-   else
-      pets = await col?.aggregate(pipeline, { collation }).limit(amount).toArray();
+   pets = await col?.aggregate(pipeline, { collation }).toArray();
+   // if (amount === undefined)
+   // else
+   //    pets = await col?.aggregate(pipeline, { collation }).limit(amount).toArray();
 
    return new Response(JSON.stringify(pets), { status: 200 });
 }
