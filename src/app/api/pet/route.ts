@@ -42,13 +42,14 @@ export async function GET(req: NextRequest): Promise<Response> {
 
 
    let pets: Pet[] = [];
-   if (params.amount) {
-      let amount = Number.parseInt(params.amount as string);
-      pets = await col?.aggregate(pipeline, { collation }).limit(amount).toArray();
-   }
-   else {
-      pets = await col?.aggregate(pipeline, { collation }).toArray();
-   }
+   pets = await col?.aggregate(pipeline, { collation }).toArray();
+   // if (params.amount) {
+   //    let amount = Number.parseInt(params.amount as string);
+   //    pets = await col?.aggregate(pipeline, { collation }).limit(amount).toArray();
+   // }
+   // else {
+   //    pets = await col?.aggregate(pipeline, { collation }).toArray();
+   // }
 
    return new Response(JSON.stringify(pets), { status: 200 });
 }
