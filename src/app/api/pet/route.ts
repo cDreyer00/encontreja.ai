@@ -2,14 +2,28 @@ import { NextRequest } from "next/server";
 import { Filter, ObjectId, StrictFilter } from "mongodb";
 import { collections, connectToDatabase } from "@/services/db";
 
-import Pet, { fixPet } from "@/models/pet";
+import Pet, { mountPet } from "@/models/pet";
 import { CLIENT_PUBLIC_FILES_PATH } from "next/dist/shared/lib/constants";
 
 // let submitImgUrl = "http://localhost:3000/api/image"
 let submitImgUrl = "https://encontreja-ai.vercel.app/api/image"
 
+interface IParams {
+   // [key: string]: string;
+}
+
+interface IGetPetParams extends IParams {
+   [key: string]: string | string[] | undefined | number | number[];
+
+   type?: string;
+   breeds?: string;
+   colors?: string;
+   age?: string[];
+   size?: string;
+   amount?: string;
+}
+
 export async function GET(req: NextRequest): Promise<Response> {
-   console.log('GET /api/pet, params:', req.nextUrl.searchParams.toString());
    if (!collections.pets)
       await connectToDatabase()
 
@@ -19,24 +33,47 @@ export async function GET(req: NextRequest): Promise<Response> {
       return new Response('Internal server error', { status: 500 });
    }
 
-   let params = req.nextUrl.searchParams;
-   let pet = mountPet(params);
-   let amount: number | undefined = undefined;
-   if (params.has('amount'))
-      amount = parseInt(params.get('amount') as string) as number;
+   let params = exportParams(req.nextUrl.searchParams);
+   let pet = mountPet(params)
+   console.log("pet filter:", pet, "amount:", params.amount);
 
    let pipeline = weightsPipeline(pet);
    let collation = { locale: 'pt', strength: 2 }
 
-   console.log("pet filter:", pet, "amount:", amount);
 
    let pets: Pet[] = [];
-   pets = await col?.aggregate(pipeline, { collation }).toArray();
-   // if (amount === undefined)
-   // else
-   //    pets = await col?.aggregate(pipeline, { collation }).limit(amount).toArray();
+   if (params.amount) {
+      let amount = Number.parseInt(params.amount as string);
+      pets = await col?.aggregate(pipeline, { collation }).limit(amount).toArray();
+   }
+   else {
+      pets = await col?.aggregate(pipeline, { collation }).toArray();
+   }
 
    return new Response(JSON.stringify(pets), { status: 200 });
+}
+
+function exportParams(params: URLSearchParams): IGetPetParams {
+   let obj: IGetPetParams = {};
+
+   params.forEach((value, key) => {
+      if (Array.isArray(obj[key])) {
+         // check if obj is typeof number
+         if (typeof obj[key] === 'number') {
+            let val = value.split(',').map((v) => parseInt(v));
+            obj[key] = val;
+         }
+         else {
+            obj[key] = value.split(',');
+         }
+         return;
+      }
+
+
+      obj[key] = value;
+   });
+
+   return obj;
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
@@ -50,7 +87,7 @@ export async function POST(req: NextRequest): Promise<Response> {
             if (p.imgUrl === undefined)
                throw new Error('Missing imgUrl in one or more pets');
          });
-         pets.forEach((p) => p = fixPet(p));
+         pets.forEach((p) => p = mountPet(p));
          await insertManyPets(pets);
          return new Response(JSON.stringify(pets), { status: 201 });
       }
@@ -58,7 +95,7 @@ export async function POST(req: NextRequest): Promise<Response> {
       if (data.imgUrl === undefined)
          throw new Error('Missing imgUrl in pet');
 
-      let pet = fixPet(data);
+      let pet = mountPet(data);
       await insertOnePet(pet);
       return new Response(JSON.stringify(pet), { status: 201 });
    } catch (error) {
@@ -112,33 +149,33 @@ async function updatePetImage(pet: Pet) {
    return pet;
 }
 
-function mountPet(params: URLSearchParams): Pet {
-   let pet = new Pet();
+// function mountPet(params: URLSearchParams): Pet {
+//    let pet = new Pet();
 
-   pet.type = params.get('type') as string ?? null;
-   pet.gender = params.get('gender') as string ?? null;
+//    pet.type = params.get('type') as string ?? null;
+//    pet.gender = params.get('gender') as string ?? null;
 
-   let breedsParam = params.get('breeds');
-   let breeds: string[] = breedsParam ? breedsParam.split(',') : [];
-   pet.breeds = breeds;
+//    let breedsParam = params.get('breeds');
+//    let breeds: string[] = breedsParam ? breedsParam.split(',') : [];
+//    pet.breeds = breeds;
 
-   let colorsParam = params.get('colors');
-   let colors: string[] = colorsParam ? colorsParam.split(',') : [];
-   pet.colors = colors;
+//    let colorsParam = params.get('colors');
+//    let colors: string[] = colorsParam ? colorsParam.split(',') : [];
+//    pet.colors = colors;
 
-   let ageParams = params.get('age');
-   let age: string[] = ageParams ? ageParams.split(',') : [];
-   pet.age = age;
+//    let ageParams = params.get('age');
+//    let age: string[] = ageParams ? ageParams.split(',') : [];
+//    pet.age = age;
 
-   let sizeParams = params.get('size');
-   let size: string[] = sizeParams ? sizeParams.split(',') : [];
-   pet.size = size;
+//    let sizeParams = params.get('size');
+//    let size: string[] = sizeParams ? sizeParams.split(',') : [];
+//    pet.size = size;
 
-   let observations = params.get('observations') as string ?? null;
-   pet.observations = observations;
+//    let observations = params.get('observations') as string ?? null;
+//    pet.observations = observations;
 
-   return pet;
-}
+//    return pet;
+// }
 
 const weightsPipeline = (pet: Pet) => {
    const weights = {
