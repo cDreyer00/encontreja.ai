@@ -1,5 +1,5 @@
 import { useEffect, useState, useImperativeHandle } from 'react';
-import Pet, { MountPet } from '@/models/pet';
+import Pet, { mountPet } from '@/models/pet';
 import { Button } from '@nextui-org/button';
 import { Spinner, Input } from '@nextui-org/react';
 

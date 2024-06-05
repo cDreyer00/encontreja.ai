@@ -1,6 +1,6 @@
 import '@/app/globals.css';
 import PetForm, { PetFormProps } from '@/components/SubmitPet';
-import Pet, { MountPet } from '@/models/pet';
+import Pet, { mountPet } from '@/models/pet';
 
 import { useEffect, useState } from "react";
 import { Button, Input } from '@nextui-org/react';
@@ -9,12 +9,12 @@ export default function Submit() {
    const [petsProps, setPetsProps] = useState<PetFormProps[]>([/* {
       id: 0,
       state:'success',
-      pet: MountPet(testPets[0]),
+      pet: mountPet(testPets[0]),
    },
    {
       id: 0,
       state:'success',
-      pet: MountPet(testPets[0]),
+      pet: mountPet(testPets[0]),
    }, */ ]);
    const [location, setLocation] = useState<string>('');
    const [totalPets, setTotalPets] = useState<number>(0);
@@ -45,7 +45,7 @@ export default function Submit() {
          let isImg = files[i].type.split('/')[0] === 'image';
          if (!isImg) continue
          let id = totalPets + newPets.length as number;
-         let pet = MountPet({ imgUrl: URL.createObjectURL(files[i]) });
+         let pet = mountPet({ imgUrl: URL.createObjectURL(files[i]) });
          newPets.push({ id, pet });
       }
 
@@ -75,7 +75,7 @@ export default function Submit() {
 
       let newPets = data.map((img: string, i: number) => {
          let id = totalPets + i;
-         let pet = MountPet({ imgUrl: img });
+         let pet = mountPet({ imgUrl: img });
          return { id, pet };
       });
 
