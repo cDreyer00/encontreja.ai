@@ -42,17 +42,16 @@ export async function GET(req: NextRequest): Promise<Response> {
 
 
    let pets: Pet[] = [];
-   pets = await col?.aggregate(pipeline, { collation }).toArray();
+   let q = col?.aggregate(pipeline, { collation });
+
    if (params.amount) {
       let amount = Number.parseInt(params.amount as string);
       console.log("Request with amount:", amount)
-      pets = await col?.aggregate(pipeline, { collation }).limit(amount).toArray();
-   }
-   else {
-      console.log("Request WITHOUT amount")
-      pets = await col?.aggregate(pipeline, { collation }).toArray();
+      q = q.limit(amount);
    }
 
+   pets = await q.toArray();
+    
    return new Response(JSON.stringify(pets), { status: 200 });
 }
 
