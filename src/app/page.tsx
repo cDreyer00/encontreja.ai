@@ -32,13 +32,11 @@ export default function Home() {
   function queryString(params: Object) {
     return Object.entries(params)
       .map(([key, value]) => {
-        if(value === undefined) return;
-        // If the value is an array, serialize it
+        if (!value) return;
         if (Array.isArray(value)) {
-          return value.map(val => `${encodeURIComponent(key)}=${encodeURIComponent(val)}`).join('&');
+          return `${key}=${value.join(',')}`
         }
-        // Otherwise, encode key and value normally
-        return `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+        return `${key}=${value}`;
       })
       .join('&');
   }

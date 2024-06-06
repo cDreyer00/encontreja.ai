@@ -109,8 +109,6 @@ export default function Submit() {
       handleDelete(id);
    }
 
- 
-
    function handleLoadAll() {
       let availablePets = petsProps.filter(p => !p.state || p.state === 'error');
 

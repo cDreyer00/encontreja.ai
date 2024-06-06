@@ -37,6 +37,7 @@ export async function GET(req: NextRequest) {
 
 const queryString = (params: Object) => Object.entries(params)
    .map(([key, value]) => {
+      if(!value) return;
       if (Array.isArray(value)) {
          return `${key}=${value.join(',')}`
       }
