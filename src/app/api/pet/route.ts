@@ -20,7 +20,8 @@ interface IGetPetParams extends IParams {
    colors?: string;
    age?: string[];
    size?: string;
-   amount?: string;
+   pageSize?: string;
+   pageNumber?: string;
 }
 
 export async function GET(req: NextRequest): Promise<Response> {
@@ -40,18 +41,17 @@ export async function GET(req: NextRequest): Promise<Response> {
    let pipeline = weightsPipeline(pet);
    let collation = { locale: 'pt', strength: 2 }
 
-
    let pets: Pet[] = [];
    let q = col?.aggregate(pipeline, { collation });
+   pets = await q.toArray();
 
-   if (params.amount) {
-      let amount = Number.parseInt(params.amount as string);
-      console.log("Request with amount:", amount)
-      q = q.limit(amount);
+   if (params.pageNumber && params.pageSize) {
+      let pSize = Number.parseInt(params.pageSize);
+      let pNumber = Number.parseInt(params.pageNumber);
+      let skip = (pNumber - 1) * pSize;
+      pets = pets.slice(skip, skip + pSize);
    }
 
-   pets = await q.toArray();
-    
    return new Response(JSON.stringify(pets), { status: 200 });
 }
 
@@ -190,6 +190,9 @@ const weightsPipeline = (pet: Pet) => {
    let matchingType = pet.type ? { $match: { type: pet.type } } : { $match: {} }
 
    let pipeline = [
+      {
+         $sort: { createdAt: 1 }
+      },
       matchingType,
       {
          $addFields: {

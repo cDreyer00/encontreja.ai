@@ -25,7 +25,6 @@ function bufferToStream(buffer: Buffer): Readable {
    return stream;
 }
 
-
 // Function to download an image from Google Drive
 export function getImageUrlFromDrive(fileId: string): string {
    return `https://lh3.googleusercontent.com/d/${fileId}`;
