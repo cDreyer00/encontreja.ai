@@ -52,7 +52,6 @@ export async function GET(req: NextRequest): Promise<Response> {
          let skip = isNaN(pNumber) ? 0 : pSize * (pNumber - 1);
          pets = pets.slice(skip, skip + pSize);
       }
-
    }
 
    return new Response(JSON.stringify(pets), { status: 200 });
@@ -73,7 +72,6 @@ function exportParams(params: URLSearchParams): IGetPetParams {
          }
          return;
       }
-
 
       obj[key] = value;
    });
@@ -193,6 +191,13 @@ const weightsPipeline = (pet: Pet) => {
    let matchingType = pet.type ? { $match: { type: pet.type } } : { $match: {} }
 
    let pipeline = [
+      {
+         $match: {
+            "imgUrl": {
+               "$ne": null
+            }
+         }
+      },
       {
          $sort: { createdAt: 1 }
       },
