@@ -8,7 +8,7 @@ import { CLIENT_PUBLIC_FILES_PATH } from "next/dist/shared/lib/constants";
 // let submitImgUrl = "http://localhost:3000/api/image"
 let submitImgUrl = "https://encontreja-ai.vercel.app/api/image"
 
-interface IParams {
+export interface IParams {
    // [key: string]: string;
 }
 
@@ -45,11 +45,14 @@ export async function GET(req: NextRequest): Promise<Response> {
    let q = col?.aggregate(pipeline, { collation });
    pets = await q.toArray();
 
-   if (params.pageNumber && params.pageSize) {
-      let pSize = Number.parseInt(params.pageSize);
-      let pNumber = Number.parseInt(params.pageNumber);
-      let skip = (pNumber - 1) * pSize;
-      pets = pets.slice(skip, skip + pSize);
+   if (params.pageNumber || params.pageSize) {
+      let pSize = Number.parseInt(params.pageSize!);
+      let pNumber = Number.parseInt(params.pageNumber!);
+      if (!isNaN(pSize)) {
+         let skip = isNaN(pNumber) ? 0 : pSize * (pNumber - 1);
+         pets = pets.slice(skip, skip + pSize);
+      }
+
    }
 
    return new Response(JSON.stringify(pets), { status: 200 });
