@@ -1,13 +1,24 @@
 import '@/app/globals.css';
 import PetForm, { PetFormProps } from '@/components/SubmitPet';
-import Pet, { MountPet } from '@/models/pet';
+import Pet, { mountPet } from '@/models/pet';
 
 import { useEffect, useState } from "react";
 import { Button, Input } from '@nextui-org/react';
 
 export default function Submit() {
-   const [petsProps, setPetsProps] = useState<PetFormProps[]>([]);
+   const [petsProps, setPetsProps] = useState<PetFormProps[]>([/* {
+      id: 0,
+      state:'success',
+      pet: mountPet(testPets[0]),
+   },
+   {
+      id: 0,
+      state:'success',
+      pet: mountPet(testPets[0]),
+   }, */ ]);
    const [location, setLocation] = useState<string>('');
+   const [totalPets, setTotalPets] = useState<number>(0);
+   const [driveFolder, setDriveFolder] = useState<string>('');
 
    useEffect(() => {
       // Prevent default behavior when dragging files
@@ -33,16 +44,18 @@ export default function Submit() {
       for (let i = 0; i < files.length; i++) {
          let isImg = files[i].type.split('/')[0] === 'image';
          if (!isImg) continue
-         let id = petsProps.length + newPets.length as number;
-         let pet = MountPet({ imgUrl: URL.createObjectURL(files[i]) });
+         let id = totalPets + newPets.length as number;
+         let pet = mountPet({ imgUrl: URL.createObjectURL(files[i]) });
          newPets.push({ id, pet });
       }
 
       setPetsProps([...petsProps, ...newPets]);
+      setTotalPets(totalPets + newPets.length);
    }
 
    function handleUpdate(props: PetFormProps) {
-      let newPets = petsProps.map(p => p.id === props.id ? props : p);
+
+      let newPets = petsProps.map(p => p.id === props.id ? { ...p, ...props,  } : p);
       setPetsProps(newPets);
    }
 
@@ -51,9 +64,35 @@ export default function Submit() {
       setPetsProps(newPets);
    }
 
+   async function handleLoadDriveImages() {
+      let res = await fetch(`/api/gdrive?q=${driveFolder}`);
+      if (!res.ok) {
+         console.error('Failed to fetch images from drive');
+         return;
+      }
+
+      let data = await res.json();
+
+      let newPets = data.map((img: string, i: number) => {
+         let id = totalPets + i;
+         let pet = mountPet({ imgUrl: img });
+         return { id, pet };
+      });
+
+      setPetsProps([...petsProps, ...newPets]);
+   }
+
    async function handleSubmit(id: number) {
+      let props = petsProps.find(p => p.id === id) as PetFormProps;
+      if (!props) return;
+
       let pet = petsProps.find(p => p.id === id)?.pet;
       if (!pet) return;
+      
+      pet.location = location;
+      
+      props.submitDisabled = true;
+      handleUpdate(props);
 
       let res = await fetch('/api/pet', {
          method: 'POST',
@@ -62,6 +101,8 @@ export default function Submit() {
 
       if (!res.ok) {
          console.error('Failed to submit pet');
+         props.submitDisabled = false
+         handleUpdate(props);
          return;
       }
 
@@ -69,18 +110,23 @@ export default function Submit() {
    }
 
    function handleLoadAll() {
-      for (let i = 0; i < petsProps.length; i++) {
-         let props = petsProps[i];
+      let availablePets = petsProps.filter(p => !p.state || p.state === 'error');
+
+      for (let i = 0; i < availablePets.length; i++) {
+         let props = availablePets[i];
          if (!props.pet?.imgUrl) continue;
 
          startAnalysesProcess(props.pet.imgUrl)
             .then((res) => {
-               let p = props;
-               p.pet = { ...props.pet, ...res };
-               p.state = 'success';
-               handleUpdate(p);
+               console.log(`Pet ${i} analyzed, res:`, res)
+               props.pet = { ...props.pet, ...res }
+               props.state = 'success';
+               handleUpdate(props);
             })
-            .catch(() => handleUpdate({ ...props, state: 'error' }));
+            .catch(() => {
+               props.state = 'error';
+               handleUpdate(props);
+            });
 
          props.state = 'loading';
          handleUpdate(props);
@@ -89,14 +135,10 @@ export default function Submit() {
 
    async function startAnalysesProcess(img: string) {
       try {
-         // let file = await convertToFile(img);
-         // let url = await submitImgToDrive(file);
-         // let data = await getAiResponse(url);
-         // data.imgUrl = url;
-
-         let data = allDogs[Math.floor(Math.random() * allDogs.length)];
-         let random = Math.random();
-         await new Promise((resolve) => setTimeout(resolve, random * 2000));
+         let file = await convertToFile(img);
+         let url = await submitImgToDrive(file);
+         let data = await getAiResponse(url);
+         data.imgUrl = url;
          return data;
       } catch (e) {
          console.error(e);
@@ -126,11 +168,13 @@ export default function Submit() {
 
    async function getAiResponse(imgUrl: string) {
       let res = await fetch(`/api/analisar?img=${imgUrl}`)
+
       if (!res.ok) {
          throw new Error('Failed to fetch AI response');
       }
 
       let data = await res.json();
+      console.log('AI response:', data);
       return data;
    }
 
@@ -140,13 +184,24 @@ export default function Submit() {
       return new File([blob], 'img');
    }
 
-   async function handleRetry(id: number) {
-      let pet = petsProps.find(p => p.id === id)?.pet;
-      if (!pet) return;
+   function handleRetry(id: number) {
+      let props = petsProps.find(p => p.id === id) as PetFormProps;
+      if (!props) return;
 
-      let res = await startAnalysesProcess(pet.imgUrl!);
-      let newPets = petsProps.map(p => p.id === id ? { id, pet: res } : p);
-      setPetsProps(newPets);
+      props = { ...props, state: 'loading' };
+      handleUpdate(props);
+
+      startAnalysesProcess(props.pet.imgUrl!)
+         .then((res) => {
+            props.pet = { ...props.pet, ...res }
+            props.state = 'success';
+            handleUpdate(props);
+         })
+         .catch(() => {
+            props.state = 'error';
+            handleUpdate(props);
+         });
+
    }
 
    return (
@@ -164,19 +219,25 @@ export default function Submit() {
 
                <div className='text-white w-96 flex flex-col gap-5 self-center'>
                   <Input placeholder='Location' onChange={(e) => setLocation(e.target.value)} value={location} width={400} height={300} />
+                  <div className='flex flex-row gap-5'>
+                     <Input placeholder='drive folder url' onChange={(e) => setDriveFolder(e.target.value)} value={driveFolder} width={400} height={300} />
+                     <Button onClick={handleLoadDriveImages}>
+                        Load
+                     </Button>
+                  </div>
+
                </div>
             </div>
 
             {petsProps.length > 0 && (
-               <div>
+               <div className=''>
                   <div>
                      <Button onClick={handleLoadAll}>
                         Load all pets
                      </Button>
                   </div>
-                  <div>
-                     <h1 className='text-white'>Uploaded images</h1>
-                     <div className='flex flex-wrap gap-10'>
+                  <div className='m-5 flex justify-center'>
+                     <div className='flex flex-col gap-10'>
                         {petsProps.map((props, i) => (
                            <PetForm
                               key={i} id={props.id} pet={props.pet}
@@ -185,6 +246,7 @@ export default function Submit() {
                               onUpdate={(props) => handleUpdate(props)}
                               onDelete={(id) => handleDelete(id)}
                               onRetry={(id) => handleRetry(id)}
+                              submitDisabled={props.submitDisabled}
                            />
                         ))}
                      </div>
@@ -196,33 +258,13 @@ export default function Submit() {
    )
 }
 
-let allDogs =
-   [
-      {
-         "type": "cachorro",
-         "breeds": ["sem raça definida"],
-         "colors": ["marrom", "preto"],
-         "age": ["adulto"],
-         "size": ["pequeno", "médio"],
-         "gender": "incerto",
-         "observations": "pelagem curta com padrão mesclado. Pele visivel com manchas escuras."
-      },
-      {
-         "type": "cachorro",
-         "breeds": ["sem raça definida"],
-         "colors": ["preto"],
-         "age": ["adulto", "idoso"],
-         "size": ["médio"],
-         "gender": "incerto",
-         "observations": "pelo preto, possui pelos brancos no focinho indicando possível idade avançada, coleira com pingentes"
-      },
-      {
-         "type": "cachorro",
-         "breeds": ["sem raça definida", "pinscher"],
-         "colors": ["caramelo", "marrom avermelhado"],
-         "age": ["adulto", "idoso"],
-         "size": ["pequeno", "médio"],
-         "gender": "incerto",
-         "observations": "pelo curto predominantemente caramelo. Orelhas semi-eretas."
-      }
-   ]
+let testPets = [
+   {
+      type: 'dog',
+      breeds: ['labrador'],
+      colors: ['black'],
+      age: ['adult'],
+      size: ['large'],
+      imgUrl: 'https://lh3.googleusercontent.com/d/1NFtxlSa-gOvB0w3Wz0V31OZxdPAtgZCD'
+   }
+]

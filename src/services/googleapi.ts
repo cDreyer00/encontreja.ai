@@ -25,9 +25,8 @@ function bufferToStream(buffer: Buffer): Readable {
    return stream;
 }
 
-
 // Function to download an image from Google Drive
-export async function getImageUrlFromDrive(fileId: string): Promise<string | null> {
+export function getImageUrlFromDrive(fileId: string): string {
    return `https://lh3.googleusercontent.com/d/${fileId}`;
 }
 
@@ -98,4 +97,23 @@ export async function submitImageToDrive(folderId: string, image: File): Promise
       console.error('Error submitting image:', error);
       return null;
    }
+}
+
+export async function getAllImagesFromFolder(folderId: string): Promise<string[]> {
+   if (!drive) await connectToDrive();
+   if (!drive) return [];
+
+   const response = await drive.files.list({
+      q: `'${folderId}' in parents`,
+      fields: 'files(id)'
+   });
+
+   const files = response.data.files;
+   if (!files) return [];
+
+   let imageUrls = files.map((file: any) => {
+      return getImageUrlFromDrive(file.id);
+   }) as unknown as string[];
+
+   return imageUrls;
 }

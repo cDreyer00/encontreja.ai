@@ -2,10 +2,27 @@ import { NextRequest } from "next/server";
 import { Filter, ObjectId, StrictFilter } from "mongodb";
 import { collections, connectToDatabase } from "@/services/db";
 
-import Pet, { fixPet } from "@/models/pet";
+import Pet, { mountPet } from "@/models/pet";
+import { CLIENT_PUBLIC_FILES_PATH } from "next/dist/shared/lib/constants";
 
 // let submitImgUrl = "http://localhost:3000/api/image"
 let submitImgUrl = "https://encontreja-ai.vercel.app/api/image"
+
+export interface IParams {
+   // [key: string]: string;
+}
+
+interface IGetPetParams extends IParams {
+   [key: string]: string | string[] | undefined | number | number[];
+
+   type?: string;
+   breeds?: string;
+   colors?: string;
+   age?: string[];
+   size?: string;
+   pageSize?: string;
+   pageNumber?: string;
+}
 
 export async function GET(req: NextRequest): Promise<Response> {
    if (!collections.pets)
@@ -17,22 +34,54 @@ export async function GET(req: NextRequest): Promise<Response> {
       return new Response('Internal server error', { status: 500 });
    }
 
-   let params = req.nextUrl.searchParams;
-   let pet = mountPet(params);
-
-   console.log(pet)
+   let params = exportParams(req.nextUrl.searchParams);
+   let pet = mountPet(params)
+   console.log("pet filter:", pet, "amount:", params.amount);
 
    let pipeline = weightsPipeline(pet);
    let collation = { locale: 'pt', strength: 2 }
 
-   const pets = await col?.aggregate(pipeline, { collation }).toArray()
+   let pets: Pet[] = [];
+   let q = col?.aggregate(pipeline, { collation });
+   pets = await q.toArray();
+
+   if (params.pageNumber || params.pageSize) {
+      let pSize = Number.parseInt(params.pageSize!);
+      let pNumber = Number.parseInt(params.pageNumber!);
+      if (!isNaN(pSize)) {
+         let skip = isNaN(pNumber) ? 0 : pSize * (pNumber - 1);
+         pets = pets.slice(skip, skip + pSize);
+      }
+   }
+
    return new Response(JSON.stringify(pets), { status: 200 });
+}
+
+function exportParams(params: URLSearchParams): IGetPetParams {
+   let obj: IGetPetParams = {};
+
+   params.forEach((value, key) => {
+      if (Array.isArray(obj[key])) {
+         // check if obj is typeof number
+         if (typeof obj[key] === 'number') {
+            let val = value.split(',').map((v) => parseInt(v));
+            obj[key] = val;
+         }
+         else {
+            obj[key] = value.split(',');
+         }
+         return;
+      }
+
+      obj[key] = value;
+   });
+
+   return obj;
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
    try {
       const data = await req.json();
-      console.log(data)
       const isArray = Array.isArray(data);
 
       if (isArray) {
@@ -41,7 +90,7 @@ export async function POST(req: NextRequest): Promise<Response> {
             if (p.imgUrl === undefined)
                throw new Error('Missing imgUrl in one or more pets');
          });
-         pets.forEach((p) => p = fixPet(p));
+         pets.forEach((p) => p = mountPet(p));
          await insertManyPets(pets);
          return new Response(JSON.stringify(pets), { status: 201 });
       }
@@ -49,7 +98,7 @@ export async function POST(req: NextRequest): Promise<Response> {
       if (data.imgUrl === undefined)
          throw new Error('Missing imgUrl in pet');
 
-      let pet = fixPet(data);
+      let pet = mountPet(data);
       await insertOnePet(pet);
       return new Response(JSON.stringify(pet), { status: 201 });
    } catch (error) {
@@ -87,7 +136,6 @@ async function updatePetImage(pet: Pet) {
    let catImgsDbFolderId = '1mO0QHnMX8HanFElrvh3CoOv9Ey2f0PO39Y0RqQp4M_QPBpltFyFLkKuGMfpo3bF-0GBZ_QbY';
 
    let folder = pet.type === 'cachorro' ? dogImgsDbFolderId : catImgsDbFolderId;
-   console.log(pet)
    let newImg = await fetch(submitImgUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -104,33 +152,33 @@ async function updatePetImage(pet: Pet) {
    return pet;
 }
 
-function mountPet(params: URLSearchParams): Pet {
-   let pet = new Pet();
+// function mountPet(params: URLSearchParams): Pet {
+//    let pet = new Pet();
 
-   pet.type = params.get('type') as string ?? null;
-   pet.gender = params.get('gender') as string ?? null;
+//    pet.type = params.get('type') as string ?? null;
+//    pet.gender = params.get('gender') as string ?? null;
 
-   let breedsParam = params.get('breeds');
-   let breeds: string[] = breedsParam ? breedsParam.split(',') : [];
-   pet.breeds = breeds;
+//    let breedsParam = params.get('breeds');
+//    let breeds: string[] = breedsParam ? breedsParam.split(',') : [];
+//    pet.breeds = breeds;
 
-   let colorsParam = params.get('colors');
-   let colors: string[] = colorsParam ? colorsParam.split(',') : [];
-   pet.colors = colors;
+//    let colorsParam = params.get('colors');
+//    let colors: string[] = colorsParam ? colorsParam.split(',') : [];
+//    pet.colors = colors;
 
-   let ageParams = params.get('age');
-   let age: string[] = ageParams ? ageParams.split(',') : [];
-   pet.age = age;
+//    let ageParams = params.get('age');
+//    let age: string[] = ageParams ? ageParams.split(',') : [];
+//    pet.age = age;
 
-   let sizeParams = params.get('size');
-   let size: string[] = sizeParams ? sizeParams.split(',') : [];
-   pet.size = size;
+//    let sizeParams = params.get('size');
+//    let size: string[] = sizeParams ? sizeParams.split(',') : [];
+//    pet.size = size;
 
-   let observations = params.get('observations') as string ?? null;
-   pet.observations = observations;
+//    let observations = params.get('observations') as string ?? null;
+//    pet.observations = observations;
 
-   return pet;
-}
+//    return pet;
+// }
 
 const weightsPipeline = (pet: Pet) => {
    const weights = {
@@ -143,6 +191,16 @@ const weightsPipeline = (pet: Pet) => {
    let matchingType = pet.type ? { $match: { type: pet.type } } : { $match: {} }
 
    let pipeline = [
+      {
+         $match: {
+            "imgUrl": {
+               "$ne": null
+            }
+         }
+      },
+      {
+         $sort: { createdAt: 1 }
+      },
       matchingType,
       {
          $addFields: {

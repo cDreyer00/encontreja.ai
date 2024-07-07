@@ -1,6 +1,6 @@
 import OpenAI from "openai"
 import { getImageUrlFromDrive } from "@/services/googleapi"
-import Pet, { fixPet } from "@/models/pet"
+import Pet, { mountPet } from "@/models/pet"
 import { connectToDatabase, collections } from "@/services/db"
 import { NextRequest } from "next/server"
 import { Filter, AggregationCursor } from "mongodb"

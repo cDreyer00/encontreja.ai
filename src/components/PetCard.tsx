@@ -9,7 +9,7 @@ export default function PetCard({ pet }: { pet: Pet }) {
 
    return (
       <div>
-         <img src="https://lh3.googleusercontent.com/d/17xj7GKQEHA8JfYpFQg_DvA8Yic2HOBqI" />
+         <img src={pet.imgUrl} onClick={handleCardClick} referrerPolicy="no-referrer" />
       </div>
    );
 }
