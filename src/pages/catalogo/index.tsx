@@ -38,11 +38,10 @@ export default function Catalogo() {
       if (!p.type) return;
 
       p = params!.toString();
-      console.log('p:', p);
+
       fetch(`/api/pet?${p}`)
          .then((res) => res.json())
          .then((data) => {
-            console.log(data);
             setPets(data);
          })
          .catch((error) => {

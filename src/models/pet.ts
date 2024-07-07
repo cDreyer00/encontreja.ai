@@ -30,7 +30,7 @@ export function mountPet({ type, breeds, colors, age, location, gender, imgUrl, 
 
    const pet = new Pet()
 
-   pet.createdAt = date;
+   pet.createdAt = createdAt ?? date;
    pet.type = type;
    pet.breeds = validateArr(breeds, undefined, true);
    pet.colors = validateArr(colors, undefined, true);

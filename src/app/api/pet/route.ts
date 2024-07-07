@@ -28,7 +28,8 @@ export async function GET(req: NextRequest): Promise<Response> {
    if (!collections.pets)
       await connectToDatabase()
 
-   const col = collections.pets;
+   const col = collections.frontTests;
+   // const col = collections.pets;
    if (!col) {
       console.error('Error connecting to database');
       return new Response('Internal server error', { status: 500 });
@@ -38,7 +39,8 @@ export async function GET(req: NextRequest): Promise<Response> {
    let pet = mountPet(params)
    console.log("pet filter:", pet, "amount:", params.amount);
 
-   let pipeline = weightsPipeline(pet);
+   let pipeline = labPipeline(pet);
+   // let pipeline = weightsPipeline(pet);
    let collation = { locale: 'pt', strength: 2 }
 
    let pets: Pet[] = [];
@@ -238,8 +240,8 @@ const weightsPipeline = (pet: Pet) => {
       },
       {
          $sort: {
-
-            combinedScore: -1
+            combinedScore: -1,
+            createdAt: -1
          }
       },
    ]
@@ -248,43 +250,10 @@ const weightsPipeline = (pet: Pet) => {
 }
 
 const labPipeline = (pet: Pet) => {
-   const weights = {
-      breeds: 4,
-      colors: 4,
-      age: 2,
-      sizes: 1
-   };
-
-   let matchingType = pet.type ? { $match: { type: pet.type } } : { $match: {} }
-
    let pipeline = [
-      matchingType,
       {
-         $addFields: {
-            countBreeds: { $size: { $setIntersection: ["$breeds", pet.breeds] } },
-            countColors: { $size: { $setIntersection: ["$colors", pet.colors] } },
-            countAge: { $size: { $setIntersection: ["$age", pet.age] } },
-            countSize: { $size: { $setIntersection: ["$size", pet.size] } },
-         }
-      },
-      {
-         $addFields: {
-            combinedScore: {
-               $add: [
-                  { $multiply: ["$countBreeds", weights.breeds] },
-                  { $multiply: ["$countColors", weights.colors] },
-                  { $multiply: ["$countAge", weights.age] },
-                  { $multiply: ["$countSize", weights.sizes] },
-               ]
-            }
-         }
-      },
-      {
-         $sort: {
-
-            combinedScore: -1
-         }
-      },
+         $sort: { createdAt: -1 }
+      }
    ]
 
    return pipeline;
