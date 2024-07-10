@@ -39,8 +39,8 @@ export async function GET(req: NextRequest): Promise<Response> {
    let pet = mountPet(params)
    console.log("pet filter:", pet, "amount:", params.amount);
 
-   let pipeline = labPipeline(pet);
-   // let pipeline = weightsPipeline(pet);
+   // let pipeline = labPipeline(pet);
+   let pipeline = weightsPipeline(pet);
    let collation = { locale: 'pt', strength: 2 }
 
    let pets: Pet[] = [];
@@ -154,34 +154,6 @@ async function updatePetImage(pet: Pet) {
    return pet;
 }
 
-// function mountPet(params: URLSearchParams): Pet {
-//    let pet = new Pet();
-
-//    pet.type = params.get('type') as string ?? null;
-//    pet.gender = params.get('gender') as string ?? null;
-
-//    let breedsParam = params.get('breeds');
-//    let breeds: string[] = breedsParam ? breedsParam.split(',') : [];
-//    pet.breeds = breeds;
-
-//    let colorsParam = params.get('colors');
-//    let colors: string[] = colorsParam ? colorsParam.split(',') : [];
-//    pet.colors = colors;
-
-//    let ageParams = params.get('age');
-//    let age: string[] = ageParams ? ageParams.split(',') : [];
-//    pet.age = age;
-
-//    let sizeParams = params.get('size');
-//    let size: string[] = sizeParams ? sizeParams.split(',') : [];
-//    pet.size = size;
-
-//    let observations = params.get('observations') as string ?? null;
-//    pet.observations = observations;
-
-//    return pet;
-// }
-
 const weightsPipeline = (pet: Pet) => {
    const weights = {
       breeds: 4,
@@ -190,61 +162,69 @@ const weightsPipeline = (pet: Pet) => {
       sizes: 1
    };
 
-   let matchingType = pet.type ? { $match: { type: pet.type } } : { $match: {} }
+   let pipeline: any = [];
 
-   let pipeline = [
-      {
-         $match: {
-            "imgUrl": {
-               "$ne": null
-            }
-         }
-      },
-      {
-         $sort: { createdAt: 1 }
-      },
-      matchingType,
-      {
-         $addFields: {
-            countBreeds: { $size: { $setIntersection: ["$breeds", pet.breeds] } },
-            countColors: { $size: { $setIntersection: ["$colors", pet.colors] } },
-            countAge: { $size: { $setIntersection: ["$age", pet.age] } },
-            countSize: { $size: { $setIntersection: ["$size", pet.size] } },
-            nonMatchingTagsCount: {
-               $size: {
-                  $setDifference: ["$breeds", pet.breeds]
+   if (pet.type) {
+      let matchingType = { $match: { type: pet.type } }
+      pipeline = [
+         {
+            $match: {
+               "imgUrl": {
+                  "$ne": null
                }
-            },
-            hasMuttTag: {
-               $cond: {
-                  if: { $in: ["Sem raça definida", "$breeds"] },
-                  then: 1,
-                  else: 0
-               }
-            },
-         }
-      },
-      {
-         $addFields: {
-            combinedScore: {
-               $add: [
-                  { $multiply: ["$countBreeds", weights.breeds] },
-                  { $multiply: ["$countColors", weights.colors] },
-                  { $multiply: ["$countAge", weights.age] },
-                  { $multiply: ["$countSize", weights.sizes] },
-                  { $multiply: ["$nonMatchingTagsCount", -1] },
-                  { $multiply: ["$hasMuttTag", 2] },
-               ]
             }
+         },
+         {
+            $sort: { createdAt: 1 }
+         },
+         matchingType,
+         {
+            $addFields: {
+               countBreeds: { $size: { $setIntersection: ["$breeds", pet.breeds] } },
+               countColors: { $size: { $setIntersection: ["$colors", pet.colors] } },
+               countAge: { $size: { $setIntersection: ["$age", pet.age] } },
+               countSize: { $size: { $setIntersection: ["$size", pet.size] } },
+               nonMatchingTagsCount: {
+                  $size: {
+                     $setDifference: ["$breeds", pet.breeds]
+                  }
+               },
+               hasMuttTag: {
+                  $cond: {
+                     if: { $in: ["Sem raça definida", "$breeds"] },
+                     then: 1,
+                     else: 0
+                  }
+               },
+            }
+         },
+         {
+            $addFields: {
+               combinedScore: {
+                  $add: [
+                     { $multiply: ["$countBreeds", weights.breeds] },
+                     { $multiply: ["$countColors", weights.colors] },
+                     { $multiply: ["$countAge", weights.age] },
+                     { $multiply: ["$countSize", weights.sizes] },
+                     { $multiply: ["$nonMatchingTagsCount", -1] },
+                     { $multiply: ["$hasMuttTag", 2] },
+                  ]
+               }
+            }
+         },
+         {
+            $sort: {
+               combinedScore: -1,
+            }
+         },
+      ]
+   } else {
+      pipeline = [
+         {
+            $sort: { createdAt: -1 }
          }
-      },
-      {
-         $sort: {
-            combinedScore: -1,
-            createdAt: -1
-         }
-      },
-   ]
+      ]
+   }
 
    return pipeline;
 }
