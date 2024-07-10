@@ -342,7 +342,7 @@ async function analyseAndFilder(image: string) {
    if (!infos) throw new Error('Failed to extract information');
 
    // extract only json from string
-   let json = infos.match(/\{.*\}/s)
+   let json = infos.match(/\{[\s\S]*\}/)
    if (!json) throw new Error('Failed to extract information')
    return JSON.parse(json[0])
 }
