@@ -28,8 +28,8 @@ export async function GET(req: NextRequest): Promise<Response> {
    if (!collections.pets)
       await connectToDatabase()
 
-   const col = collections.frontTests;
-   // const col = collections.pets;
+   // const col = collections.frontTests;
+   const col = collections.pets;
    if (!col) {
       console.error('Error connecting to database');
       return new Response('Internal server error', { status: 500 });
