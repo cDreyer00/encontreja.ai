@@ -58,3 +58,16 @@ Content-Type: application/json
     "imgUrl": "https://lh3.googleusercontent.com/d/1VlJoBuE-xi5yUY60NcCccTDZY3fgJ2fF",
     "folderId": "15JrJPxhehgRqtF__GuHtAWGd0atJH5_EfR3pVyMHXd8-INhlMsiWujNW_r0qCdsYNzyBf_dE"
 }
+
+###
+
+POST http://localhost:3000/api/user
+Content-Type: application/json
+
+{    
+    "email": "lucas@lab.com",
+    "address":{
+        "city": "São Paulo",
+        "aaaa": "afsdfsdf"
+    }
+}

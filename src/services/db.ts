@@ -1,13 +1,38 @@
 import { MongoClient, Collection, Db } from "mongodb";
 import Pet from "@/models/pet";
+import User from "@/models/user";
 
 export const collections: {
    pets?: Collection<Pet>,
+   users?: Collection<User>,
    lab?: Collection<Pet>,
    backup?: Collection<Pet>,
    frontTests?: Collection<Pet>,
-
 } = {}
+
+export const petsCollection = async (): Promise<Collection<Pet>> => {
+   if (!collections.pets)
+      await connectToDatabase();
+   return collections.pets!;
+}
+
+export const usersCollection = async (): Promise<Collection<User>> => {
+   if (!collections.users)
+      await connectToDatabase();
+   return collections.users!;
+}
+
+export const labCollection = async (): Promise<Collection<Pet>> => {
+   if (!collections.lab)
+      await connectToDatabase();
+   return collections.lab!;
+}
+
+export const backupCollection = async (): Promise<Collection<Pet>> => {
+   if (!collections.backup)
+      await connectToDatabase();
+   return collections.backup!;
+}
 
 const dbPass = process.env.DB_PASS
 const dbName = process.env.DB_NAME
@@ -18,41 +43,25 @@ export async function connectToDatabase() {
       const client: MongoClient = new MongoClient(connString);
       await client.connect();
       const db: Db = client.db(dbName);
-      
-      const petsCollection: Collection<Pet> = db.collection('pets');
-      const tempColelction: Collection<Pet> = db.collection('lab');
-      const backupCollection: Collection<Pet> = db.collection('backup');
-      const frontTestsCollection: Collection<Pet> = db.collection('frontTests');
 
+      const petsCollection: Collection<Pet> = db.collection('pets');
       collections.pets = petsCollection;
+
+      const userCollection: Collection<User> = db.collection('users');
+      collections.users = userCollection;
+
+      /// experiments \\\
+      const tempColelction: Collection<Pet> = db.collection('lab');
       collections.lab = tempColelction;
+
+      const backupCollection: Collection<Pet> = db.collection('backup');
       collections.backup = backupCollection;
+
+      const frontTestsCollection: Collection<Pet> = db.collection('frontTests');
       collections.frontTests = frontTestsCollection;
+      /// ============ \\\
    }
    catch (error) {
       console.error(error);
    }
 }
-
-// async function insertOnePet(pet: Pet, updateImg: boolean = true): Promise<void> {
-//    if (!collections.temp)
-//       await connectToDatabase();
-
-//    if (updateImg)
-//       pet = await updatePetImage(pet);
-
-//    await collections.temp?.insertOne(pet);
-// }
-
-// async function insertManyPets(pets: Pet[], updateImg: boolean = true): Promise<void> {
-//    if (!collections.temp)
-//       await connectToDatabase();
-
-//    if (!updateImg) {
-//       for (let pet of pets) {
-//          pet = await updatePetImage(pet);
-//       }
-//    }
-
-//    await collections.temp?.insertMany(pets);
-// }

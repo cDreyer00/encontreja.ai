@@ -1,5 +1,4 @@
 import { NextRequest } from "next/server";
-import { Filter, ObjectId, StrictFilter } from "mongodb";
 import { collections, connectToDatabase } from "@/services/db";
 
 import Pet, { mountPet } from "@/models/pet";
