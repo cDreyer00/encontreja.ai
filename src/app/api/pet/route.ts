@@ -165,8 +165,8 @@ async function updatePetImage(pet: Pet) {
    return pet;
 }
 
-function validatePet(pet: any): boolean{
-   if (!pet.type && !pet.breeds && !pet.colors && !pet.age && !pet.size) {
+function validatePet(pet: any): boolean {
+   if (!pet.type && pet.breeds.length == 0 && pet.colors.length == 0 && pet.age.includes('incerto') && pet.size.includes('incerto')) {
       return false;
    }
 
@@ -182,62 +182,66 @@ const weightsPipeline = (pet: Pet) => {
    };
 
    let pipeline: any = [];
-
+   console.log("PET", pet);
    if (validatePet(pet)) {
-      let matchingType = pet.type ? { $match: { type: pet.type } } : {};
-      pipeline = [
-         {
-            $match: {
-               "imgUrl": {
-                  "$ne": null
+      pipeline = []
+
+      pipeline.push({
+         $match: {
+            "imgUrl": {
+               "$ne": null
+            }
+         }
+      })
+
+      pipeline.push({ $sort: { createdAt: 1 } })
+
+      if (pet.type) {
+         pipeline.push({ $match: { type: pet.type } })
+      }
+      
+      pipeline.push({
+         $addFields: {
+            countBreeds: { $size: { $setIntersection: ["$breeds", pet.breeds] } },
+            countColors: { $size: { $setIntersection: ["$colors", pet.colors] } },
+            countAge: { $size: { $setIntersection: ["$age", pet.age] } },
+            countSize: { $size: { $setIntersection: ["$size", pet.size] } },
+            nonMatchingTagsCount: {
+               $size: {
+                  $setDifference: ["$breeds", pet.breeds]
                }
-            }
-         },
-         {
-            $sort: { createdAt: 1 }
-         },
-         matchingType,
-         {
-            $addFields: {
-               countBreeds: { $size: { $setIntersection: ["$breeds", pet.breeds] } },
-               countColors: { $size: { $setIntersection: ["$colors", pet.colors] } },
-               countAge: { $size: { $setIntersection: ["$age", pet.age] } },
-               countSize: { $size: { $setIntersection: ["$size", pet.size] } },
-               nonMatchingTagsCount: {
-                  $size: {
-                     $setDifference: ["$breeds", pet.breeds]
-                  }
-               },
-               hasMuttTag: {
-                  $cond: {
-                     if: { $in: ["Sem raça definida", "$breeds"] },
-                     then: 1,
-                     else: 0
-                  }
-               },
-            }
-         },
-         {
-            $addFields: {
-               combinedScore: {
-                  $add: [
-                     { $multiply: ["$countBreeds", weights.breeds] },
-                     { $multiply: ["$countColors", weights.colors] },
-                     { $multiply: ["$countAge", weights.age] },
-                     { $multiply: ["$countSize", weights.sizes] },
-                     { $multiply: ["$nonMatchingTagsCount", -1] },
-                     { $multiply: ["$hasMuttTag", 2] },
-                  ]
+            },
+            hasMuttTag: {
+               $cond: {
+                  if: { $in: ["Sem raça definida", "$breeds"] },
+                  then: 1,
+                  else: 0
                }
+            },
+         }
+      })
+
+      pipeline.push({
+         $addFields: {
+            combinedScore: {
+               $add: [
+                  { $multiply: ["$countBreeds", weights.breeds] },
+                  { $multiply: ["$countColors", weights.colors] },
+                  { $multiply: ["$countAge", weights.age] },
+                  { $multiply: ["$countSize", weights.sizes] },
+                  { $multiply: ["$nonMatchingTagsCount", -1] },
+                  { $multiply: ["$hasMuttTag", 2] },
+               ]
             }
-         },
-         {
-            $sort: {
-               combinedScore: -1,
-            }
-         },
-      ]
-   } else {
+         }
+      })
+
+      pipeline.push({
+         $sort: {
+            combinedScore: -1,
+         }
+      })
+   } else {      
       pipeline = [
          {
             $sort: { createdAt: -1 }
