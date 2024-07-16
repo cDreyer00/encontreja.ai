@@ -48,6 +48,7 @@ export async function GET(req: NextRequest): Promise<Response> {
    }
 
    let pet = mountPet(params)
+   console.log("GET PETS", "Query: ", JSON.stringify(pet));
 
    let pipeline = weightsPipeline(pet);
    let collation = { locale: 'pt', strength: 2 }
@@ -65,7 +66,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       }
    }
 
-   console.log("GET PETS", "Query: ", JSON.stringify(pet), "Result: ", JSON.stringify(pets));
+   // console.log("GET PETS", "Query: ", JSON.stringify(pet), "Result: ", JSON.stringify(pets));
 
    return new Response(JSON.stringify(pets), { status: 200 });
 }
@@ -182,14 +183,15 @@ const weightsPipeline = (pet: Pet) => {
    };
 
    let pipeline: any = [];
-   console.log("PET", pet);
+
    if (validatePet(pet)) {
+      console.log("PET", pet);
       pipeline = []
 
       pipeline.push({
          $match: {
-            "imgUrl": {
-               "$ne": null
+            imgUrl: {
+               $ne: null
             }
          }
       })
@@ -199,7 +201,7 @@ const weightsPipeline = (pet: Pet) => {
       if (pet.type) {
          pipeline.push({ $match: { type: pet.type } })
       }
-      
+
       pipeline.push({
          $addFields: {
             countBreeds: { $size: { $setIntersection: ["$breeds", pet.breeds] } },
@@ -241,14 +243,13 @@ const weightsPipeline = (pet: Pet) => {
             combinedScore: -1,
          }
       })
-   } else {      
+   } else {
       pipeline = [
          {
             $sort: { createdAt: -1 }
          }
       ]
    }
-
    return pipeline;
 }
 

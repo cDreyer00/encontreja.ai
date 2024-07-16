@@ -29,7 +29,6 @@ export function mountPet({ type, breeds, colors, age, location, gender, imgUrl, 
    const date = new Date();
 
    const pet = new Pet()
-
    pet.createdAt = createdAt ?? date;
    pet.type = type;
    pet.breeds = validateArr(breeds, undefined, true);
@@ -48,7 +47,7 @@ export function mountPet({ type, breeds, colors, age, location, gender, imgUrl, 
    return pet;
 }
 
-export function validateArr(arr: any, defaultValueIfEmpty: string | undefined = undefined, splitString: boolean = false) {
+export function validateArr(arr: any, defaultValueIfEmpty: string | undefined = undefined, splitString: boolean = true) {
    // if is array, return it
    if (Array.isArray(arr)) {
       if (arr.length === 0 && defaultValueIfEmpty !== undefined)
