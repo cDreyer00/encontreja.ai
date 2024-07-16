@@ -3,6 +3,7 @@ import { collections, connectToDatabase } from "@/services/db";
 
 import Pet, { mountPet } from "@/models/pet";
 import { CLIENT_PUBLIC_FILES_PATH } from "next/dist/shared/lib/constants";
+import { ObjectId } from "mongodb";
 
 // let submitImgUrl = "http://localhost:3000/api/image"
 let submitImgUrl = "https://encontreja-ai.vercel.app/api/image"
@@ -27,7 +28,6 @@ export async function GET(req: NextRequest): Promise<Response> {
    if (!collections.pets)
       await connectToDatabase()
 
-   // const col = collections.frontTests;
    const col = collections.pets;
    if (!col) {
       console.error('Error connecting to database');
@@ -35,10 +35,20 @@ export async function GET(req: NextRequest): Promise<Response> {
    }
 
    let params = exportParams(req.nextUrl.searchParams);
-   let pet = mountPet(params)
-   console.log("pet filter:", pet, "amount:", params.amount);
 
-   // let pipeline = labPipeline(pet);
+   // if Id is present, find only target
+   if (params.id) {
+      try {
+         let pet = await col.findOne({ _id: new ObjectId(params.id as string) });
+         return new Response(JSON.stringify(pet), { status: 200 });
+      } catch (error) {
+         console.error(error);
+         return new Response("Pet not found or invalid id", { status: 404 });
+      }
+   }
+
+   let pet = mountPet(params)
+
    let pipeline = weightsPipeline(pet);
    let collation = { locale: 'pt', strength: 2 }
 
@@ -54,6 +64,8 @@ export async function GET(req: NextRequest): Promise<Response> {
          pets = pets.slice(skip, skip + pSize);
       }
    }
+
+   console.log("GET PETS", "Query: ", JSON.stringify(pet), "Result: ", JSON.stringify(pets));
 
    return new Response(JSON.stringify(pets), { status: 200 });
 }
@@ -153,6 +165,14 @@ async function updatePetImage(pet: Pet) {
    return pet;
 }
 
+function validatePet(pet: any): boolean{
+   if (!pet.type && !pet.breeds && !pet.colors && !pet.age && !pet.size) {
+      return false;
+   }
+
+   return true;
+}
+
 const weightsPipeline = (pet: Pet) => {
    const weights = {
       breeds: 4,
@@ -163,8 +183,8 @@ const weightsPipeline = (pet: Pet) => {
 
    let pipeline: any = [];
 
-   if (pet.type) {
-      let matchingType = { $match: { type: pet.type } }
+   if (validatePet(pet)) {
+      let matchingType = pet.type ? { $match: { type: pet.type } } : {};
       pipeline = [
          {
             $match: {

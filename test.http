@@ -65,7 +65,9 @@ POST http://localhost:3000/api/user
 Content-Type: application/json
 
 {    
+    "name": "Lucas",
     "email": "lucas@lab.com",
+    "petId": "664e0083be0ec78c9183586e",
     "address":{
         "city": "São Paulo",
         "aaaa": "afsdfsdf"

@@ -16,6 +16,8 @@ import { ObjectId } from "mongodb";
 export default interface User {
    _id: ObjectId;
    name: string;
+   petId: string
+   createdAt?: Date;
    phone?: string;
    email?: string;
    address?: {
@@ -33,6 +35,8 @@ export function mountUser(user: any): User {
    return {
       _id: new ObjectId(),
       name: user.name,
+      petId: user.petId,
+      createdAt: new Date(),
       phone: user.phone,
       email: user.email,
       address: {
