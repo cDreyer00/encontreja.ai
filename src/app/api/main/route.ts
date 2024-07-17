@@ -1,9 +1,10 @@
 import { NextRequest } from "next/server";
 import { IParams } from "../pet/route";
 import { getImageUrlFromDrive, submitImageToDrive } from "@/services/googleapi";
-// const baseUrl = 'https://encontreja-ai.vercel.app/api/'
 
-const baseUrl = 'http://localhost:3000/api/'
+const baseUrl = 'https://encontreja-ai.vercel.app/api/'
+// const baseUrl = 'http://localhost:3000/api/'
+
 export const maxDuration = 30;
 
 interface IMainParams extends IParams {

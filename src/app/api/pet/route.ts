@@ -250,6 +250,7 @@ const weightsPipeline = (pet: Pet) => {
          }
       ]
    }
+   
    return pipeline;
 }
 
